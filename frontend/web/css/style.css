@@ -1530,9 +1530,10 @@ ul.breadcrumbs li{
 	color:#000;
 }
 ul.breadcrumbs li.women{
-	    background: yellow;
+    background: #816263;
     font-size: 14px;
     padding: 3px;
+    color: white;
 }
 ul.previous{
 	padding:0;
