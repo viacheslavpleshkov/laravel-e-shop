@@ -2,191 +2,233 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'Yii2-Aditii';
+$this->title = 'Yii2-E-Shop';
 ?>
-<!-- start slider -->
-<div id="da-slider" class="da-slider">
-    <div class="da-slide">
-        <h2>welcome to aditii</h2>
-        <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane.</p>
-        <a href="details.html" class="da-link">shop now</a>
-        <div class="da-img"><img src="images/slider1.png" alt="image01" /></div>
-    </div>
-    <div class="da-slide">
-        <h2>Easy management</h2>
-        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-        <a href="details.html" class="da-link">shop now</a>
-        <div class="da-img"><img src="images/slider2.png" alt="image01" /></div>
-    </div>
-    <div class="da-slide">
-        <h2>Revolution</h2>
-        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-        <a href="details.html" class="da-link">shop now</a>
-        <div class="da-img"><img src="images/slider3.png" alt="image01" /></div>
-    </div>
-    <div class="da-slide">
-        <h2>Quality Control</h2>
-        <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
-        <a href="details.html" class="da-link">shop now</a>
-        <div class="da-img"><img src="images/slider4.png" alt="image01" /></div>
-    </div>
-    <nav class="da-arrows">
-        <span class="da-arrows-prev"></span>
-        <span class="da-arrows-next"></span>
-    </nav>
-</div>
-</div>
-<!----start-cursual---->
-<div class="wrap">
-    <!----start-img-cursual---->
-    <div id="owl-demo" class="owl-carousel">
-        <div class="item" onclick="location.href='details.html';">
-            <div class="cau_left">
-                <img class="lazyOwl" data-src="images/c1.jpg" alt="Lazy Owl Image">
+<div class="banner">
+    <div class="container">
+        <div class="banner-bottom">
+            <div class="banner-bottom-left">
+                <h2>B<br>U<br>Y</h2>
             </div>
-            <div class="cau_left">
-                <h4><a href="details.html">branded shoes</a></h4>
-                <a href="details.html" class="btn">shop</a>
+            <div class="banner-bottom-right">
+                <div  class="callbacks_container">
+                    <ul class="rslides" id="slider4">
+                        <li>
+                            <div class="banner-info">
+                                <h3>Smart But Casual</h3>
+                                <p>Start your shopping here...</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="banner-info">
+                                <h3>Shop Online</h3>
+                                <p>Start your shopping here...</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="banner-info">
+                                <h3>Pack your Bag</h3>
+                                <p>Start your shopping here...</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!--banner-->
+                <script src="js/responsiveslides.min.js"></script>
+                <script>
+                    // You can also use "$(window).load(function() {"
+                    $(function () {
+                        // Slideshow 4
+                        $("#slider4").responsiveSlides({
+                            auto: true,
+                            pager:true,
+                            nav:false,
+                            speed: 500,
+                            namespace: "callbacks",
+                            before: function () {
+                                $('.events').append("<li>before event fired.</li>");
+                            },
+                            after: function () {
+                                $('.events').append("<li>after event fired.</li>");
+                            }
+                        });
+
+                    });
+                </script>
             </div>
+            <div class="clearfix"> </div>
         </div>
-        <div class="item" onclick="location.href='details.html';">
-            <div class="cau_left">
-                <img class="lazyOwl" data-src="images/c2.jpg" alt="Lazy Owl Image">
-            </div>
-            <div class="cau_left">
-                <h4><a href="details.html">branded tees</a></h4>
-                <a href="details.html" class="btn">shop</a>
-            </div>
-        </div>
-        <div class="item" onclick="location.href='details.html';">
-            <div class="cau_left">
-                <img class="lazyOwl" data-src="images/c3.jpg" alt="Lazy Owl Image">
-            </div>
-            <div class="cau_left">
-                <h4><a href="details.html">branded jeens</a></h4>
-                <a href="details.html" class="btn">shop</a>
-            </div>
-        </div>
-        <div class="item" onclick="location.href='details.html';">
-            <div class="cau_left">
-                <img class="lazyOwl" data-src="images/c2.jpg" alt="Lazy Owl Image">
-            </div>
-            <div class="cau_left">
-                <h4><a href="details.html">branded tees</a></h4>
-                <a href="details.html" class="btn">shop</a>
-            </div>
-        </div>
-        <div class="item" onclick="location.href='details.html';">
-            <div class="cau_left">
-                <img class="lazyOwl" data-src="images/c1.jpg" alt="Lazy Owl Image">
-            </div>
-            <div class="cau_left">
-                <h4><a href="details.html">branded shoes</a></h4>
-                <a href="details.html" class="btn">shop</a>
-            </div>
-        </div>
-        <div class="item" onclick="location.href='details.html';">
-            <div class="cau_left">
-                <img class="lazyOwl" data-src="images/c2.jpg" alt="Lazy Owl Image">
-            </div>
-            <div class="cau_left">
-                <h4><a href="details.html">branded tees</a></h4>
-                <a href="details.html" class="btn">shop</a>
-            </div>
-        </div>
-        <div class="item" onclick="location.href='details.html';">
-            <div class="cau_left">
-                <img class="lazyOwl" data-src="images/c3.jpg" alt="Lazy Owl Image">
-            </div>
-            <div class="cau_left">
-                <h4><a href="details.html">branded jeens</a></h4>
-                <a href="details.html" class="btn">shop</a>
-            </div>
-        </div>
-    </div>
-    <!----//End-img-cursual---->
-</div>
-<!-- start main1 -->
-<div class="main_bg1">
-    <div class="wrap">
-        <div class="main1">
-            <h2>featured products</h2>
+        <div class="shop">
+            <a href="single.html">SHOP COLLECTION NOW</a>
         </div>
     </div>
 </div>
-<!-- start main -->
-<div class="main_bg">
-    <div class="wrap">
-        <div class="main">
-            <!-- start grids_of_3 -->
-            <div class="grids_of_3">
-                <div class="grid1_of_3">
-                    <a href="details.html">
-                        <img src="images/pic1.jpg" alt=""/>
-                        <h3>branded shoes</h3>
-                        <div class="price">
-                            <h4>$300<span>indulge</span></h4>
-                        </div>
-                        <span class="b_btm"></span>
-                    </a>
-                </div>
-                <div class="grid1_of_3">
-                    <a href="details.html">
-                        <img src="images/pic2.jpg" alt=""/>
-                        <h3>branded t-shirts</h3>
-                        <div class="price">
-                            <h4>$300<span>indulge</span></h4>
-                        </div>
-                        <span class="b_btm"></span>
-                    </a>
-                </div>
-                <div class="grid1_of_3">
-                    <a href="details.html">
-                        <img src="images/pic3.jpg" alt=""/>
-                        <h3>branded tees</h3>
-                        <div class="price">
-                            <h4>$300<span>indulge</span></h4>
-                        </div>
-                        <span class="b_btm"></span>
-                    </a>
-                </div>
-                <div class="clear"></div>
+<!-- content-section-starts-here -->
+<div class="container">
+    <div class="main-content">
+        <div class="online-strip">
+            <div class="col-md-4 follow-us">
+                <h3>follow us : <a class="twitter" href="#"></a><a class="facebook" href="#"></a></h3>
             </div>
-            <div class="grids_of_3">
-                <div class="grid1_of_3">
-                    <a href="details.html">
-                        <img src="images/pic4.jpg" alt=""/>
-                        <h3>branded bags</h3>
-                        <div class="price">
-                            <h4>$300<span>indulge</span></h4>
-                        </div>
-                        <span class="b_btm"></span>
-                    </a>
+            <div class="col-md-4 shipping-grid">
+                <div class="shipping">
+                    <img src="images/shipping.png" alt="" />
                 </div>
-                <div class="grid1_of_3">
-                    <a href="details.html">
-                        <img src="images/pic5.jpg" alt=""/>
-                        <h3>ems women bag</h3>
-                        <div class="price">
-                            <h4>$300<span>indulge</span></h4>
-                        </div>
-                        <span class="b_btm"></span>
-                    </a>
+                <div class="shipping-text">
+                    <h3>Free Shipping</h3>
+                    <p>on orders over $ 199</p>
                 </div>
-                <div class="grid1_of_3">
-                    <a href="details.html">
-                        <img src="images/pic6.jpg" alt=""/>
-                        <h3>branded cargos</h3>
-                        <div class="price">
-                            <h4>$300<span>indulge</span></h4>
-                        </div>
-                        <span class="b_btm"></span>
-                    </a>
-                </div>
-                <div class="clear"></div>
+                <div class="clearfix"></div>
             </div>
-            <!-- end grids_of_3 -->
+            <div class="col-md-4 online-order">
+                <p>Order online</p>
+                <h3>Tel:999 4567 8902</h3>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="products-grid">
+            <header>
+                <h3 class="head text-center">Latest Products</h3>
+            </header>
+            <div class="col-md-4 product simpleCart_shelfItem text-center">
+                <a href="single.html"><img src="images/p1.jpg" alt="" /></a>
+                <div class="mask">
+                    <a href="single.html">Quick View</a>
+                </div>
+                <a class="product_name" href="single.html">Sed ut perspiciatis</a>
+                <p><a class="item_add" href="#"><i></i> <span class="item_price">$329</span></a></p>
+            </div>
+            <div class="col-md-4 product simpleCart_shelfItem text-center">
+                <a href="single.html"><img src="images/p2.jpg" alt="" /></a>
+                <div class="mask">
+                    <a href="single.html">Quick View</a>
+                </div>
+                <a class="product_name" href="single.html">great explorer</a>
+                <p><a class="item_add" href="#"><i></i> <span class="item_price">$599.8</span></a></p>
+            </div>
+            <div class="col-md-4 product simpleCart_shelfItem text-center">
+                <a href="single.html"><img src="images/p3.jpg" alt="" /></a>
+                <div class="mask">
+                    <a href="single.html">Quick View</a>
+                </div>
+                <a class="product_name" href="single.html">similique sunt</a>
+                <p><a class="item_add" href="#"><i></i> <span class="item_price">$359.6</span></a></p>
+            </div>
+            <div class="col-md-4 product simpleCart_shelfItem text-center">
+                <a href="single.html"><img src="images/p4.jpg" alt="" /></a>
+                <div class="mask">
+                    <a href="single.html">Quick View</a>
+                </div>
+                <a class="product_name" href="single.html">shrinking </a>
+                <p><a class="item_add" href="#"><i></i> <span class="item_price">$649.99</span></a></p>
+            </div>
+            <div class="col-md-4 product simpleCart_shelfItem text-center">
+                <a href="single.html"><img src="images/p5.jpg" alt="" /></a>
+                <div class="mask">
+                    <a href="single.html">Quick View</a>
+                </div>
+                <a class="product_name" href="single.html">perfectly simple</a>
+                <p><a class="item_add" href="#"><i></i> <span class="item_price">$750</span></a></p>
+            </div>
+            <div class="col-md-4 product simpleCart_shelfItem text-center">
+                <a href="single.html"><img src="images/p6.jpg" alt="" /></a>
+                <div class="mask">
+                    <a href="single.html">Quick View</a>
+                </div>
+                <a class="product_name" href="single.html">equal blame</a>
+                <p><a class="item_add" href="#"><i></i> <span class="item_price">$295.59</span></a></p>
+            </div>
+            <div class="col-md-4 product simpleCart_shelfItem text-center">
+                <a href="single.html"><img src="images/p7.jpg" alt="" /></a>
+                <div class="mask">
+                    <a href="single.html">Quick View</a>
+                </div>
+                <a class="product_name" href="single.html">Neque porro</a>
+                <p><a class="item_add" href="#"><i></i> <span class="item_price">$380</span></a></p>
+            </div>
+            <div class="col-md-4 product simpleCart_shelfItem text-center">
+                <a href="single.html"><img src="images/p8.jpg" alt="" /></a>
+                <div class="mask">
+                    <a href="single.html">Quick View</a>
+                </div>
+                <a class="product_name" href="single.html">perfectly simple</a>
+                <p><a class="item_add" href="#"><i></i> <span class="item_price">$540.6</span></a></p>
+            </div>
+            <div class="col-md-4 product simpleCart_shelfItem text-center">
+                <a href="single.html"><img src="images/p9.jpg" alt="" /></a>
+                <div class="mask">
+                    <a href="single.html">Quick View</a>
+                </div>
+                <a class="product_name" href="single.html">praising pain</a>
+                <p><a class="item_add" href="#"><i></i> <span class="item_price">$229.5</span></a></p>
+            </div>
+            <div class="clearfix"></div>
         </div>
     </div>
+
 </div>
-<!-- start footer -->
+<div class="other-products">
+    <div class="container">
+        <h3 class="like text-center">Featured Collection</h3>
+        <ul id="flexiselDemo3">
+            <li><a href="single.html"><img src="images/l1.jpg" class="img-responsive" alt="" /></a>
+                <div class="product liked-product simpleCart_shelfItem">
+                    <a class="like_name" href="single.html">perfectly simple</a>
+                    <p><a class="item_add" href="#"><i></i> <span class=" item_price">$759</span></a></p>
+                </div>
+            </li>
+            <li><a href="single.html"><img src="images/l2.jpg" class="img-responsive" alt="" /></a>
+                <div class="product liked-product simpleCart_shelfItem">
+                    <a class="like_name" href="single.html">praising pain</a>
+                    <p><a class="item_add" href="#"><i></i> <span class=" item_price">$699</span></a></p>
+                </div>
+            </li>
+            <li><a href="single.html"><img src="images/l3.jpg" class="img-responsive" alt="" /></a>
+                <div class="product liked-product simpleCart_shelfItem">
+                    <a class="like_name" href="single.html">Neque porro</a>
+                    <p><a class="item_add" href="#"><i></i> <span class=" item_price">$329</span></a></p>
+                </div>
+            </li>
+            <li><a href="single.html"><img src="images/l4.jpg" class="img-responsive" alt="" /></a>
+                <div class="product liked-product simpleCart_shelfItem">
+                    <a class="like_name" href="single.html">equal blame</a>
+                    <p><a class="item_add" href="#"><i></i> <span class=" item_price">$499</span></a></p>
+                </div>
+            </li>
+            <li><a href="single.html"><img src="images/l5.jpg" class="img-responsive" alt="" /></a>
+                <div class="product liked-product simpleCart_shelfItem">
+                    <a class="like_name" href="single.html">perfectly simple</a>
+                    <p><a class="item_add" href="#"><i></i> <span class=" item_price">$649</span></a></p>
+                </div>
+            </li>
+        </ul>
+        <script type="text/javascript">
+            $(window).load(function() {
+                $("#flexiselDemo3").flexisel({
+                    visibleItems: 4,
+                    animationSpeed: 1000,
+                    autoPlay: true,
+                    autoPlaySpeed: 3000,
+                    pauseOnHover: true,
+                    enableResponsiveBreakpoints: true,
+                    responsiveBreakpoints: {
+                        portrait: {
+                            changePoint:480,
+                            visibleItems: 1
+                        },
+                        landscape: {
+                            changePoint:640,
+                            visibleItems: 2
+                        },
+                        tablet: {
+                            changePoint:768,
+                            visibleItems: 3
+                        }
+                    }
+                });
+
+            });
+        </script>
+        <script type="text/javascript" src="js/jquery.flexisel.js"></script>
+    </div>
+</div>
