@@ -35,14 +35,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="container">
             <div class="header-top-left">
                 <ul>
-                    <li><a href="/site/login"><span class="glyphicon glyphicon-user"> </span>Login</a></li>
-                    <li><a href="/site/signup"><span class="glyphicon glyphicon-lock"> </span>Create an Account</a></li>
+                    <li><a href="/backend/views/site/login"><span class="glyphicon glyphicon-user"> </span>Login</a></li>
+                    <li><a href="/backend/views/site/signup"><span class="glyphicon glyphicon-lock"> </span>Create an Account</a></li>
                 </ul>
             </div>
             <div class="header-right">
                 <div class="cart box_1">
-                    <a href="checkout.html">
-                        <h3> <span class="simpleCart_total"> $0.00 </span> (<span id="simpleCart_quantity" class="simpleCart_quantity"> 0 </span>)<img src="images/bag.png" alt=""></h3>
+                    <a href="/backend/views/site/checkout">
+                        <h3> <span class="simpleCart_total"> $0.00 </span> (<span id="simpleCart_quantity" class="simpleCart_quantity"> 0 </span>)<img src="/images/bag.png" alt=""></h3>
                     </a>
                     <p><a href="javascript:;" class="simpleCart_empty">Empty cart</a></p>
                     <div class="clearfix"> </div>
@@ -72,11 +72,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li><a href="/">Home</a></li>
-                    <li><a href="/site/men">MEN</a></li>
-                    <li><a href="/site/women">WOMEN</a></li>
-                    <li><a href="/site/kids">KIDS</a></li>
-                    <li><a href="/site/typo">TYPO</a></li>
-                    <li><a href="/site/contact">CONTACT</a></li>
+                    <li><a href="/backend/views/site/men">MEN</a></li>
+                    <li><a href="/backend/views/site/women">WOMEN</a></li>
+                    <li><a href="/backend/views/site/kids">KIDS</a></li>
+                    <li><a href="/backend/views/site/typo">TYPO</a></li>
+                    <li><a href="/backend/views/site/contact">CONTACT</a></li>
                 </ul>
             </div>
             <!--/.navbar-collapse-->

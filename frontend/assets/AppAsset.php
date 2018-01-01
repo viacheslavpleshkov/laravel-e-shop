@@ -14,6 +14,7 @@ class AppAsset extends AssetBundle
     public $css = [
         'css/bootstrap.css',
         'css/style.css',
+        'css/component.css',
         'css/flexslider.css',
         'css/owl.carousel.css',
         ];

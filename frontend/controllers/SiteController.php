@@ -221,4 +221,8 @@ class SiteController extends Controller
     {
         return $this->render('contact');
     }
+    public function actionCheckout()
+    {
+        return $this->render('checkout');
+    }
 }

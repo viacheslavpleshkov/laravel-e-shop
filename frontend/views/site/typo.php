@@ -3,10 +3,6 @@
 use yii\helpers\Html;
 $this->title = 'Typo';
 ?>
-</div>
-</div>
-</div>
-<!-- content-section-starts -->
 <div class="content">
     <div class="container">
         <div class="typrography">
