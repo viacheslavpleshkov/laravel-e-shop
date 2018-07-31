@@ -41,4 +41,9 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
 });
 Route::namespace('Site')->group(function () {
     Route::get('/', 'SiteController@index')->name('site.index');
+    Route::get('men', 'SiteController@men')->name('site.men');
+    Route::get('women', 'SiteController@women')->name('site.women');
+    Route::get('kids', 'SiteController@kids')->name('site.kids');
+    Route::get('cart', 'SiteController@cart')->name('site.cart');
+    Route::get('contact', 'SiteController@contact')->name('site.contact');
 });

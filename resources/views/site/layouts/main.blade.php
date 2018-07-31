@@ -8,9 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title') | {{__('site.title')}}</title>
     <link rel="author" href="{{ asset ('humans.txt')}}"/>
-    <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
-    <script src="js/jquery.min.js"></script>
-    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="{{ asset('css/site.css') }}">
     <!-- Custom Theme files -->
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
     <script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
@@ -30,7 +28,7 @@
             </div>
             <div class="header-right">
                 <div class="cart box_1">
-                    <a href="checkout.html">
+                    <a href="{{ route('site.cart') }}">
                         <h3> <span class="simpleCart_total"> $0.00 </span> (<span id="simpleCart_quantity" class="simpleCart_quantity"> 0 </span>)<img src="images/bag.png" alt=""></h3>
                     </a>
                     <p><a href="javascript:;" class="simpleCart_empty">Empty cart</a></p>
@@ -53,14 +51,14 @@
                     <span class="icon-bar"></span>
                 </button>
                 <div class="logo">
-                    <h1><a href="index.html"><span>E</span> -Shop</a></h1>
+                    <h1><a href="{{ route('site.index') }}"><span>E</span> -Shop</a></h1>
                 </div>
             </div>
             <!--/.navbar-header-->
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="{{ route('site.index') }}">Home</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Men <b class="caret"></b></a>
                         <ul class="dropdown-menu multi-column columns-3">
@@ -171,7 +169,7 @@
                             </div>
                         </ul>
                     </li>
-                    <li><a href="contact.html">CONTACT</a></li>
+                    <li><a href="{{ route('site.contact') }}">CONTACT</a></li>
                 </ul>
             </div>
             <!--/.navbar-collapse-->
