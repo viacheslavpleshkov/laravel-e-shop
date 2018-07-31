@@ -1,20 +1,44 @@
 <?php
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-Route::get('/', function () {return view('site.pages.index');})->name('site.index');
-Route::get('running', function () {return view('site.pages.index');})->name('site.running');
-Route::get('football', function () {return view('site.pages.index');})->name('site.football');
-Route::get('cycling', function () {return view('site.pages.index');})->name('site.cycling');
-Route::get('fitness', function () {return view('site.pages.index');})->name('site.fitness');
-Route::get('tennis', function () {return view('site.pages.index');})->name('site.tennis');
-Route::get('contact', function () {return view('site.pages.index');})->name('site.contact');
+Route::group(['prefix' => 'auth', 'namespace' => 'Auth'], function () {
+    Route::get('login', 'LoginController@showLoginForm')->name('login');
+    Route::post('login', 'LoginController@login');
+    Route::post('logout', 'LoginController@logout')->name('logout');
+    Route::get('register', 'RegisterController@showRegistrationForm')->name('register');
+    Route::post('register', 'RegisterController@register');
+    Route::get('password/reset', 'ForgotPasswordController@showLinkRequestForm')->name('password.request');
+    Route::post('password/email', 'ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+    Route::get('password/reset/{token}', 'ResetPasswordController@showResetForm')->name('password.reset');
+    Route::post('password/reset', 'ResetPasswordController@reset');
+});
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth', 'roles'], 'block' => ['User']], function () {
+    Route::group(['roles' => ['Author', 'Moderator', 'Admin']], function () {
+        Route::get('/', 'AdminController@index')->name('admin.index');
+        Route::get('profile', 'ProfileController@index')->name('profile.index');
+        Route::get('profile/{id}/edit', 'ProfileController@edit')->name('profile.edit');
+        Route::put('profile/{id}/edit', 'ProfileController@updateedit');
+        Route::get('profile/{id}/password', 'ProfileController@password')->name('profile.password');
+        Route::put('profile/{id}/password', 'ProfileController@updatepassword');
+        Route::delete('profile/{id}', 'ProfileController@destroy')->name('profile.destroy');
+    });
+    Route::group(['roles' => ['Moderator', 'Admin']], function () {
+        Route::resource('contact-with-me', 'ContactwithmeController');
+        Route::resource('knowledge-of-languages', 'LanguageknowledgeController');
+        Route::resource('educations', 'EducationController');
+        Route::resource('about-me', 'AboutmeController');
+        Route::resource('experiences', 'ExperienceController');
+        Route::resource('skills', 'SkillController');
+        Route::resource('projects', 'ProjectController');
+    });
+    Route::group(['roles' => ['Admin']], function () {
+        Route::resource('users', 'UserController');
+        Route::get('roles', 'RoleController@index')->name('roles.index');
+        Route::get('role/{id}', 'RoleController@show')->name('roles.show');
+        Route::get('roles/{id}/edit', 'RoleController@edit')->name('roles.edit');
+        Route::put('roles/{id}', 'RoleController@update')->name('roles.update');
+        Route::get('settings', 'AdminController@settings')->name('admin.settings');
+        Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index')->name('admin.logs');
+    });
+});
+Route::namespace('Site')->group(function () {
+    Route::get('/', 'SiteController@index')->name('site.index');
+});

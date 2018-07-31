@@ -1,149 +1,250 @@
 @extends('site.layouts.main')
 
-@section('title', __('site.home'))
+@section('title',__('site.anonymous-title'))
 
 @section('content')
     <div class="banner">
         <div class="container">
-            <div class="banner-matter">
-                <h1>Get active get running<span>push your limits</h1>
-                <div class="out">
-                    <a href="single.html" class="find">FIND OUT MORE </a>
-                    <a href="single.html" class="shop">SHOP</a>
-                    <div class="clearfix"> </div>
+            <div class="banner-bottom">
+                <div class="banner-bottom-left">
+                    <h2>B<br>U<br>Y</h2>
                 </div>
+                <div class="banner-bottom-right">
+                    <div class="callbacks_container">
+                        <ul class="rslides" id="slider4">
+                            <li>
+                                <div class="banner-info">
+                                    <h3>Smart But Casual</h3>
+                                    <p>Start your shopping here...</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="banner-info">
+                                    <h3>Shop Online</h3>
+                                    <p>Start your shopping here...</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="banner-info">
+                                    <h3>Pack your Bag</h3>
+                                    <p>Start your shopping here...</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--banner-->
+                    <script src="js/responsiveslides.min.js"></script>
+                    <script>
+                        // You can also use "$(window).load(function() {"
+                        $(function () {
+                            // Slideshow 4
+                            $("#slider4").responsiveSlides({
+                                auto: true,
+                                pager: true,
+                                nav: false,
+                                speed: 500,
+                                namespace: "callbacks",
+                                before: function () {
+                                    $('.events').append("<li>before event fired.</li>");
+                                },
+                                after: function () {
+                                    $('.events').append("<li>after event fired.</li>");
+                                }
+                            });
+
+                        });
+                    </script>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="shop">
+                <a href="single.html">SHOP COLLECTION NOW</a>
             </div>
         </div>
     </div>
-    <!---->
-    <div class="content">
-        <div class="sport-your">
-            <!-- requried-jsfiles-for owl -->
-            <link href="css/owl.carousel.css" rel="stylesheet">
-            <script src="js/owl.carousel.js"></script>
-            <script>
-                $(document).ready(function() {
-                    $("#owl-demo").owlCarousel({
-                        items : 5,
-                        lazyLoad : true,
-                        autoPlay : true,
-                        navigation : true,
-                        navigationText :  true,
-                        pagination : false,
+    <!-- content-section-starts-here -->
+    <div class="container">
+        <div class="main-content">
+            <div class="online-strip">
+                <div class="col-md-4 follow-us">
+                    <h3>follow us : <a class="twitter" href="#"></a><a class="facebook" href="#"></a></h3>
+                </div>
+                <div class="col-md-4 shipping-grid">
+                    <div class="shipping">
+                        <img src="images/shipping.png" alt=""/>
+                    </div>
+                    <div class="shipping-text">
+                        <h3>Free Shipping</h3>
+                        <p>on orders over $ 199</p>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="col-md-4 online-order">
+                    <p>Order online</p>
+                    <h3>Tel:999 4567 8902</h3>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="products-grid">
+                <header>
+                    <h3 class="head text-center">Latest Products</h3>
+                </header>
+                <div class="col-md-4 product simpleCart_shelfItem text-center">
+                    <a href="single.html"><img src="images/p1.jpg" alt=""/></a>
+                    <div class="mask">
+                        <a href="single.html">Quick View</a>
+                    </div>
+                    <a class="product_name" href="single.html">Sed ut perspiciatis</a>
+                    <p><a class="item_add" href="#"><i></i> <span class="item_price">$329</span></a></p>
+                </div>
+                <div class="col-md-4 product simpleCart_shelfItem text-center">
+                    <a href="single.html"><img src="images/p2.jpg" alt=""/></a>
+                    <div class="mask">
+                        <a href="single.html">Quick View</a>
+                    </div>
+                    <a class="product_name" href="single.html">great explorer</a>
+                    <p><a class="item_add" href="#"><i></i> <span class="item_price">$599.8</span></a></p>
+                </div>
+                <div class="col-md-4 product simpleCart_shelfItem text-center">
+                    <a href="single.html"><img src="images/p3.jpg" alt=""/></a>
+                    <div class="mask">
+                        <a href="single.html">Quick View</a>
+                    </div>
+                    <a class="product_name" href="single.html">similique sunt</a>
+                    <p><a class="item_add" href="#"><i></i> <span class="item_price">$359.6</span></a></p>
+                </div>
+                <div class="col-md-4 product simpleCart_shelfItem text-center">
+                    <a href="single.html"><img src="images/p4.jpg" alt=""/></a>
+                    <div class="mask">
+                        <a href="single.html">Quick View</a>
+                    </div>
+                    <a class="product_name" href="single.html">shrinking </a>
+                    <p><a class="item_add" href="#"><i></i> <span class="item_price">$649.99</span></a></p>
+                </div>
+                <div class="col-md-4 product simpleCart_shelfItem text-center">
+                    <a href="single.html"><img src="images/p5.jpg" alt=""/></a>
+                    <div class="mask">
+                        <a href="single.html">Quick View</a>
+                    </div>
+                    <a class="product_name" href="single.html">perfectly simple</a>
+                    <p><a class="item_add" href="#"><i></i> <span class="item_price">$750</span></a></p>
+                </div>
+                <div class="col-md-4 product simpleCart_shelfItem text-center">
+                    <a href="single.html"><img src="images/p6.jpg" alt=""/></a>
+                    <div class="mask">
+                        <a href="single.html">Quick View</a>
+                    </div>
+                    <a class="product_name" href="single.html">equal blame</a>
+                    <p><a class="item_add" href="#"><i></i> <span class="item_price">$295.59</span></a></p>
+                </div>
+                <div class="col-md-4 product simpleCart_shelfItem text-center">
+                    <a href="single.html"><img src="images/p7.jpg" alt=""/></a>
+                    <div class="mask">
+                        <a href="single.html">Quick View</a>
+                    </div>
+                    <a class="product_name" href="single.html">Neque porro</a>
+                    <p><a class="item_add" href="#"><i></i> <span class="item_price">$380</span></a></p>
+                </div>
+                <div class="col-md-4 product simpleCart_shelfItem text-center">
+                    <a href="single.html"><img src="images/p8.jpg" alt=""/></a>
+                    <div class="mask">
+                        <a href="single.html">Quick View</a>
+                    </div>
+                    <a class="product_name" href="single.html">perfectly simple</a>
+                    <p><a class="item_add" href="#"><i></i> <span class="item_price">$540.6</span></a></p>
+                </div>
+                <div class="col-md-4 product simpleCart_shelfItem text-center">
+                    <a href="single.html"><img src="images/p9.jpg" alt=""/></a>
+                    <div class="mask">
+                        <a href="single.html">Quick View</a>
+                    </div>
+                    <a class="product_name" href="single.html">praising pain</a>
+                    <p><a class="item_add" href="#"><i></i> <span class="item_price">$229.5</span></a></p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+    </div>
+    <div class="other-products">
+        <div class="container">
+            <h3 class="like text-center">Featured Collection</h3>
+            <ul id="flexiselDemo3">
+                <li><a href="single.html"><img src="images/l1.jpg" class="img-responsive" alt=""/></a>
+                    <div class="product liked-product simpleCart_shelfItem">
+                        <a class="like_name" href="single.html">perfectly simple</a>
+                        <p><a class="item_add" href="#"><i></i> <span class=" item_price">$759</span></a></p>
+                    </div>
+                </li>
+                <li><a href="single.html"><img src="images/l2.jpg" class="img-responsive" alt=""/></a>
+                    <div class="product liked-product simpleCart_shelfItem">
+                        <a class="like_name" href="single.html">praising pain</a>
+                        <p><a class="item_add" href="#"><i></i> <span class=" item_price">$699</span></a></p>
+                    </div>
+                </li>
+                <li><a href="single.html"><img src="images/l3.jpg" class="img-responsive" alt=""/></a>
+                    <div class="product liked-product simpleCart_shelfItem">
+                        <a class="like_name" href="single.html">Neque porro</a>
+                        <p><a class="item_add" href="#"><i></i> <span class=" item_price">$329</span></a></p>
+                    </div>
+                </li>
+                <li><a href="single.html"><img src="images/l4.jpg" class="img-responsive" alt=""/></a>
+                    <div class="product liked-product simpleCart_shelfItem">
+                        <a class="like_name" href="single.html">equal blame</a>
+                        <p><a class="item_add" href="#"><i></i> <span class=" item_price">$499</span></a></p>
+                    </div>
+                </li>
+                <li><a href="single.html"><img src="images/l5.jpg" class="img-responsive" alt=""/></a>
+                    <div class="product liked-product simpleCart_shelfItem">
+                        <a class="like_name" href="single.html">perfectly simple</a>
+                        <p><a class="item_add" href="#"><i></i> <span class=" item_price">$649</span></a></p>
+                    </div>
+                </li>
+            </ul>
+            <script type="text/javascript">
+                $(window).load(function () {
+                    $("#flexiselDemo3").flexisel({
+                        visibleItems: 4,
+                        animationSpeed: 1000,
+                        autoPlay: true,
+                        autoPlaySpeed: 3000,
+                        pauseOnHover: true,
+                        enableResponsiveBreakpoints: true,
+                        responsiveBreakpoints: {
+                            portrait: {
+                                changePoint: 480,
+                                visibleItems: 1
+                            },
+                            landscape: {
+                                changePoint: 640,
+                                visibleItems: 2
+                            },
+                            tablet: {
+                                changePoint: 768,
+                                visibleItems: 3
+                            }
+                        }
                     });
+
                 });
             </script>
-            <!-- //requried-jsfiles-for owl -->
-
-            <!-- start content_slider -->
-            <div class="line1">
-
-            </div>
-            <div id="example1">
-                <div id="owl-demo" class="owl-carousel text-center">
-                    <div class="item">
-                        <a href="{{ route('site.running') }}" title="image" rel="title1">
-                            <img class="img-responsive " src="images/pic.jpg" alt="">
-                            <div class="run">
-                                <i class="running"> </i>
-                                <p>RUNNING</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="{{ route('site.football') }}" title="image" rel="title1">
-                            <img class="img-responsive " src="images/pic1.jpg" alt="">
-                            <div class="run">
-                                <i class="foot-in"> </i>
-                                <p>FOOTBALL</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="{{ route('site.cycling') }}" title="image" rel="title1">
-                            <img class="img-responsive " src="images/pic2.jpg" alt="">
-                            <div class="run">
-                                <i class="cycling"> </i>
-                                <p>CYCLING</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="{{ route('site.fitness') }}" title="image" rel="title1">
-                            <img class="img-responsive " src="images/pic3.jpg" alt="">
-                            <div class="run">
-                                <i class="fitness"> </i>
-                                <p>FITNESS</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="{{ route('site.tennis') }}" title="image" rel="title1">
-                            <img class="img-responsive " src="images/pic4.jpg" alt="">
-                            <div class="run">
-                                <i class="tennis"> </i>
-                                <p>TENNIS</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <h6 class="your-in">Your sport</h6>
-            <div class="line2">
-
-            </div>
+            <script type="text/javascript" src="js/jquery.flexisel.js"></script>
         </div>
-        <!--//sreen-gallery-cursual---->
-        <div class="content-grids">
-
-            <div class="col-md-4 content-grid">
-                <a href="single.html" class="lot"><img class="img-responsive " src="images/sh.png" alt=""></a>
-                <div class="shoe">
-                    <p>Nike 3.0 V4 Men Grey Royal
-                        Blue with White</p>
-                    <label>$67.99</label>
-                    <a href="single.html">find a store</a>
+    </div>
+    <!-- content-section-ends-here -->
+    <div class="news-letter">
+        <div class="container">
+            <div class="join">
+                <h6>JOIN OUR MAILING LIST</h6>
+                <div class="sub-left-right">
+                    <form>
+                        <input type="text" value="Enter Your Email Here" onfocus="this.value = '';"
+                               onblur="if (this.value == '') {this.value = 'Enter Your Email Here';}"/>
+                        <input type="submit" value="SUBSCRIBE"/>
+                    </form>
                 </div>
-                <div class="clearfix"> </div>
-                <b class="plus-in">+</b>
+                <div class="clearfix"></div>
             </div>
-            <div class="col-md-4 content-grid">
-                <a href="single.html" class="lot"><img class="img-responsive " src="images/sh1.png" alt=""></a>
-                <div class="shoe">
-                    <p>Nike 3.0 V4 Men Grey RoyalBlue with White</p>
-                    <label>$67.99</label>
-                    <a href="single.html">find a store</a>
-                </div>
-                <div class="clearfix"> </div>
-                <b class="plus-in">+</b>
-            </div>
-            <div class="col-md-4 content-grid">
-                <a href="single.html" class="lot"><img class="img-responsive " src="images/sh2.png" alt=""></a>
-                <div class="shoe">
-                    <p>Nike 3.0 V4 Men Grey RoyalBlue with White</p>
-                    <label>$67.99</label>
-                    <a href="single.html">find a store</a>
-                </div>
-
-                <div class="clearfix"> </div>
-                <b class="plus-in">+</b>
-            </div>
-
-            <div class="clearfix"> </div>
-        </div>
-        <!---->
-        <div class="content-top">
-            <div class="col-md-4 top-content">
-                <a href="single.html"><img class="img-responsive " src="images/pi.jpg" alt=""></a>
-            </div>
-            <div class="col-md-4 top-content">
-                <a href="single.html"><img class="img-responsive " src="images/pi1.jpg" alt=""></a>
-            </div>
-            <div class="col-md-4 top-content">
-                <a href="single.html"><img class="img-responsive " src="images/pi2.jpg" alt=""></a>
-            </div>
-
-            <div class="clearfix"> </div>
         </div>
     </div>
 @endsection
