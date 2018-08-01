@@ -63,6 +63,7 @@
                     <li><a href="{{ route('site.men') }}">{{ __('site.men') }}</a></li>
                     <li><a href="{{ route('site.women') }}">{{ __('site.women') }}</a></li>
                     <li><a href="{{ route('site.kids') }}">{{ __('site.kids') }}</a></li>
+                    <li><a href="{{ route('site.accessories') }}">{{ __('site.accessories') }}</a></li>
                     <li><a href="{{ route('site.contact') }}">{{ __('site.contact') }}</a></li>
                 </ul>
             </div>
@@ -75,12 +76,12 @@
 <div class="news-letter">
     <div class="container">
         <div class="join">
-            <h6>JOIN OUR MAILING LIST</h6>
+            <h6>{{ __('site.join-our-mailing-list') }}</h6>
             <div class="sub-left-right">
-                <form>
-                    <input type="text" value="Enter Your Email Here" onfocus="this.value = '';"
-                           onblur="if (this.value == '') {this.value = 'Enter Your Email Here';}"/>
-                    <input type="submit" value="SUBSCRIBE"/>
+                <form method="post">
+                    <input type="text" value="{{ __('site.enter-your-email-here') }}" onfocus="this.value = '';"
+                           onblur="if (this.value == '') {this.value = '{{ __('site.enter-your-email-here') }}';}"/>
+                    <input type="submit" value="{{ __('site.subscribe') }}"/>
                 </form>
             </div>
             <div class="clearfix"></div>
@@ -94,53 +95,49 @@
                 <div class="col-md-3 span1_of_4">
                     <h4>Shop</h4>
                     <ul class="f_nav">
-                        <li><a href="#">new arrivals</a></li>
-                        <li><a href="#">men</a></li>
-                        <li><a href="#">women</a></li>
-                        <li><a href="#">accessories</a></li>
-                        <li><a href="#">kids</a></li>
-                        <li><a href="#">brands</a></li>
-                        <li><a href="#">trends</a></li>
-                        <li><a href="#">sale</a></li>
-                        <li><a href="#">style videos</a></li>
+                        <li><a href="{{ route('site.new') }}">New arrivals</a></li>
+                        <li><a href="{{ route('site.men') }}">Men</a></li>
+                        <li><a href="{{ route('site.women') }}">Women</a></li>
+                        <li><a href="{{ route('site.kids') }}">Kids</a></li>
+                        <li><a href="{{ route('site.accessories') }}">Accessories</a></li>
+                        <li><a href="{{ route('site.brands') }}">Brands</a></li>
+                        <li><a href="{{ route('site.trends') }}">Trends</a></li>
+                        <li><a href="{{ route('site.sale') }}">Sale</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3 span1_of_4">
-                    <h4>help</h4>
+                    <h4>Help</h4>
                     <ul class="f_nav">
-                        <li><a href="#">frequently asked questions</a></li>
-                        <li><a href="#">men</a></li>
-                        <li><a href="#">women</a></li>
-                        <li><a href="#">accessories</a></li>
-                        <li><a href="#">kids</a></li>
-                        <li><a href="#">brands</a></li>
+                        <li><a href="{{ route('site.faq') }}">Frequently asked questions</a></li>
+                        <li><a href="{{ route('site.help-men') }}">Men</a></li>
+                        <li><a href="{{ route('site.help-women') }}">Women</a></li>
+                        <li><a href="{{ route('site.help-kids') }}">Kids</a></li>
+                        <li><a href="{{ route('site.help-accessories') }}">Accessories</a></li>
+                        <li><a href="{{ route('site.help-brands') }}">Brands</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3 span1_of_4">
                     <h4>{{ __('site.account') }}</h4>
                     <ul class="f_nav">
-                        <li><a href="account.html">login</a></li>
-                        <li><a href="register.html">create an account</a></li>
-                        <li><a href="#">create wishlist</a></li>
-                        <li><a href="checkout.html">my shopping bag</a></li>
-                        <li><a href="#">brands</a></li>
-                        <li><a href="#">create wishlist</a></li>
+                        <li><a href="{{ route('login') }}">Login</a></li>
+                        <li><a href="{{ route('register') }}">Create an account</a></li>
+                        <li><a href="#">Create wishlist</a></li>
+                        <li><a href="{{ route('site.cart') }}">My shopping bag</a></li>
+                        <li><a href="#">Brands</a></li>
+                        <li><a href="#">Create wishlist</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3 span1_of_4">
                     <h4>popular</h4>
                     <ul class="f_nav">
-                        <li><a href="#">new arrivals</a></li>
-                        <li><a href="#">men</a></li>
-                        <li><a href="#">women</a></li>
-                        <li><a href="#">accessories</a></li>
-                        <li><a href="#">kids</a></li>
-                        <li><a href="#">brands</a></li>
-                        <li><a href="#">trends</a></li>
-                        <li><a href="#">sale</a></li>
-                        <li><a href="#">style videos</a></li>
-                        <li><a href="#">login</a></li>
-                        <li><a href="#">brands</a></li>
+                        <li><a href="{{ route('site.new') }}">New arrivals</a></li>
+                        <li><a href="{{ route('site.men') }}">Men</a></li>
+                        <li><a href="{{ route('site.women') }}">Women</a></li>
+                        <li><a href="{{ route('site.kids') }}">Kids</a></li>
+                        <li><a href="{{ route('site.accessories') }}">Accessories</a></li>
+                        <li><a href="{{ route('site.brands') }}">Brands</a></li>
+                        <li><a href="{{ route('site.trends') }}">Trends</a></li>
+                        <li><a href="{{ route('site.sale') }}">Sale</a></li>
                     </ul>
                 </div>
                 <div class="clearfix"></div>
@@ -150,7 +147,7 @@
             <img src="images/cards.jpg" alt=""/>
         </div>
         <div class="copyright text-center">
-            <p>E-Shop ©{{ date('Y') }}. All rights reserved.</p>
+            <p>{{ __('site.title') }} ©{{ date('Y') }}. {{__('site.all-rights-reserved')}}</p>
         </div>
     </div>
 </div>

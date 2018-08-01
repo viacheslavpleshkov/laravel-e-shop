@@ -44,6 +44,17 @@ Route::namespace('Site')->group(function () {
     Route::get('men', 'SiteController@men')->name('site.men');
     Route::get('women', 'SiteController@women')->name('site.women');
     Route::get('kids', 'SiteController@kids')->name('site.kids');
+    Route::get('accessories', 'SiteController@accessories')->name('site.accessories');
     Route::get('cart', 'SiteController@cart')->name('site.cart');
     Route::get('contact', 'SiteController@contact')->name('site.contact');
+    Route::get('new', 'SiteController@new')->name('site.new');
+    Route::get('brands', 'SiteController@brands')->name('site.brands');
+    Route::get('trends', 'SiteController@trends')->name('site.trends');
+    Route::get('sale', 'SiteController@sale')->name('site.sale');
+    Route::get('faq', 'SiteController@faq')->name('site.faq');
+    Route::get('help-men', 'SiteController@helpmen')->name('site.help-men');
+    Route::get('help-women', 'SiteController@helpwomen')->name('site.help-women');
+    Route::get('help-kids', 'SiteController@helpkids')->name('site.help-kids');
+    Route::get('help-accessories', 'SiteController@helpaccessories')->name('site.help-accessories');
+    Route::get('help-brands', 'SiteController@helpbrands')->name('site.help-brands');
 });
