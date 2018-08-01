@@ -3,6 +3,16 @@
 return [
 
     'title' => 'E-shop',
-    'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
+    'login' => 'Login',
+    'register' => 'Create an Account',
+    'empty-cart' => 'Empty cart',
+    //nav
+    'home' => 'Home',
+    'men' => 'Men',
+    'women' => 'Women',
+    'kids' => 'Kids',
+    'contact' => 'Contact',
+    //footer
+    'account' => 'Account'
 
 ];

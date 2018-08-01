@@ -3,12 +3,18 @@
 // Variables
 @import "variables";
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+@import '~bootstrap/dist/css/bootstrap.min.css';
 //Style
+/*--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+--*/
 body{
   padding:0;
   margin:0;
-  font-family: 'Lato-Regular';
+  font-family: $font-family-original;
   background:#fff;
 }
 body a{
@@ -302,7 +308,6 @@ ul.multi-column-dropdown h6 {
   text-decoration: none;
   height: 70px;
   width: 40px;
-  background: transparent url("../images/arrows2.png") no-repeat left top;
   margin-top: 1%;
 }
 .callbacks_nav:hover{
@@ -311,7 +316,7 @@ ul.multi-column-dropdown h6 {
 .callbacks_nav.next {
   left: auto;
   background-position: right top;
-  right:0px;
+  right:0;
 }
 .callbacks_nav.prev {
   right: auto;
@@ -594,7 +599,6 @@ a.product_name {
   vertical-align: middle;
 }
 .product-left:hover .product p i{
-  background: url(../images/cart-2.png) no-repeat;
 }
 /*--end-product--*/
 h3.like{
@@ -623,8 +627,8 @@ a.like_name {
 .nbs-flexisel-ul {
   position: relative;
   width: 9999px;
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   list-style-type: none;
   text-align: center;
 }
@@ -667,12 +671,10 @@ a.like_name {
   margin-top:-2em;
 }
 .nbs-flexisel-nav-left {
-  left: 0px;
-  background: url(../images/arrows.png) no-repeat -8px -7px;
+  left: 0;
 }
 .nbs-flexisel-nav-right {
   right: 0px;
-  background: url(../images/arrows.png) no-repeat -61px -7px;
 }
 .other-products {
   padding: 60px 0;
@@ -693,7 +695,6 @@ a.like_name {
   margin-right: 5%;
   margin-top:10px;
   letter-spacing: 1px;
-  font-family: 'Lato-Regular';
   padding: 0;
 }
 .join input[type="text"] {
@@ -871,7 +872,6 @@ ul.tags_links li a:hover{
   line-height: 18px;
   color: #333;
   font-weight: bold;
-  background: url(../images/tag_arrow.png) right 4px no-repeat;
   padding-right: 20px;
   margin-top:1.5em;
   display: inline-block;
@@ -941,9 +941,6 @@ ul.ratings li a{
   color: #000;
   text-decoration: none;
   font-weight: 600;
-}
-i.rating-ed{
-  background: url(../images/stars.png)no-repeat -9px;
 }
 .price_single {
   font-size: 1.3em;
@@ -1227,7 +1224,6 @@ ul.tags_links li a:hover{
   line-height: 18px;
   color: #333;
   font-weight: bold;
-  background: url(../images/tag_arrow.png) right 4px no-repeat;
   padding-right: 20px;
   margin-top:1.5em;
   display: inline-block;
@@ -1277,9 +1273,6 @@ ul.ratings li a{
   color: #000;
   text-decoration: none;
   font-weight: 600;
-}
-i.rating-ed{
-  background: url(../images/stars.png)no-repeat -9px;
 }
 .price_single {
   font-size: 1.3em;

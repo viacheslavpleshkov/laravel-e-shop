@@ -1,6 +1,6 @@
 @extends('site.layouts.main')
 
-@section('title',__('site.anonymous-title'))
+@section('title',__('site.home'))
 
 @section('content')
     <div class="banner">
@@ -232,19 +232,4 @@
         </div>
     </div>
     <!-- content-section-ends-here -->
-    <div class="news-letter">
-        <div class="container">
-            <div class="join">
-                <h6>JOIN OUR MAILING LIST</h6>
-                <div class="sub-left-right">
-                    <form>
-                        <input type="text" value="Enter Your Email Here" onfocus="this.value = '';"
-                               onblur="if (this.value == '') {this.value = 'Enter Your Email Here';}"/>
-                        <input type="submit" value="SUBSCRIBE"/>
-                    </form>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-        </div>
-    </div>
 @endsection
