@@ -8,6 +8,18 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title') | {{__('site.title')}}</title>
     <link rel="author" href="{{ asset ('humans.txt')}}"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+    <link rel="manifest" href="icons/site.webmanifest">
+    <link rel="mask-icon" href="icons/safari-pinned-tab.svg" color="#f8f8f8">
+    <link rel="shortcut icon" href="icons/favicon.ico">
+    <meta name="apple-mobile-web-app-title" content="E-Shop">
+    <meta name="application-name" content="E-Shop">
+    <meta name="msapplication-TileColor" content="#f8f8f8">
+    <meta name="msapplication-TileImage" content="icons/mstile-144x144.png">
+    <meta name="msapplication-config" content="icons/browserconfig.xml">
+    <meta name="theme-color" content="#f8f8f8">
     <link rel="stylesheet" href="{{ asset('css/site.css') }}">
     <script src="{{ asset('js/site.js') }}"></script>
 </head>
@@ -56,7 +68,6 @@
                 </div>
             </div>
             <!--/.navbar-header-->
-
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li><a href="{{ route('site.index') }}">{{ __('site.home') }}</a></li>
