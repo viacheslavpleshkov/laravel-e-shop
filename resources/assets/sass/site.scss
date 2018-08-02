@@ -1488,6 +1488,13 @@ li.home a {
   display: block;
   text-transform: uppercase;
 }
+.login-right input[type="email"] {
+  border: 1px solid #EEE;
+  outline-color:#CACACA;
+  width: 96%;
+  font-size:13px;
+  padding: 8px;
+}
 .login-right input[type="text"] {
   border: 1px solid #EEE;
   outline-color:#CACACA;
