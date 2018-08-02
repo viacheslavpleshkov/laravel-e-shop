@@ -1,6 +1,6 @@
 @extends('site.layouts.main')
 
-@section('title',__('site.home-title'))
+@section('title', __('site.registration-title'))
 
 @section('content')
     <div class="registration-form">
@@ -8,139 +8,114 @@
             <div class="dreamcrub">
                 <ul class="breadcrumbs">
                     <li class="home">
-                        <a href="index.html" title="Go to Home Page">Home</a>&nbsp;
+                        <a href="{{ route('site.index') }}"
+                           title="{{ __('site.breadcrumbs-home-description') }}">{{ __('site.breadcrumbs-home') }}</a>&nbsp;
                         <span>&gt;</span>
                     </li>
                     <li class="women">
-                        Registration
+                        {{ __('site.registration-title') }}
                     </li>
                 </ul>
                 <ul class="previous">
-                    <li><a href="index.html">Back to Previous Page</a></li>
+                    <li><a href="{{ URL::previous() }}">{{ __('site.breadcrumbs-back-to-previous-page') }}</a></li>
                 </ul>
                 <div class="clearfix"></div>
             </div>
-            <h2>Registration</h2>
+            <h2>{{ __('site.registration-title') }}</h2>
             <div class="registration-grids">
                 <div class="reg-form">
                     <div class="reg">
-                        <p>Welcome, please enter the following details to continue.</p>
-                        <p>If you have previously registered with us, <a href="#">click here</a></p>
-                        <form>
+                        <p>{{ __('site.registration-title-description') }}</p>
+                        <p>{{ __('site.registration-title-description-two') }} <a href="{{ route('login') }}">{{ __('site.registration-click-here') }}</a></p>
+                        <form method="post" action="{{ route('register') }}"
+                              aria-label="{{ __('site.registration-title') }}">
+                            @csrf
                             <ul>
-                                <li class="text-info">First Name: </li>
-                                <li><input type="text" value=""></li>
+                                <li class="text-info">{{ __('site.registration-first-name') }}</li>
+                                <li>
+                                    <input id="email" type="text"
+                                           class="{{ $errors->has('firstname') ? ' is-invalid' : '' }}"
+                                           name="email" value="{{ old('firstname') }}" required>
+
+                                    @if ($errors->has('firstname'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('firstname') }}</strong>
+                                        </span>
+                                    @endif
+                                </li>
                             </ul>
                             <ul>
-                                <li class="text-info">Last Name: </li>
-                                <li><input type="text" value=""></li>
+                                <li class="text-info">{{ __('site.registration-last-name') }}</li>
+                                <li>
+                                    <input id="email" type="text"
+                                           class="{{ $errors->has('lastname') ? ' is-invalid' : '' }}"
+                                           name="email" value="{{ old('lastname') }}" required>
+
+                                    @if ($errors->has('lastname'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('lastname') }}</strong>
+                                        </span>
+                                    @endif
+                                </li>
                             </ul>
                             <ul>
-                                <li class="text-info">Email: </li>
-                                <li><input type="text" value=""></li>
+                                <li class="text-info">{{ __('site.registration-email') }}</li>
+                                <li>
+                                    <input id="email" type="text"
+                                           class="{{ $errors->has('email') ? ' is-invalid' : '' }}"
+                                           name="email" value="{{ old('email') }}" required>
+
+                                    @if ($errors->has('email'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('email') }}</strong>
+                                        </span>
+                                    @endif
+                                </li>
                             </ul>
                             <ul>
-                                <li class="text-info">Password: </li>
-                                <li><input type="password" value=""></li>
+                                <li class="text-info">{{ __('site.registration-password') }}</li>
+                                <li>
+                                    <input id="password" type="password"
+                                           class="{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password"
+                                           required>
+                                    @if ($errors->has('password'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('password') }}</strong>
+                                        </span>
+                                    @endif
+                                </li>
                             </ul>
                             <ul>
-                                <li class="text-info">Re-enter Password:</li>
-                                <li><input type="password" value=""></li>
+                                <li class="text-info">{{ __('site.registration-password-confirm') }}</li>
+                                <li><input id="password-confirm" type="password" class="form-control"
+                                           name="password_confirmation" required></li>
                             </ul>
                             <ul>
-                                <li class="text-info">Mobile Number:</li>
-                                <li><input type="text" value=""></li>
+                                <li class="text-info">{{ __('site.registration-number') }}</li>
+                                <li>
+                                    <input id="email" type="text"
+                                           class="{{ $errors->has('number') ? ' is-invalid' : '' }}"
+                                           name="email" value="{{ old('number') }}" required>
+
+                                    @if ($errors->has('number'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('number') }}</strong>
+                                        </span>
+                                    @endif
+                                </li>
                             </ul>
-                            <input type="submit" value="REGISTER NOW">
-                            <p class="click">By clicking this button, you are agree to my  <a href="#">Policy Terms and Conditions.</a></p>
+                            <input type="submit" value="{{ __('site.registration-submit') }}">
+                            <p class="click">{{ __('site.registration-policy-terms-and-conditions-text') }} <a href="{{ route('policy-terms-and-conditions') }}">{{ __('site.registration-policy-terms-and-conditions') }}</a></p>
                         </form>
                     </div>
                 </div>
                 <div class="reg-right">
-                    <h3>Completely Free Account</h3>
+                    <h3>{{ __('site.registration-completely-free-account') }}</h3>
                     <div class="strip"></div>
-                    <p>Pellentesque neque leo, dictum sit amet accumsan non, dignissim ac mauris. Mauris rhoncus, lectus tincidunt tempus aliquam, odio
-                        libero tincidunt metus, sed euismod elit enim ut mi. Nulla porttitor et dolor sed condimentum. Praesent porttitor lorem dui, in pulvinar enim rhoncus vitae. Curabitur tincidunt, turpis ac lobortis hendrerit, ex elit vestibulum est, at faucibus erat ligula non neque.</p>
-                    <h3 class="lorem">Lorem ipsum dolor.</h3>
-                    <div class="strip"></div>
-                    <p>Tincidunt metus, sed euismod elit enim ut mi. Nulla porttitor et dolor sed condimentum. Praesent porttitor lorem dui, in pulvinar enim rhoncus vitae. Curabitur tincidunt, turpis ac lobortis hendrerit, ex elit vestibulum est, at faucibus erat ligula non neque.</p>
+                    <p>{{ __('site.registration-completely-free-account-text') }}</p>
                 </div>
                 <div class="clearfix"></div>
             </div>
         </div>
     </div>
-
-    {{--<div class="container">--}}
-    {{--<div class="row justify-content-center">--}}
-        {{--<div class="col-md-8">--}}
-            {{--<div class="card">--}}
-                {{--<div class="card-header">{{ __('Register') }}</div>--}}
-
-                {{--<div class="card-body">--}}
-                    {{--<form method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}">--}}
-                        {{--@csrf--}}
-
-                        {{--<div class="form-group row">--}}
-                            {{--<label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>--}}
-
-                            {{--<div class="col-md-6">--}}
-                                {{--<input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>--}}
-
-                                {{--@if ($errors->has('name'))--}}
-                                    {{--<span class="invalid-feedback" role="alert">--}}
-                                        {{--<strong>{{ $errors->first('name') }}</strong>--}}
-                                    {{--</span>--}}
-                                {{--@endif--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-
-                        {{--<div class="form-group row">--}}
-                            {{--<label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>--}}
-
-                            {{--<div class="col-md-6">--}}
-                                {{--<input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>--}}
-
-                                {{--@if ($errors->has('email'))--}}
-                                    {{--<span class="invalid-feedback" role="alert">--}}
-                                        {{--<strong>{{ $errors->first('email') }}</strong>--}}
-                                    {{--</span>--}}
-                                {{--@endif--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-
-                        {{--<div class="form-group row">--}}
-                            {{--<label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>--}}
-
-                            {{--<div class="col-md-6">--}}
-                                {{--<input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>--}}
-
-                                {{--@if ($errors->has('password'))--}}
-                                    {{--<span class="invalid-feedback" role="alert">--}}
-                                        {{--<strong>{{ $errors->first('password') }}</strong>--}}
-                                    {{--</span>--}}
-                                {{--@endif--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-
-                        {{--<div class="form-group row">--}}
-                            {{--<label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>--}}
-
-                            {{--<div class="col-md-6">--}}
-                                {{--<input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-
-                        {{--<div class="form-group row mb-0">--}}
-                            {{--<div class="col-md-6 offset-md-4">--}}
-                                {{--<button type="submit" class="btn btn-primary">--}}
-                                    {{--{{ __('Register') }}--}}
-                                {{--</button>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                    {{--</form>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--</div>--}}
-{{--</div>--}}
 @endsection

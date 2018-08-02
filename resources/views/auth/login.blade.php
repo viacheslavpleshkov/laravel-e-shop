@@ -1,6 +1,6 @@
 @extends('site.layouts.main')
 
-@section('title',__('site.home-title'))
+@section('title', __('site.login-title'))
 
 @section('content')
     <div class="content">
@@ -9,33 +9,33 @@
                 <div class="dreamcrub">
                     <ul class="breadcrumbs">
                         <li class="home">
-                            <a href="{{ route('site.index') }}" title="Go to Home Page">Home</a>&nbsp;
+                            <a href="{{ route('site.index') }}"
+                               title="{{ __('site.breadcrumbs-home-description') }}">{{ __('site.breadcrumbs-home') }}</a>&nbsp;
                             <span>&gt;</span>
                         </li>
                         <li class="women">
-                            Login
+                            {{ __('site.login-title') }}
                         </li>
                     </ul>
                     <ul class="previous">
-                        <li><a href="{{ URL::previous() }}">Back to Previous Page</a></li>
+                        <li><a href="{{ URL::previous() }}">{{ __('site.breadcrumbs-back-to-previous-page') }}</a></li>
                     </ul>
                     <div class="clearfix"></div>
                 </div>
                 <div class="account_grid">
                     <div class="col-md-6 login-left wow fadeInLeft" data-wow-delay="0.4s">
-                        <h2>NEW CUSTOMERS</h2>
-                        <p>By creating an account with our store, you will be able to move through the checkout process
-                            faster, store multiple shipping addresses, view and track your orders in your account and
-                            more.</p>
-                        <a class="acount-btn" href="{{ route('register') }}">Create an Account</a>
+                        <h2>{{ __('site.login-new-customers') }}</h2>
+                        <p>{{ __('site.login-new-customers-description') }}</p>
+                        <a class="acount-btn"
+                           href="{{ route('register') }}">{{ __('site.login-create-an-account') }}</a>
                     </div>
                     <div class="col-md-6 login-right wow fadeInRight" data-wow-delay="0.4s">
-                        <h3>REGISTERED CUSTOMERS</h3>
-                        <p>If you have an account with us, please log in.</p>
-                        <form method="post" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
+                        <h3>{{ __('site.login-registered-customers') }}</h3>
+                        <p>{{ __('site.login-registered-customers-description') }}</p>
+                        <form method="post" action="{{ route('login') }}" aria-label="{{ __('site.login-title') }}">
                             @csrf
                             <div>
-                                <span>Email Address<label>*</label></span>
+                                <span>{{ __('site.login-email') }}<label>*</label></span>
                                 <input id="email" type="email"
                                        class="{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email"
                                        value="{{ old('email') }}" required autofocus>
@@ -47,7 +47,7 @@
                                 @endif
                             </div>
                             <div>
-                                <span>Password<label>*</label></span>
+                                <span>{{ __('site.login-password') }}<label>*</label></span>
                                 <input id="password" type="password"
                                        class="{{ $errors->has('password') ? ' is-invalid' : '' }}"
                                        name="password" required>
@@ -58,8 +58,9 @@
                                     </span>
                                 @endif
                             </div>
-                            <a class="forgot" href="{{ route('password.request') }}">Forgot Your Password?</a>
-                            <input type="submit" value="Login">
+                            <a class="forgot"
+                               href="{{ route('password.request') }}">{{ __('site.login-forgot-your-password') }}</a>
+                            <input type="submit" value="{{ __('site.login-submit') }}">
                         </form>
                     </div>
                     <div class="clearfix"></div>

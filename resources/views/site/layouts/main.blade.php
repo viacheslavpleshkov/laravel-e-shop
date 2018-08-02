@@ -87,7 +87,7 @@
 <div class="news-letter">
     <div class="container">
         <div class="join">
-            <h6>{{ __('site.join-our-mailing-list') }}</h6>
+            <h6>{{ __('site.subscribe-join-our-mailing-list') }}</h6>
             <div class="sub-left-right">
                 <form method="post">
                     <input type="text" value="{{ __('site.subscribe-enter-your-email-here') }}" onfocus="this.value = '';"
