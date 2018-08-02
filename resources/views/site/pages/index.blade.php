@@ -1,6 +1,6 @@
 @extends('site.layouts.main')
 
-@section('title',__('site.home'))
+@section('title',__('site.home-title'))
 
 @section('content')
     <div class="banner">

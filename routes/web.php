@@ -57,4 +57,6 @@ Route::namespace('Site')->group(function () {
     Route::get('help-kids', 'SiteController@helpkids')->name('site.help-kids');
     Route::get('help-accessories', 'SiteController@helpaccessories')->name('site.help-accessories');
     Route::get('help-brands', 'SiteController@helpbrands')->name('site.help-brands');
+    Route::get('profile/create-wishlist', 'SiteController@create-wishlist')->name('site.create-wishlist');
+
 });
