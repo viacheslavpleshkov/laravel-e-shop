@@ -6,19 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-param" content="_csrf-frontend">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>@yield('title') | {{__('site.title')}}</title>
-    <link rel="author" href="{{ asset ('humans.txt')}}"/>
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset ('icons/apple-touch-icon.png') }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset ('icons/favicon-32x32.png') }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset ('icons/favicon-16x16.png') }}">
-    <link rel="manifest" href="{{ asset ('icons/site.webmanifest') }}">
-    <link rel="mask-icon" href="{{ asset ('icons/safari-pinned-tab.svg') }}" color="#f8f8f8">
-    <link rel="shortcut icon" href="{{ asset ('icons/favicon.ico') }}">
-    <meta name="apple-mobile-web-app-title" content="E-Shop">
-    <meta name="application-name" content="E-Shop">
+    <title>@if(url()->current() != route('site.index')) @yield('title') |  @endif{{__('site.title')}}</title>
+    <link rel="author" href="{{ asset('humans.txt')}}"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('icons/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('icons/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('icons/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ asset('icons/site.webmanifest') }}">
+    <link rel="mask-icon" href="{{ asset('icons/safari-pinned-tab.svg') }}" color="#f8f8f8">
+    <link rel="shortcut icon" href="{{ asset('icons/favicon.ico') }}">
+    <meta name="apple-mobile-web-app-title" content="{{__('site.title')}}">
+    <meta name="application-name" content="{{__('site.title')}}">
     <meta name="msapplication-TileColor" content="#f8f8f8">
-    <meta name="msapplication-TileImage" content="{{ asset ('icons/mstile-144x144.png') }}">
-    <meta name="msapplication-config" content="{{ asset ('icons/browserconfig.xml') }}">
+    <meta name="msapplication-TileImage" content="{{ asset('icons/mstile-144x144.png') }}">
+    <meta name="msapplication-config" content="{{ asset('icons/browserconfig.xml') }}">
     <meta name="theme-color" content="#f8f8f8">
     <link rel="stylesheet" href="{{ asset('css/site.css') }}">
     <script src="{{ asset('js/site.js') }}"></script>
@@ -90,7 +90,8 @@
             <h6>{{ __('site.subscribe-join-our-mailing-list') }}</h6>
             <div class="sub-left-right">
                 <form method="post">
-                    <input type="text" value="{{ __('site.subscribe-enter-your-email-here') }}" onfocus="this.value = '';"
+                    <input type="text" value="{{ __('site.subscribe-enter-your-email-here') }}"
+                           onfocus="this.value = '';"
                            onblur="if (this.value == '') {this.value = '{{ __('site.subscribe-enter-your-email-here') }}';}"/>
                     <input type="submit" value="{{ __('site.subscribe') }}"/>
                 </form>
@@ -132,7 +133,8 @@
                     <ul class="f_nav">
                         <li><a href="{{ route('login') }}">{{ __('site.footer-login') }}</a></li>
                         <li><a href="{{ route('register') }}">{{ __('site.footer-create-an-account') }}</a></li>
-                        <li><a href="{{ route('site.create-wishlist') }}">{{ __('site.footer-create-wishlist') }}</a></li>
+                        <li><a href="{{ route('site.create-wishlist') }}">{{ __('site.footer-create-wishlist') }}</a>
+                        </li>
                         <li><a href="{{ route('site.cart') }}">{{ __('site.footer-my-shopping-bag') }}</a></li>
                     </ul>
                 </div>
