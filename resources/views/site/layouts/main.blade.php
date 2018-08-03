@@ -153,7 +153,7 @@
             </div>
         </div>
         <div class="cards text-center">
-            <img src="images/cards.jpg" alt=""/>
+            <img src="{{ asset('images/cards.jpg') }}" alt=""/>
         </div>
         <div class="copyright text-center">
             <p>{{ __('site.title') }} ©{{ date('Y') }}. {{__('site.all-rights-reserved')}}</p>

@@ -70,5 +70,15 @@ return [
     'registration-completely-free-account-text' => 'Pellentesque neque leo, dictum sit amet accumsan non, dignissim ac mauris. Mauris rhoncus, lectus tincidunt tempus aliquam, odio libero tincidunt metus, sed euismod elit enim ut mi. Nulla porttitor et dolor sed condimentum. Praesent porttitor lorem dui, in pulvinar enim rhoncus vitae. Curabitur tincidunt, turpis ac lobortis hendrerit, ex elit vestibulum est, at faucibus erat ligula non neque.',
     //home
     'home-title' => 'Home',
+    //contact
+    'contact-title' => 'Contact',
+    'contact-find-us-here' => 'FIND US HERE',
+    'contact-contact-form' => 'CONTACT FORM',
+    'contact-name' => 'Name',
+    'contact-email' => 'E-mail',
+    'contact-subject' => 'Subject',
+    'contact-message' => 'Message',
+    'contact-submit' => 'SUBMIT',
+
 
 ];
