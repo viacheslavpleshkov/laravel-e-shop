@@ -35,7 +35,7 @@
                                 <li>
                                     <input id="email" type="text"
                                            class="{{ $errors->has('firstname') ? ' is-invalid' : '' }}"
-                                           name="email" value="{{ old('firstname') }}" required>
+                                           name="firstname" value="{{ old('firstname') }}" required>
 
                                     @if ($errors->has('firstname'))
                                         <span class="invalid-feedback" role="alert">
@@ -49,7 +49,7 @@
                                 <li>
                                     <input id="email" type="text"
                                            class="{{ $errors->has('lastname') ? ' is-invalid' : '' }}"
-                                           name="email" value="{{ old('lastname') }}" required>
+                                           name="lastname" value="{{ old('lastname') }}" required>
 
                                     @if ($errors->has('lastname'))
                                         <span class="invalid-feedback" role="alert">
@@ -95,7 +95,7 @@
                                 <li>
                                     <input id="email" type="text"
                                            class="{{ $errors->has('number') ? ' is-invalid' : '' }}"
-                                           name="email" value="{{ old('number') }}" required>
+                                           name="number" value="{{ old('number') }}" required>
 
                                     @if ($errors->has('number'))
                                         <span class="invalid-feedback" role="alert">
