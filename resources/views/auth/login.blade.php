@@ -1,6 +1,6 @@
 @extends('site.layouts.main')
 
-@section('title', __('site.login-title'))
+@section('title', __('auth.login-title'))
 
 @section('content')
     <div class="content">
@@ -14,7 +14,7 @@
                             <span>&gt;</span>
                         </li>
                         <li class="women">
-                            {{ __('site.login-title') }}
+                            {{ __('auth.login-title') }}
                         </li>
                     </ul>
                     <ul class="previous">
@@ -24,43 +24,47 @@
                 </div>
                 <div class="account_grid">
                     <div class="col-md-6 login-left wow fadeInLeft" data-wow-delay="0.4s">
-                        <h2>{{ __('site.login-new-customers') }}</h2>
-                        <p>{{ __('site.login-new-customers-description') }}</p>
+                        <h2>{{ __('auth.login-new-customers') }}</h2>
+                        <p>{{ __('auth.login-new-customers-description') }}</p>
                         <a class="acount-btn"
-                           href="{{ route('register') }}">{{ __('site.login-create-an-account') }}</a>
+                           href="{{ route('register') }}">{{ __('auth.login-create-an-account') }}</a>
                     </div>
                     <div class="col-md-6 login-right wow fadeInRight" data-wow-delay="0.4s">
-                        <h3>{{ __('site.login-registered-customers') }}</h3>
-                        <p>{{ __('site.login-registered-customers-description') }}</p>
-                        <form method="post" action="{{ route('login') }}" aria-label="{{ __('site.login-title') }}">
+                        <h3>{{ __('auth.login-registered-customers') }}</h3>
+                        <p>{{ __('auth.login-registered-customers-description') }}</p>
+                        <form method="post" action="{{ route('login') }}" aria-label="{{ __('auth.login-title') }}">
                             @csrf
                             <div>
-                                <span>{{ __('site.login-email') }}<label>*</label></span>
+                                <span>{{ __('auth.login-email') }}<label>*</label></span>
                                 <input id="email" type="email"
                                        class="{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email"
                                        value="{{ old('email') }}" required autofocus>
 
                                 @if ($errors->has('email'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
+                                    <div class="alert alert-danger">{{ $errors->first('email') }}</div>
                                 @endif
                             </div>
                             <div>
-                                <span>{{ __('site.login-password') }}<label>*</label></span>
+                                <span>{{ __('auth.login-password') }}<label>*</label></span>
                                 <input id="password" type="password"
                                        class="{{ $errors->has('password') ? ' is-invalid' : '' }}"
                                        name="password" required>
 
                                 @if ($errors->has('password'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
+                                    <div class="alert alert-danger">{{ $errors->first('password') }}</div>
+                                @endif
+                            </div>
+                            <div>
+                                <span>{{ __('auth.login-captcha') }}<label>*</label></span>
+                                {!! NoCaptcha::renderJs('en') !!}
+                                {!! NoCaptcha::display(['data-theme' => 'light','data-size'=>'normal']) !!}
+                                @if ($errors->has('g-recaptcha-response'))
+                                    <div class="alert alert-danger">{{ $errors->first('g-recaptcha-response') }}</div>
                                 @endif
                             </div>
                             <a class="forgot"
-                               href="{{ route('password.request') }}">{{ __('site.login-forgot-your-password') }}</a>
-                            <input type="submit" value="{{ __('site.login-submit') }}">
+                               href="{{ route('password.request') }}">{{ __('auth.login-forgot-your-password') }}</a>
+                            <input type="submit" value="{{ __('auth.login-submit') }}">
                         </form>
                     </div>
                     <div class="clearfix"></div>

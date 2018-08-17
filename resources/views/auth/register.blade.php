@@ -1,6 +1,6 @@
 @extends('site.layouts.main')
 
-@section('title', __('site.registration-title'))
+@section('title', __('auth.registration-title'))
 
 @section('content')
     <div class="registration-form">
@@ -13,7 +13,7 @@
                         <span>&gt;</span>
                     </li>
                     <li class="women">
-                        {{ __('site.registration-title') }}
+                        {{ __('auth.registration-title') }}
                     </li>
                 </ul>
                 <ul class="previous">
@@ -21,17 +21,18 @@
                 </ul>
                 <div class="clearfix"></div>
             </div>
-            <h2>{{ __('site.registration-title') }}</h2>
+            <h2>{{ __('auth.registration-title') }}</h2>
             <div class="registration-grids">
                 <div class="reg-form">
                     <div class="reg">
-                        <p>{{ __('site.registration-title-description') }}</p>
-                        <p>{{ __('site.registration-title-description-two') }} <a href="{{ route('login') }}">{{ __('site.registration-click-here') }}</a></p>
+                        <p>{{ __('auth.registration-title-description') }}</p>
+                        <p>{{ __('auth.registration-title-description-two') }} <a
+                                    href="{{ route('login') }}">{{ __('auth.registration-click-here') }}</a></p>
                         <form method="post" action="{{ route('register') }}"
-                              aria-label="{{ __('site.registration-title') }}">
+                              aria-label="{{ __('auth.registration-title') }}">
                             @csrf
                             <ul>
-                                <li class="text-info">{{ __('site.registration-first-name') }}</li>
+                                <li class="text-info">{{ __('auth.registration-first-name') }}</li>
                                 <li>
                                     <input id="email" type="text"
                                            class="{{ $errors->has('firstname') ? ' is-invalid' : '' }}"
@@ -45,7 +46,7 @@
                                 </li>
                             </ul>
                             <ul>
-                                <li class="text-info">{{ __('site.registration-last-name') }}</li>
+                                <li class="text-info">{{ __('auth.registration-last-name') }}</li>
                                 <li>
                                     <input id="email" type="text"
                                            class="{{ $errors->has('lastname') ? ' is-invalid' : '' }}"
@@ -59,7 +60,7 @@
                                 </li>
                             </ul>
                             <ul>
-                                <li class="text-info">{{ __('site.registration-email') }}</li>
+                                <li class="text-info">{{ __('auth.registration-email') }}</li>
                                 <li>
                                     <input id="email" type="text"
                                            class="{{ $errors->has('email') ? ' is-invalid' : '' }}"
@@ -73,7 +74,7 @@
                                 </li>
                             </ul>
                             <ul>
-                                <li class="text-info">{{ __('site.registration-password') }}</li>
+                                <li class="text-info">{{ __('auth.registration-password') }}</li>
                                 <li>
                                     <input id="password" type="password"
                                            class="{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password"
@@ -86,33 +87,41 @@
                                 </li>
                             </ul>
                             <ul>
-                                <li class="text-info">{{ __('site.registration-password-confirm') }}</li>
+                                <li class="text-info">{{ __('auth.registration-password-confirm') }}</li>
                                 <li><input id="password-confirm" type="password" class="form-control"
                                            name="password_confirmation" required></li>
                             </ul>
                             <ul>
-                                <li class="text-info">{{ __('site.registration-number') }}</li>
+                                <li class="text-info">{{ __('auth.registration-number') }}</li>
                                 <li>
                                     <input id="email" type="text"
                                            class="{{ $errors->has('number') ? ' is-invalid' : '' }}"
                                            name="number" value="{{ old('number') }}" required>
 
                                     @if ($errors->has('number'))
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('number') }}</strong>
-                                        </span>
+                                        <div class="alert alert-danger">{{ $errors->first('number') }}</div>
                                     @endif
                                 </li>
                             </ul>
-                            <input type="submit" value="{{ __('site.registration-submit') }}">
-                            <p class="click">{{ __('site.registration-policy-terms-and-conditions-text') }} <a href="{{ route('policy-terms-and-conditions') }}">{{ __('site.registration-policy-terms-and-conditions') }}</a></p>
+                            <ul>
+                                <li class="text-info">{{ __('auth.registration-captcha') }}</li>
+                                {!! NoCaptcha::renderJs('en') !!}
+                                <li>{!! NoCaptcha::display(['data-theme' => 'light','data-size'=>'normal']) !!}</li>
+                                <li>@if ($errors->has('g-recaptcha-response'))
+                                        {{ $errors->first('g-recaptcha-response') }}
+                                    @endif</li>
+                            </ul>
+                            <input type="submit" value="{{ __('auth.registration-submit') }}">
+                            <p class="click">{{ __('auth.registration-policy-terms-and-conditions-text') }} <a
+                                        href="{{ route('policy-terms-and-conditions') }}">{{ __('auth.registration-policy-terms-and-conditions') }}</a>
+                            </p>
                         </form>
                     </div>
                 </div>
                 <div class="reg-right">
-                    <h3>{{ __('site.registration-completely-free-account') }}</h3>
+                    <h3>{{ __('auth.registration-completely-free-account') }}</h3>
                     <div class="strip"></div>
-                    <p>{{ __('site.registration-completely-free-account-text') }}</p>
+                    <p>{{ __('auth.registration-completely-free-account-text') }}</p>
                 </div>
                 <div class="clearfix"></div>
             </div>
