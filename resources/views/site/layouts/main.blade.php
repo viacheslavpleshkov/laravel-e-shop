@@ -30,10 +30,32 @@
         <div class="container">
             <div class="header-top-left">
                 <ul>
-                    <li><a href="{{ route('login') }}"><span
-                                    class="glyphicon glyphicon-user"> </span>{{ __('site.nav-login') }}</a></li>
-                    <li><a href="{{ route('register') }}"><span
-                                    class="glyphicon glyphicon-lock"> </span>{{ __('site.nav-register') }}</a></li>
+                    @guest
+                        <li><a href="{{ route('login') }}"><span
+                                        class="glyphicon glyphicon-user"> </span>{{ __('site.nav-login') }}</a></li>
+                        <li><a href="{{ route('register') }}"><span
+                                        class="glyphicon glyphicon-lock"> </span>{{ __('site.nav-register') }}</a></li>
+                    @else
+                        <li class="while">
+                            <span class="glyphicon glyphicon-volume-up"></span> {{ __('site.nav-hello').', '.Auth::user()->firstname .' '. Auth::user()->lastname }}
+                        </li>
+                        <li><a href="{{ route('profile.index') }}"><span
+                                        class="glyphicon glyphicon-user"> </span>{{ __('site.nav-personal-area') }}</a>
+                        </li>
+                        @if(in_array(Auth::user()->role->name, ['Author','Moderator','Admin']))
+                            <li><a href="{{ route('admin.index') }}"><span
+                                            class="glyphicon glyphicon-cog"> </span> {{ __('site.nav-admin-panel') }}
+                                </a>
+                            </li>
+                        @endif
+                        <li><a class="dropdown-item" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();document.getElementById('logout-form').submit();"><span
+                                        class="glyphicon glyphicon-log-in"> </span> {{ __('site.nav-logout') }}</a>
+                        </li>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    @endif
                 </ul>
             </div>
             <div class="header-right">

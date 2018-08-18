@@ -14,12 +14,12 @@ Route::group(['prefix' => 'auth', 'namespace' => 'Auth'], function () {
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth', 'roles'], 'block' => ['User']], function () {
     Route::group(['roles' => ['Author', 'Moderator', 'Admin']], function () {
         Route::get('/', 'AdminController@index')->name('admin.index');
-        Route::get('profile', 'ProfileController@index')->name('profile.index');
-        Route::get('profile/{id}/edit', 'ProfileController@edit')->name('profile.edit');
-        Route::put('profile/{id}/edit', 'ProfileController@updateedit');
-        Route::get('profile/{id}/password', 'ProfileController@password')->name('profile.password');
-        Route::put('profile/{id}/password', 'ProfileController@updatepassword');
-        Route::delete('profile/{id}', 'ProfileController@destroy')->name('profile.destroy');
+//        Route::get('profile', 'ProfileController@index')->name('profile.index');
+//        Route::get('profile/{id}/edit', 'ProfileController@edit')->name('profile.edit');
+//        Route::put('profile/{id}/edit', 'ProfileController@updateedit');
+//        Route::get('profile/{id}/password', 'ProfileController@password')->name('profile.password');
+//        Route::put('profile/{id}/password', 'ProfileController@updatepassword');
+//        Route::delete('profile/{id}', 'ProfileController@destroy')->name('profile.destroy');
     });
     Route::group(['roles' => ['Moderator', 'Admin']], function () {
         Route::resource('contact-with-me', 'ContactwithmeController');
@@ -58,5 +58,10 @@ Route::namespace('Site')->group(function () {
     Route::get('help-kids', 'SiteController@helpkids')->name('site.help-kids');
     Route::get('help-accessories', 'SiteController@helpaccessories')->name('site.help-accessories');
     Route::get('help-brands', 'SiteController@helpbrands')->name('site.help-brands');
-    Route::get('profile/create-wishlist', 'SiteController@create-wishlist')->name('site.create-wishlist');
+    Route::get('profile/create-wishlist', 'SiteController@create-wishlist')->name('site.create-wishlist');Route::get('profile', 'ProfileController@index')->name('profile.index');
+    Route::get('profile/{id}/edit', 'ProfileController@edit')->name('profile.edit');
+    Route::put('profile/{id}/edit', 'ProfileController@updateedit');
+    Route::get('profile/{id}/password', 'ProfileController@password')->name('profile.password');
+    Route::put('profile/{id}/password', 'ProfileController@updatepassword');
+    Route::delete('profile/{id}', 'ProfileController@destroy')->name('profile.destroy');
 });

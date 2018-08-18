@@ -13,6 +13,10 @@ return [
     'nav-contact' => 'Contact',
     'nav-login' => 'Login',
     'nav-register' => 'Create an Account',
+    'nav-hello' => 'Hello',
+    'nav-personal-area' => 'Personal Area',
+    'nav-admin-panel' => 'Admin panel',
+    'nav-logout' => 'Logout',
     'nav-empty-cart' => 'Empty cart',
     //subscribe
     'subscribe-join-our-mailing-list' => 'JOIN OUR MAILING LIST',
