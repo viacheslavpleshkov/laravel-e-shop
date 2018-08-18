@@ -39,9 +39,7 @@
                                            name="firstname" value="{{ old('firstname') }}" required>
 
                                     @if ($errors->has('firstname'))
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('firstname') }}</strong>
-                                        </span>
+                                            {{ $errors->first('firstname') }}
                                     @endif
                                 </li>
                             </ul>
@@ -53,9 +51,7 @@
                                            name="lastname" value="{{ old('lastname') }}" required>
 
                                     @if ($errors->has('lastname'))
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('lastname') }}</strong>
-                                        </span>
+                                            {{ $errors->first('lastname') }}
                                     @endif
                                 </li>
                             </ul>
@@ -67,9 +63,7 @@
                                            name="email" value="{{ old('email') }}" required>
 
                                     @if ($errors->has('email'))
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('email') }}</strong>
-                                        </span>
+                                            {{ $errors->first('email') }}
                                     @endif
                                 </li>
                             </ul>
@@ -80,9 +74,7 @@
                                            class="{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password"
                                            required>
                                     @if ($errors->has('password'))
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('password') }}</strong>
-                                        </span>
+                                        {{ $errors->first('password') }}
                                     @endif
                                 </li>
                             </ul>
@@ -99,17 +91,18 @@
                                            name="number" value="{{ old('number') }}" required>
 
                                     @if ($errors->has('number'))
-                                        <div class="alert alert-danger">{{ $errors->first('number') }}</div>
+                                        {{ $errors->first('number') }}
                                     @endif
                                 </li>
                             </ul>
                             <ul>
                                 <li class="text-info">{{ __('auth.registration-captcha') }}</li>
                                 {!! NoCaptcha::renderJs('en') !!}
-                                <li>{!! NoCaptcha::display(['data-theme' => 'light','data-size'=>'normal']) !!}</li>
-                                <li>@if ($errors->has('g-recaptcha-response'))
+                                <li>{!! NoCaptcha::display(['data-theme' => 'light','data-size'=>'normal']) !!}
+                                    @if ($errors->has('g-recaptcha-response'))
                                         {{ $errors->first('g-recaptcha-response') }}
-                                    @endif</li>
+                                    @endif
+                                </li>
                             </ul>
                             <input type="submit" value="{{ __('auth.registration-submit') }}">
                             <p class="click">{{ __('auth.registration-policy-terms-and-conditions-text') }} <a

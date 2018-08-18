@@ -41,7 +41,7 @@
                                        value="{{ old('email') }}" required autofocus>
 
                                 @if ($errors->has('email'))
-                                    <div class="alert alert-danger">{{ $errors->first('email') }}</div>
+                                    {{ $errors->first('email') }}
                                 @endif
                             </div>
                             <div>
@@ -51,7 +51,7 @@
                                        name="password" required>
 
                                 @if ($errors->has('password'))
-                                    <div class="alert alert-danger">{{ $errors->first('password') }}</div>
+                                    {{ $errors->first('password') }}
                                 @endif
                             </div>
                             <div>
@@ -59,7 +59,7 @@
                                 {!! NoCaptcha::renderJs('en') !!}
                                 {!! NoCaptcha::display(['data-theme' => 'light','data-size'=>'normal']) !!}
                                 @if ($errors->has('g-recaptcha-response'))
-                                    <div class="alert alert-danger">{{ $errors->first('g-recaptcha-response') }}</div>
+                                    {{ $errors->first('g-recaptcha-response') }}
                                 @endif
                             </div>
                             <a class="forgot"
