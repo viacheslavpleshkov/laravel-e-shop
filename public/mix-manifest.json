@@ -1,10 +1,9 @@
 {
-    "/js/logs.js": "/js/logs.js",
     "/js/admin.js": "/js/admin.js",
-    "/js/site.js": "/js/site.js",
     "/css/site.css": "/css/site.css",
     "/css/admin.css": "/css/admin.css",
     "/css/logs.css": "/css/logs.css",
     "/css/error.css": "/css/error.css",
+    "/js/logs.js": "/js/logs.js",
     "/js/error.js": "/js/error.js"
 }
