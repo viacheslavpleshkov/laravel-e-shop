@@ -58,6 +58,7 @@ Route::namespace('Site')->group(function () {
     Route::get('help-kids', 'SiteController@helpkids')->name('site.help-kids');
     Route::get('help-accessories', 'SiteController@helpaccessories')->name('site.help-accessories');
     Route::get('help-brands', 'SiteController@helpbrands')->name('site.help-brands');
+    Route::put('subscribe', 'SiteController@subscribe')->name('site.subscribe');
     Route::get('profile/create-wishlist', 'SiteController@create-wishlist')->name('site.create-wishlist');Route::get('profile', 'ProfileController@index')->name('profile.index');
     Route::get('profile/{id}/edit', 'ProfileController@edit')->name('profile.edit');
     Route::put('profile/{id}/edit', 'ProfileController@updateedit');

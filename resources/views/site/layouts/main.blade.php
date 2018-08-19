@@ -111,11 +111,16 @@
         <div class="join">
             <h6>{{ __('site.subscribe-join-our-mailing-list') }}</h6>
             <div class="sub-left-right">
-                <form method="post">
-                    <input type="text" value="{{ __('site.subscribe-enter-your-email-here') }}"
+                <form method="post" action="{{ route('site.subscribe') }}">
+                    @csrf
+                    @method('PUT')
+                    <input type="text" name="subscribe" value="{{ __('site.subscribe-enter-your-email-here') }}"
                            onfocus="this.value = '';"
                            onblur="if (this.value == '') {this.value = '{{ __('site.subscribe-enter-your-email-here') }}';}"/>
                     <input type="submit" value="{{ __('site.subscribe') }}"/>
+                    @if ($errors->has('subscribe'))
+                        {{ $errors->first('subscribe') }}
+                    @endif
                 </form>
             </div>
             <div class="clearfix"></div>
