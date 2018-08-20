@@ -16,13 +16,22 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('image');
             $table->string('description');
+            $table->unsignedInteger('type_id');
             $table->integer('price');
             $table->integer('sale');
             $table->string('color');
+            $table->unsignedInteger('brand_id');
+            $table->unsignedInteger('made_id');
             $table->text('information');
             $table->text('specifications');
+            $table->unsignedInteger('user_id');
             $table->timestamps();
+            $table->foreign('type_id')->references('id')->on('types');
+            $table->foreign('brand_id')->references('id')->on('brands');
+            $table->foreign('made_id')->references('id')->on('mades');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
