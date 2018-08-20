@@ -33,7 +33,7 @@
 </main>
 <footer class="footer">
     <div class="container text-center">
-        <span class="text-muted">Slava Pleshkov ©2016-{{ date('Y') }}. All rights reserved.</span>
+        <span class="text-muted">E-shop ©{{ date('Y') }}. All rights reserved.</span>
     </div>
 </footer>
 <script src="{{ asset('js/logs.js') }}"></script>

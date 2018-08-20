@@ -41,7 +41,9 @@ class UserController extends Controller
     public function store(Request $request)
     {
         User::create([
-            'name' => $request->name,
+            'firstname' => $request->firstname,
+            'lastname' => $request->lastname,
+            'number' => $request->number,
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'role_id' => $request->role_id
@@ -84,7 +86,9 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         User::find($id)->update([
-            'name' => $request->name,
+            'firstname' => $request->firstname,
+            'lastname' => $request->lastname,
+            'number' => $request->number,
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'role_id' => $request->role_id

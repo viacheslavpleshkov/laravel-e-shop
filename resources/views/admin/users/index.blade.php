@@ -23,13 +23,11 @@
             <thead>
             <tr>
                 <th scope="col">{{ __('admin.users-id') }}</th>
-                <th scope="col">{{ __('admin.users-name') }}</th>
+                <th scope="col">{{ __('admin.users-firstname') }}</th>
+                <th scope="col">{{ __('admin.users-lastname') }}</th>
+                <th scope="col">{{ __('admin.users-number') }}</th>
                 <th scope="col">{{ __('admin.users-email') }}</th>
                 <th scope="col">{{ __('admin.users-password') }}</th>
-                <th scope="col">{{ __('admin.users-gitHub') }}</th>
-                <th scope="col">{{ __('admin.users-google') }}</th>
-                <th scope="col">{{ __('admin.users-facebook') }}</th>
-                <th scope="col">{{ __('admin.users-twitter') }}</th>
                 <th scope="col">{{ __('admin.users-roles') }}</th>
                 <th scope="col"></th>
             </tr>
@@ -38,38 +36,12 @@
             @foreach($main as $item)
                 <tr>
                     <th scope="row">{{ $item->id }}</th>
-                    <td scope="row">{{ $item->name }}</td>
+                    <td scope="row">{{ $item->firstname }}</td>
+                    <td scope="row">{{ $item->lastname }}</td>
+                    <td scope="row">{{ $item->number }}</td>
                     <td scope="row">{{ $item->email }}</td>
                     <td scope="row">
                         @if($item->password)
-                            {{ __('admin.enabled') }}
-                        @else
-                            {{ __('admin.disabled') }}
-                        @endif
-                    </td>
-                    <td scope="row">
-                        @if($item->github_id)
-                            {{ __('admin.enabled') }}
-                        @else
-                            {{ __('admin.disabled') }}
-                        @endif
-                    </td>
-                    <td scope="row">
-                        @if($item->google_id)
-                            {{ __('admin.enabled') }}
-                        @else
-                            {{ __('admin.disabled') }}
-                        @endif
-                    </td>
-                    <td scope="row">
-                        @if($item->facebook_id)
-                            {{ __('admin.enabled') }}
-                        @else
-                            {{ __('admin.disabled') }}
-                        @endif
-                    </td>
-                    <td scope="row">
-                        @if($item->twitter_id)
                             {{ __('admin.enabled') }}
                         @else
                             {{ __('admin.disabled') }}

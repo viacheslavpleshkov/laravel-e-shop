@@ -21,8 +21,16 @@
             <td>{{ $main->id }}</td>
         </tr>
         <tr>
-            <th>{{ __('admin.users-name') }}</th>
-            <td>{{ $main->name }}</td>
+            <th>{{ __('admin.users-firstname') }}</th>
+            <td>{{ $main->firstname }}</td>
+        </tr>
+        <tr>
+            <th>{{ __('admin.users-lastname') }}</th>
+            <td>{{ $main->lastname }}</td>
+        </tr>
+        <tr>
+            <th>{{ __('admin.users-number') }}</th>
+            <td>{{ $main->number }}</td>
         </tr>
         <tr>
             <th>{{ __('admin.users-email') }}</th>
@@ -36,46 +44,6 @@
                 @else
                     {{ __('admin.disabled') }}
                 @endif</td>
-        </tr>
-        <tr>
-            <th>{{ __('admin.users-gitHub') }}</th>
-            <td>
-                @if( $main->github_id )
-                    {{ __('admin.enabled') }}
-                @else
-                    {{ __('admin.disabled') }}
-                @endif
-            </td>
-        </tr>
-        <tr>
-            <th>{{ __('admin.users-google') }}</th>
-            <td>
-                @if( $main->google_id )
-                    {{ __('admin.enabled') }}
-                @else
-                    {{ __('admin.disabled') }}
-                @endif
-            </td>
-        </tr>
-        <tr>
-            <th>{{ __('admin.users-facebook') }}</th>
-            <td>
-                @if( $main->facebook_id )
-                    {{ __('admin.enabled') }}
-                @else
-                    {{ __('admin.disabled') }}
-                @endif
-            </td>
-        </tr>
-        <tr>
-            <th>{{ __('admin.users-twitter') }}</th>
-            <td>
-                @if( $main->twitter_id )
-                    {{ __('admin.enabled') }}
-                @else
-                    {{ __('admin.disabled') }}
-                @endif
-            </td>
         </tr>
         <tr>
             <th>{{ __('admin.users-roles') }}</th>

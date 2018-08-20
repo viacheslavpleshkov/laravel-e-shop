@@ -80,21 +80,7 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-globe"></i> {{ __('admin.site-language') }}
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item {{ Request::is('en*') ? 'active' : '' }}"
-                       href="{{ url('en/admin') }}">{{ __('admin.english') }}</a>
-                    <a class="dropdown-item {{ Request::is('uk*') ? 'active' : '' }}"
-                       href="{{ url('uk/admin') }}">{{ __('admin.ukrainian') }}</a>
-                    <a class="dropdown-item {{ Request::is('ru*') ? 'active' : '' }}"
-                       href="{{ url('ru/admin') }}">{{ __('admin.russian') }}</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-user"></i> {{ Auth::user()->name }}
+                    <i class="fas fa-user"></i> {{ Auth::user()->firstname.' '.Auth::user()->lastname }}
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item {{ url()->current() == route('profile.index') ? 'active' : '' }}"
