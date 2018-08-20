@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateKidsTable extends Migration
+class CreateFeedbackTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateKidsTable extends Migration
      */
     public function up()
     {
-        Schema::create('kids', function (Blueprint $table) {
+        Schema::create('feedback', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ class CreateKidsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kids');
+        Schema::dropIfExists('feedback');
     }
 }

@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Men extends Model
+class Feedback extends Model
 {
     //
 }
