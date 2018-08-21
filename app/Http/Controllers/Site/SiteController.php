@@ -16,12 +16,20 @@ class SiteController extends Controller
      */
     public function index()
     {
-        $setting= Setting::find(1);
-        return view('site.pages.index',compact('setting'));
+        $setting = Setting::find(1);
+        return view('site.pages.index', compact('setting'));
     }
+
     public function contact()
     {
-        return view('site.pages.contact');
+        $setting = Setting::find(1);
+        return view('site.pages.contact', compact('setting'));
+    }
+
+    public function contactpost()
+    {
+        $setting = Setting::find(1);
+        return view('site.pages.contact', compact('setting'));
     }
 
     public function subscribe(SubscribeRequest $request)
