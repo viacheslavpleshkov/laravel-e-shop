@@ -13,8 +13,13 @@ class CreateSettingsTable extends Migration
      */
     public function up()
     {
+
         Schema::create('settings', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('delivery');
+            $table->string('tel');
+            $table->text('map');
+            $table->string('email');
             $table->timestamps();
         });
     }

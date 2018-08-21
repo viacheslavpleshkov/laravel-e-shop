@@ -47,6 +47,7 @@ return [
     'breadcrumbs-back-to-previous-page' => 'Back to Previous Page',
     //home
     'home-title' => 'Home',
+    'home-smart-but-casual' => 'Smart But Casual',
     //contact
     'contact-title' => 'Contact',
     'contact-find-us-here' => 'FIND US HERE',

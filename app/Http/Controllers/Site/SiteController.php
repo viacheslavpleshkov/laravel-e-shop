@@ -4,7 +4,8 @@ namespace App\Http\Controllers\Site;
 
 use App\Http\Controllers\Controller;
 use App\Subscribe;
-use App\Http\Requests\Subscribe as RequestSubscribe;
+use App\Http\Requests\Subscribe as SubscribeRequest;
+use App\Setting;
 
 class SiteController extends Controller
 {
@@ -15,14 +16,15 @@ class SiteController extends Controller
      */
     public function index()
     {
-        return view('site.pages.index');
+        $setting= Setting::find(1);
+        return view('site.pages.index',compact('setting'));
     }
     public function contact()
     {
         return view('site.pages.contact');
     }
 
-    public function subscribe(RequestSubscribe $request)
+    public function subscribe(SubscribeRequest $request)
     {
         Subscribe::create(['email' => $request['subscribe']]);
         return redirect()->back();

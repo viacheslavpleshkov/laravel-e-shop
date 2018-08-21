@@ -14,7 +14,7 @@
                         <ul class="rslides" id="slider4">
                             <li>
                                 <div class="banner-info">
-                                    <h3>Smart But Casual</h3>
+                                    <h3>{{ __('site.home-smart-but-casual') }}</h3>
                                     <p>Start your shopping here...</p>
                                 </div>
                             </li>
@@ -32,28 +32,6 @@
                             </li>
                         </ul>
                     </div>
-                    <!--banner-->
-                    <script src="js/responsiveslides.min.js"></script>
-                    <script>
-                        // You can also use "$(window).load(function() {"
-                        $(function () {
-                            // Slideshow 4
-                            $("#slider4").responsiveSlides({
-                                auto: true,
-                                pager: true,
-                                nav: false,
-                                speed: 500,
-                                namespace: "callbacks",
-                                before: function () {
-                                    $('.events').append("<li>before event fired.</li>");
-                                },
-                                after: function () {
-                                    $('.events').append("<li>after event fired.</li>");
-                                }
-                            });
-
-                        });
-                    </script>
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -62,12 +40,12 @@
             </div>
         </div>
     </div>
-    <!-- content-section-starts-here -->
     <div class="container">
         <div class="main-content">
             <div class="online-strip">
-                <div class="col-md-4 follow-us">
-                    <h3>follow us : <a class="twitter" href="#"></a><a class="facebook" href="#"></a></h3>
+                <div class="col-md-4 online-order">
+                    <h3>Write to us</h3>
+                    <h3>Email: {{ $setting->email }}</h3>
                 </div>
                 <div class="col-md-4 shipping-grid">
                     <div class="shipping">
@@ -75,13 +53,13 @@
                     </div>
                     <div class="shipping-text">
                         <h3>Free Shipping</h3>
-                        <p>on orders over $ 199</p>
+                        <p>{{ $setting->delivery }}</p>
                     </div>
                     <div class="clearfix"></div>
                 </div>
                 <div class="col-md-4 online-order">
-                    <p>Order online</p>
-                    <h3>Tel:999 4567 8902</h3>
+                    <h3>Call us</h3>
+                    <h3>Tel: {{ $setting->tel }}</h3>
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -170,7 +148,5 @@
                 <div class="clearfix"></div>
             </div>
         </div>
-
     </div>
-    <!-- content-section-ends-here -->
 @endsection

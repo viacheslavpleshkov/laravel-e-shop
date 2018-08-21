@@ -10,7 +10,6 @@ return [
     'roles' => 'Roles',
     'logs' => 'Logs',
     'settings' => 'Settings',
-    'site-language' => 'Site language',
     'profile' => 'Profile',
     'logout' => 'Logout',
     //home
@@ -62,6 +61,15 @@ return [
     'logs-delete-file' => 'Delete file',
     'logs-delete-all-files' => 'Delete all files',
     'logs-text' => 'Log file >50M, please download it.',
+    //settings
+    'settings-delivery' => 'Delivery',
+    'settings-tel' => 'Mobile number',
+    'settings-map' => 'Map',
+    'settings-email' => 'E-mail',
+    'settings-enter-delivery' => 'Enter delivery',
+    'settings-enter-tel' => 'Enter mobile number',
+    'settings-enter-map' => 'Enter map',
+    'settings-enter-email' => 'Enter e-mail',
     //Profile
     'profile-name' => 'Name',
     'profile-email' => 'E-mail',
