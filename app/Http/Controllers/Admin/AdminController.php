@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App;
-use App\Settings;
+use App\Setting;
 
 class AdminController extends Controller
 {
@@ -20,13 +20,13 @@ class AdminController extends Controller
 
     public function settings()
     {
-        $main = Settings::all();
+        $main = Setting::all();
         return view('admin.pages.settings', compact('main'));
     }
 
     public function settingsupdate()
     {
-        $main = Settings::all();
+        $main = Setting::all();
         return view('admin.pages.settings', compact('main'));
     }
 }
