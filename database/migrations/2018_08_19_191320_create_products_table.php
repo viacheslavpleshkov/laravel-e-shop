@@ -22,11 +22,13 @@ class CreateProductsTable extends Migration
             $table->integer('price');
             $table->integer('sale');
             $table->string('color');
+            $table->string('url')->unique();
             $table->unsignedInteger('brand_id');
             $table->unsignedInteger('made_id');
             $table->text('information');
             $table->text('specifications');
             $table->unsignedInteger('user_id');
+            $table->integer('status');
             $table->timestamps();
             $table->foreign('type_id')->references('id')->on('types');
             $table->foreign('brand_id')->references('id')->on('brands');

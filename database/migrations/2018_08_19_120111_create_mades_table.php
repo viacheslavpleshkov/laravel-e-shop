@@ -16,6 +16,7 @@ class CreateMadesTable extends Migration
         Schema::create('mades', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->integer('status');
             $table->timestamps();
         });
     }

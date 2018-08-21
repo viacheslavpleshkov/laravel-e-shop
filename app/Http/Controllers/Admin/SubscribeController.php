@@ -38,7 +38,7 @@ class SubscribeController extends Controller
      */
     public function store(Request $request)
     {
-        Subscribe::create($request->all());
+        Project::create($request->all());
         return redirect()->route('subscribes.index')->with('success', __('admin.created-success'));
     }
 
@@ -62,7 +62,7 @@ class SubscribeController extends Controller
      */
     public function edit($id)
     {
-        $main = Subscribe::find($id);
+        $main = Project::find($id);
         return view('admin.subscribes.edit', compact('main'));
     }
 

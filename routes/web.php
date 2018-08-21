@@ -9,7 +9,7 @@ Route::group(['prefix' => 'auth', 'namespace' => 'Auth'], function () {
     Route::post('password/email', 'ForgotPasswordController@sendResetLinkEmail')->name('password.email');
     Route::get('password/reset/{token}', 'ResetPasswordController@showResetForm')->name('password.reset');
     Route::post('password/reset', 'ResetPasswordController@reset');
-    Route::post('policy-terms-and-conditions', 'ResetPasswordController@reset')->name('policy-terms-and-conditions');
+    Route::post('policy-terms-and-conditions', 'AdminController@policytermsandconditions')->name('policy-terms-and-conditions');
 });
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth', 'roles'], 'block' => ['User']], function () {
     Route::group(['roles' => ['Author', 'Moderator', 'Admin']], function () {

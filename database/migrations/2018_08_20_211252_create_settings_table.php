@@ -20,6 +20,7 @@ class CreateSettingsTable extends Migration
             $table->string('tel');
             $table->text('map');
             $table->string('email');
+            $table->text('policytermsandconditions');
             $table->timestamps();
         });
     }

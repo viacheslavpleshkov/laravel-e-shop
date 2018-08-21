@@ -30,4 +30,8 @@ class AdminController extends Controller
         Setting::find(1)->update($request->all());
         return redirect()->route('admin.settings')->with('success', __('admin.updated-success'));
     }
+    public function policytermsandconditions()
+    {
+        return 'Hello';
+    }
 }
