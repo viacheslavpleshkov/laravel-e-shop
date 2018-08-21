@@ -13,7 +13,7 @@
         </div>
         <div class="col-lg-3">
             <div class="pull-right">
-                <a class="btn btn-original" href="{{ route('contact-with-me.create') }}">{{ __('admin.create-contact-with-me') }}</a>
+                <a class="btn btn-original" href="{{ route('subscribes.create') }}">{{ __('admin.create-contact-with-me') }}</a>
             </div>
         </div>
     </div>
@@ -45,9 +45,9 @@
                         @endif
                     </td>
                     <td scope="row">
-                        <a href="{{ route('contact-with-me.show',$item->id) }}"><i class="far fa-eye"></i></a>
-                        <a href="{{ route('contact-with-me.edit',$item->id) }}"><i class="fas fa-edit"></i></a>
-                        <form action="{{ route('contact-with-me.destroy',$item->id) }}" method="POST">
+                        <a href="{{ route('subscribes.show',$item->id) }}"><i class="far fa-eye"></i></a>
+                        <a href="{{ route('subscribes.edit',$item->id) }}"><i class="fas fa-edit"></i></a>
+                        <form action="{{ route('subscribes.destroy',$item->id) }}" method="POST">
                             @csrf
                             @method('DELETE')
                             <button type="submit"><i class="fas fa-trash-alt"></i></button>

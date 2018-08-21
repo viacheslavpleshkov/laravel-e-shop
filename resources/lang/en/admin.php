@@ -2,17 +2,19 @@
 
 return [
     //nav
-    'home' => 'Home',
-    'edit-site' => 'Edit site',
-    'contact-with-me' => 'Contact with me',
-    'user-manager' => 'User Manager',
-    'users' => 'Users',
-    'roles' => 'Roles',
-    'logs' => 'Logs',
-    'settings' => 'Settings',
-    'profile' => 'Profile',
-    'logout' => 'Logout',
+    'nav-home' => 'Home',
+    'nav-online-shop' => 'Online shop',
+    'nav-goods' => 'Goods',
+    'nav-subscribes' => 'Subscribes',
+    'nav-user-manager' => 'User Manager',
+    'nav-users' => 'Users',
+    'nav-roles' => 'Roles',
+    'nav-logs' => 'Logs',
+    'nav-settings' => 'Settings',
+    'nav-profile' => 'Profile',
+    'nav-logout' => 'Logout',
     //home
+    'home-title' => 'Home',
     'home-hello' => 'Hello',
     'home-welcome' => 'Improve your skills every day.)',
     'home-url' => 'Go to the site',
@@ -28,6 +30,7 @@ return [
     'contact-with-me-enter-url' => 'Enter url',
     'contact-with-me-enter-icon' => 'Enter icon',
     //Users
+    'users-title' => 'Users',
     'create-users' => 'Create user',
     'show-users' => 'Show user',
     'edit-users' => 'Edit user',

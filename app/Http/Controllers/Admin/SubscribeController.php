@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Contactwithme;
-use App\Http\Requests\Contactwithme as Request;
+use App\Subscribe;
+use App\Http\Requests\Subscribe as Request;
 
 
-class ContactwithmeController extends Controller
+class SubscribeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,8 @@ class ContactwithmeController extends Controller
      */
     public function index()
     {
-        $main = Contactwithme::all();
-        return view('admin.contact-with-me.index', compact('main'));
+        $main = Subscribe::all();
+        return view('admin.subscribes.index', compact('main'));
     }
 
     /**
@@ -27,7 +27,7 @@ class ContactwithmeController extends Controller
      */
     public function create()
     {
-        return view('admin.contact-with-me.create');
+        return view('admin.subscribes.create');
     }
 
     /**
@@ -38,8 +38,8 @@ class ContactwithmeController extends Controller
      */
     public function store(Request $request)
     {
-        Contactwithme::create($request->all());
-        return redirect()->route('contact-with-me.index')->with('success', __('admin.created-success'));
+        Subscribe::create($request->all());
+        return redirect()->route('subscribes.index')->with('success', __('admin.created-success'));
     }
 
     /**
@@ -50,8 +50,8 @@ class ContactwithmeController extends Controller
      */
     public function show($id)
     {
-        $main = Contactwithme::find($id);
-        return view('admin.contact-with-me.show', compact('main'));
+        $main = Subscribe::find($id);
+        return view('admin.subscribes.show', compact('main'));
     }
 
     /**
@@ -62,8 +62,8 @@ class ContactwithmeController extends Controller
      */
     public function edit($id)
     {
-        $main = Contactwithme::find($id);
-        return view('admin.contact-with-me.edit', compact('main'));
+        $main = Subscribe::find($id);
+        return view('admin.subscribes.edit', compact('main'));
     }
 
     /**
@@ -75,8 +75,8 @@ class ContactwithmeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Contactwithme::find($id)->update($request->all());
-        return redirect()->route('contact-with-me.index')->with('success', __('admin.updated-success'));
+        Subscribe::find($id)->update($request->all());
+        return redirect()->route('subscribes.index')->with('success', __('admin.updated-success'));
     }
 
     /**
@@ -87,7 +87,7 @@ class ContactwithmeController extends Controller
      */
     public function destroy($id)
     {
-        Contactwithme::find($id)->delete();
-        return redirect()->route('contact-with-me.index')->with('success', __('admin.information-deleted'));
+        Subscribe::find($id)->delete();
+        return redirect()->route('subscribes.index')->with('success', __('admin.information-deleted'));
     }
 }

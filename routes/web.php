@@ -14,21 +14,9 @@ Route::group(['prefix' => 'auth', 'namespace' => 'Auth'], function () {
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth', 'roles'], 'block' => ['User']], function () {
     Route::group(['roles' => ['Author', 'Moderator', 'Admin']], function () {
         Route::get('/', 'AdminController@index')->name('admin.index');
-//        Route::get('profile', 'ProfileController@index')->name('profile.index');
-//        Route::get('profile/{id}/edit', 'ProfileController@edit')->name('profile.edit');
-//        Route::put('profile/{id}/edit', 'ProfileController@updateedit');
-//        Route::get('profile/{id}/password', 'ProfileController@password')->name('profile.password');
-//        Route::put('profile/{id}/password', 'ProfileController@updatepassword');
-//        Route::delete('profile/{id}', 'ProfileController@destroy')->name('profile.destroy');
     });
     Route::group(['roles' => ['Moderator', 'Admin']], function () {
-        Route::resource('contact-with-me', 'ContactwithmeController');
-        Route::resource('knowledge-of-languages', 'LanguageknowledgeController');
-        Route::resource('educations', 'EducationController');
-        Route::resource('about-me', 'AboutmeController');
-        Route::resource('experiences', 'ExperienceController');
-        Route::resource('skills', 'SkillController');
-        Route::resource('projects', 'ProjectController');
+        Route::resource('subscribes', 'SubscribeController');
     });
     Route::group(['roles' => ['Admin']], function () {
         Route::resource('users', 'UserController');
@@ -49,7 +37,7 @@ Route::namespace('Site')->group(function () {
     Route::get('accessories', 'SiteController@accessories')->name('site.accessories');
     Route::get('cart', 'SiteController@cart')->name('site.cart');
     Route::get('contact', 'SiteController@contact')->name('site.contact');
-    Route::post('contact', 'SiteController@contactpost');
+    Route::put('contact', 'SiteController@contactpost');
     Route::get('new', 'SiteController@new')->name('site.new');
     Route::get('brands', 'SiteController@brands')->name('site.brands');
     Route::get('trends', 'SiteController@trends')->name('site.trends');
@@ -60,7 +48,7 @@ Route::namespace('Site')->group(function () {
     Route::get('help-kids', 'SiteController@helpkids')->name('site.help-kids');
     Route::get('help-accessories', 'SiteController@helpaccessories')->name('site.help-accessories');
     Route::get('help-brands', 'SiteController@helpbrands')->name('site.help-brands');
-    Route::post('subscribe', 'SiteController@subscribe')->name('site.subscribe');
+    Route::put('subscribe', 'SiteController@subscribe')->name('site.subscribe');
     Route::get('profile/create-wishlist', 'SiteController@create-wishlist')->name('site.create-wishlist');Route::get('profile', 'ProfileController@index')->name('profile.index');
     Route::get('profile/{id}/edit', 'ProfileController@edit')->name('profile.edit');
     Route::put('profile/{id}/edit', 'ProfileController@updateedit');

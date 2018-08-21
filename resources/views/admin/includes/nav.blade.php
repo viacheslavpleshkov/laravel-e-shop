@@ -7,71 +7,53 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item {{ url()->current() == route('admin.index') ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route('admin.index') }}"><i class="fas fa-home"></i> {{ __('admin.home') }}
+                <a class="nav-link" href="{{ route('admin.index') }}"><i class="fas fa-home"></i> {{ __('admin.nav-home') }}
                 </a>
             </li>
             @if(in_array(Auth::user()->role->name, ['Moderator','Admin']))
-                {{--<li class="nav-item dropdown">--}}
-                    {{--<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"--}}
-                       {{--data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
-                        {{--<i class="fas fa-edit"></i> {{ __('admin.edit-site') }}--}}
-                    {{--</a>--}}
-                    {{--<div class="dropdown-menu" aria-labelledby="navbarDropdown">--}}
-                        {{--<a class="dropdown-item {{ Request::is('*contact-with-me*') ? 'active' : '' }}"--}}
-                           {{--href="{{ route('contact-with-me.index') }}"><i--}}
-                                    {{--class="fas  fa-link"></i> {{ __('admin.contact-with-me') }}</a>--}}
-                        {{--<a class="dropdown-item {{ Request::is('*knowledge-of-languages*') ? 'active' : '' }}"--}}
-                           {{--href="{{ route('knowledge-of-languages.index') }}"><i--}}
-                                    {{--class="fas  fa-language"></i> {{ __('admin.knowledge-of-languages') }}</a>--}}
-                        {{--<a class="dropdown-item {{ Request::is('*courses*') ? 'active' : '' }}"--}}
-                           {{--href="{{ route('courses.index') }}"><i--}}
-                                    {{--class="fas fa-book-open"></i> {{ __('admin.courses') }}--}}
-                        {{--</a>--}}
-                        {{--<a class="dropdown-item {{ Request::is('*educations*') ? 'active' : '' }}"--}}
-                           {{--href="{{ route('educations.index') }}"><i--}}
-                                    {{--class="fas fa-graduation-cap"></i> {{ __('admin.educations') }}--}}
-                        {{--</a>--}}
-                        {{--<a class="dropdown-item {{ Request::is('*about-me*') ? 'active' : '' }}"--}}
-                           {{--href="{{ route('about-me.index') }}"><i class="fas fa-user"></i> {{ __('admin.about-me') }}--}}
-                        {{--</a>--}}
-                        {{--<a class="dropdown-item {{ Request::is('*experiences*') ? 'active' : '' }}"--}}
-                           {{--href="{{ route('experiences.index') }}"><i--}}
-                                    {{--class="fas fa-building"></i> {{ __('admin.experiences') }}--}}
-                        {{--</a>--}}
-                        {{--<a class="dropdown-item {{ Request::is('*skills*') ? 'active' : '' }}"--}}
-                           {{--href="{{ route('skills.index') }}"><i class="fas fa-list"></i> {{ __('admin.skills') }}</a>--}}
-                        {{--<a class="dropdown-item {{ Request::is('*projects*') ? 'active' : '' }}"--}}
-                           {{--href="{{ route('projects.index') }}"><i--}}
-                                    {{--class="fas fa-briefcase"></i> {{ __('admin.projects') }}--}}
-                        {{--</a>--}}
-                    {{--</div>--}}
-                {{--</li>--}}
-            @endif
-            @if(in_array(Auth::user()->role->name, ['Admin']))
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-users-cog"></i> {{ __('admin.user-manager') }}</a>
+                        <i class="fas fa-shopping-cart"></i> {{ __('admin.nav-online-shop') }}</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item {{ Request::is('*users*') ? 'active' : '' }}"
+                        <a class="dropdown-item {{ Request::is('*goods*') ? 'active' : '' }}"
                            href="{{ route('users.index') }}"><i
-                                    class="fas fa-users"></i> {{ __('admin.users') }}</a>
+                                    class="fas fa-tshirt"></i> {{ __('admin.nav-goods') }}</a>
                         <a class="dropdown-item {{ Request::is('*roles*') ? 'active' : '' }}"
                            href="{{ route('roles.index') }}"><i
                                     class="fas fa-user-shield"></i> {{ __('admin.roles') }}</a>
                     </div>
                 </li>
+                <li class="nav-item {{ Request::is('*subscribes*') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('subscribes.index') }}"><i class="fas fa-bell"></i> {{ __('admin.nav-subscribes') }}
+                    </a>
+                </li>
+            @endif
+            @if(in_array(Auth::user()->role->name, ['Admin']))
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-cogs"></i> {{ __('admin.settings') }}</a>
+                        <i class="fas fa-users-cog"></i> {{ __('admin.nav-user-manager') }}</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item {{ Request::is('*users*') ? 'active' : '' }}"
+                           href="{{ route('users.index') }}"><i
+                                    class="fas fa-users"></i> {{ __('admin.nav-users') }}</a>
+                        <a class="dropdown-item {{ Request::is('*roles*') ? 'active' : '' }}"
+                           href="{{ route('roles.index') }}"><i
+                                    class="fas fa-user-shield"></i> {{ __('admin.nav-roles') }}</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-cogs"></i> {{ __('admin.nav-settings') }}</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item {{ Request::is('*settings*') ? 'active' : '' }}"
                            href="{{ route('admin.settings') }}"><i
-                                    class="fas fa-wrench"></i> {{ __('admin.settings') }}</a>
+                                    class="fas fa-wrench"></i> {{ __('admin.nav-settings') }}</a>
                         <a class="dropdown-item {{ Request::is('*logs*') ? 'active' : '' }}"
                            href="{{ route('admin.logs') }}"><fa-cogsi
-                                    class="fas fa-calendar"></fa-cogsi> {{ __('admin.logs') }}</a>
+                                    class="fas fa-calendar"></fa-cogsi> {{ __('admin.nav-logs') }}</a>
                     </div>
                 </li>
             @endif
@@ -85,10 +67,10 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item {{ url()->current() == route('profile.index') ? 'active' : '' }}"
                        href="{{ route('profile.index') }}"><i
-                                class="far fa-user-circle"></i> {{ __('admin.profile') }}</a>
+                                class="far fa-user-circle"></i> {{ __('admin.nav-profile') }}</a>
                     <a class="dropdown-item" href="{{ route('logout') }}"
                        onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i
-                                class="fas fa-sign-out-alt"></i> {{ __('admin.logout') }}</a>
+                                class="fas fa-sign-out-alt"></i> {{ __('admin.nav-logout') }}</a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
                     </form>

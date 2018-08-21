@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Subscribe;
 use App\Http\Requests\Subscribe as SubscribeRequest;
 use App\Setting;
+use App\Http\Requests\Contact as ContactRequest;
+use Illuminate\Support\Facades\Mail;
 
 class SiteController extends Controller
 {
@@ -26,7 +28,7 @@ class SiteController extends Controller
         return view('site.pages.contact', compact('setting'));
     }
 
-    public function contactpost()
+    public function contactpost(ContactRequest $request)
     {
         $setting = Setting::find(1);
         return view('site.pages.contact', compact('setting'));
