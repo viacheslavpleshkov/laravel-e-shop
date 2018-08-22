@@ -27,6 +27,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
     Route::group(['roles' => ['Admin']], function () {
         Route::resource('users', 'UserController');
         Route::resource('wishlists', 'WishlistController');
+        Route::resource('purchased-commodities', 'PurchasedcommoditiesController');
         Route::get('roles', 'RoleController@index')->name('roles.index');
         Route::get('role/{id}', 'RoleController@show')->name('roles.show');
         Route::get('roles/{id}/edit', 'RoleController@edit')->name('roles.edit');
@@ -56,10 +57,12 @@ Route::namespace('Site')->group(function () {
     Route::get('help-accessories', 'HelpController@accessories')->name('site.help-accessories');
     Route::get('help-brands', 'HelpController@brands')->name('site.help-brands');
     Route::put('subscribe', 'SiteController@subscribe')->name('site.subscribe');
-    Route::get('profile/create-wishlist', 'SiteController@create-wishlist')->name('site.create-wishlist');Route::get('profile', 'ProfileController@index')->name('profile.index');
+    Route::get('profile', 'ProfileController@index')->name('profile.index');
     Route::get('profile/{id}/edit', 'ProfileController@edit')->name('profile.edit');
     Route::put('profile/{id}/edit', 'ProfileController@updateedit');
     Route::get('profile/{id}/password', 'ProfileController@password')->name('profile.password');
     Route::put('profile/{id}/password', 'ProfileController@updatepassword');
     Route::delete('profile/{id}', 'ProfileController@destroy')->name('profile.destroy');
+    Route::get('profile/wishlist', 'ProfileController@wishlist')->name('profile.wishlist');
+    Route::get('profile/purchased-commodities', 'ProfileController@purchasedcommodities')->name('profile.purchased-commodities');
 });

@@ -71,6 +71,33 @@ return [
     'contact-subject' => 'Subject',
     'contact-message' => 'Message',
     'contact-submit' => 'SUBMIT',
+    //profile
+    'profile-title' => 'Profile',
+    'profile-firstname' => 'First name:',
+    'profile-lastname' => 'Last name:',
+    'profile-number' => 'Mobile Number:',
+    'profile-email' => 'Email:',
+    'profile-password' => 'Password:',
+    'profile-role' => 'Role:',
+    'profile-new-password' => 'New password',
+    'profile-confirm-password' => 'Confirm Password',
+    'profile-enter-password' => 'Enter password',
+    'profile-enter-confirm-password' => 'Enter confirm password',
+    'profile-wishlist' => 'Wishlist',
+    'profile-purchased-commodities' => 'Purchased commodities',
+    'profile-edit-profile' => 'Edit profile',
+    'profile-edit-password' => 'Edit password',
+    'profile-delete-user' => 'Delete user',
+    'profile-password-success' => 'Password changed successfully.',
+    'profile-password-error' => 'Sorry, passwords do not match.',
+    'profile-user-deleted' => 'Your user has been deleted.',
+    //help
+    'help-faq' => 'Frequently Asked Questions',
+    'help-men' => 'Help men',
+    'help-women' => 'Help women',
+    'help-kids' => 'Help kids',
+    'help-accessories' => 'Help accessories',
+    'help-brands' => 'Help brands',
 
 
 ];

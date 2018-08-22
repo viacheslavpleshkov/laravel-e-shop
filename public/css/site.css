@@ -10890,3 +10890,24 @@ p.right {
   font-size: 13px;
 }
 
+form {
+  display: inline;
+}
+
+form button {
+  background: transparent;
+  padding: 0;
+  border: 0;
+  color: #816263;
+}
+
+.btn-original {
+  color: #fff;
+  background-color: #816263;
+  border-color: #816263;
+}
+
+.btn-original:hover {
+  color: #fff;
+}
+

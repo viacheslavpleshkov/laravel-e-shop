@@ -160,7 +160,7 @@
                     <ul class="f_nav">
                         <li><a href="{{ route('login') }}">{{ __('site.footer-login') }}</a></li>
                         <li><a href="{{ route('register') }}">{{ __('site.footer-create-an-account') }}</a></li>
-                        <li><a href="{{ route('site.create-wishlist') }}">{{ __('site.footer-create-wishlist') }}</a>
+                        <li><a href="{{ route('profile.wishlist') }}">{{ __('site.footer-create-wishlist') }}</a>
                         </li>
                         <li><a href="{{ route('site.cart') }}">{{ __('site.footer-my-shopping-bag') }}</a></li>
                     </ul>
