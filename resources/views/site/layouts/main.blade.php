@@ -147,7 +147,7 @@
                 <div class="col-md-3 span1_of_4">
                     <h4>{{ __('site.footer-help') }}</h4>
                     <ul class="f_nav">
-                        <li><a href="{{ route('site.faq') }}">{{ __('site.footer-faq') }}</a></li>
+                        <li><a href="{{ route('site.help-faq') }}">{{ __('site.footer-faq') }}</a></li>
                         <li><a href="{{ route('site.help-men') }}">{{ __('site.footer-men') }}</a></li>
                         <li><a href="{{ route('site.help-women') }}">{{ __('site.footer-women') }}</a></li>
                         <li><a href="{{ route('site.help-kids') }}">{{ __('site.footer-kids') }}</a></li>

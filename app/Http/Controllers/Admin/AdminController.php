@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App;
 use App\Setting;
 use App\Help;
+use App\Http\Requests\Help as HelpRequest;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -26,10 +27,10 @@ class AdminController extends Controller
         return view('admin.pages.help', compact('main'));
     }
 
-    public function helpupdate(Request $request)
+    public function helpupdate(HelpRequest $request)
     {
         Help::find(1)->update($request->all());
-        return redirect()->route('admin.settings')->with('success', __('admin.updated-success'));
+        return redirect()->route('admin.help')->with('success', __('admin.updated-success'));
     }
 
     public function settings()

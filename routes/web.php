@@ -49,12 +49,12 @@ Route::namespace('Site')->group(function () {
     Route::get('brands', 'SiteController@brands')->name('site.brands');
     Route::get('trends', 'SiteController@trends')->name('site.trends');
     Route::get('sale', 'SiteController@sale')->name('site.sale');
-    Route::get('faq', 'SiteController@faq')->name('site.faq');
-    Route::get('help-men', 'SiteController@helpmen')->name('site.help-men');
-    Route::get('help-women', 'SiteController@helpwomen')->name('site.help-women');
-    Route::get('help-kids', 'SiteController@helpkids')->name('site.help-kids');
-    Route::get('help-accessories', 'SiteController@helpaccessories')->name('site.help-accessories');
-    Route::get('help-brands', 'SiteController@helpbrands')->name('site.help-brands');
+    Route::get('help-faq', 'HelpController@faq')->name('site.help-faq');
+    Route::get('help-men', 'HelpController@men')->name('site.help-men');
+    Route::get('help-women', 'HelpController@women')->name('site.help-women');
+    Route::get('help-kids', 'HelpController@kids')->name('site.help-kids');
+    Route::get('help-accessories', 'HelpController@accessories')->name('site.help-accessories');
+    Route::get('help-brands', 'HelpController@brands')->name('site.help-brands');
     Route::put('subscribe', 'SiteController@subscribe')->name('site.subscribe');
     Route::get('profile/create-wishlist', 'SiteController@create-wishlist')->name('site.create-wishlist');Route::get('profile', 'ProfileController@index')->name('profile.index');
     Route::get('profile/{id}/edit', 'ProfileController@edit')->name('profile.edit');

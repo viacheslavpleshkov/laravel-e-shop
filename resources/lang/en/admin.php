@@ -24,7 +24,7 @@ return [
     'home-welcome' => 'Improve your skills every day.)',
     'home-url' => 'Go to the site',
     //Help
-    'help-title' => 'Helps',
+    'help-title' => 'Help',
     'help-faq' => 'Frequently Asked Questions',
     'help-men' => 'Men',
     'help-women' => 'Women',
