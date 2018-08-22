@@ -28,6 +28,7 @@ class Setting extends FormRequest
             'tel' => 'required',
             'map' => 'required',
             'email' => 'required',
+            'policytermsandconditions' => 'required',
         ];
     }
 }

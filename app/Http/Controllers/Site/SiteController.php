@@ -36,7 +36,10 @@ class SiteController extends Controller
 
     public function subscribe(SubscribeRequest $request)
     {
-        Subscribe::create(['email' => $request['subscribe']]);
+        Subscribe::create([
+            'email' => $request['subscribe'],
+            'status' => 1
+            ]);
         return redirect()->back();
     }
 }

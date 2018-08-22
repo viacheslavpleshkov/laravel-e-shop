@@ -44,5 +44,6 @@ return [
     'registration-policy-terms-and-conditions' => 'Policy Terms and Conditions.',
     'registration-completely-free-account' => 'Completely Free Account.',
     'registration-completely-free-account-text' => 'Pellentesque neque leo, dictum sit amet accumsan non, dignissim ac mauris. Mauris rhoncus, lectus tincidunt tempus aliquam, odio libero tincidunt metus, sed euismod elit enim ut mi. Nulla porttitor et dolor sed condimentum. Praesent porttitor lorem dui, in pulvinar enim rhoncus vitae. Curabitur tincidunt, turpis ac lobortis hendrerit, ex elit vestibulum est, at faucibus erat ligula non neque.',
-
+    //Policy Terms and Conditions.
+    'policy-terms-and-conditions-title' => 'Policy Terms and Conditions',
 ];

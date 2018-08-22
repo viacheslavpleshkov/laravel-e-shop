@@ -23,14 +23,20 @@
 
         <div class="form-group">
             <label>{{ __('admin.settings-map') }}</label>
-            <input type="text" class="form-control" name="map" value="{{ $main->map }}"
-                   placeholder="{{ __('admin.settings-enter-map') }}" required>
+            <textarea class="form-control" name="map" placeholder="{{ __('admin.settings-enter-map') }}" rows="4"
+                      required>{{ $main->map }}</textarea>
         </div>
 
         <div class="form-group">
             <label>{{ __('admin.settings-email') }}</label>
             <input type="email" class="form-control" name="email" value="{{ $main->email }}"
                    placeholder="{{ __('admin.settings-enter-email') }}" required>
+        </div>
+
+        <div class="form-group">
+            <label>{{ __('admin.settings-policytermsandconditions') }}</label>
+            <textarea class="form-control" name="policytermsandconditions" placeholder="{{ __('admin.settings-enter-policytermsandconditions') }}" rows="15"
+                      required>{{ $main->policytermsandconditions }}</textarea>
         </div>
 
         <button class="btn btn-lg btn-original btn-block" type="submit">{{ __('admin.edit') }}</button>

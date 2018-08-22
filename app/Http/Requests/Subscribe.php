@@ -24,7 +24,8 @@ class Subscribe extends FormRequest
     public function rules()
     {
         return [
-            'subscribe' => 'required|string|email|max:255|unique:subscribes',
+            'email' => 'required|string|email|max:255',
+            'status' => 'required',
         ];
     }
 }

@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App;
 use App\Setting;
-use App\Http\Requests\Setting as SettingRequest;
+use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
@@ -25,13 +25,12 @@ class AdminController extends Controller
         return view('admin.pages.settings', compact('main'));
     }
 
-    public function settingsupdate(SettingRequest $request)
+    public function settingsupdate(Request $request)
     {
+        $request->validate([
+            'subscribe' => 'required|string|email|max:255',
+        ]);
         Setting::find(1)->update($request->all());
         return redirect()->route('admin.settings')->with('success', __('admin.updated-success'));
-    }
-    public function policytermsandconditions()
-    {
-        return 'Hello';
     }
 }
