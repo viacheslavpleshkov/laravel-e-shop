@@ -12,7 +12,8 @@ return [
     'nav-subscribes' => 'Subscribes',
     'nav-user-manager' => 'User Manager',
     'nav-users' => 'Users',
-    'nav-wishlists' => 'Wish List',
+    'nav-wishlists' => 'Wishlist',
+    'nav-purchased-commodities' => 'Purchased commodities',
     'nav-roles' => 'Roles',
     'nav-logs' => 'Logs',
     'nav-settings' => 'Settings',
@@ -65,6 +66,9 @@ return [
     'roles-description' => 'Description',
     'roles-enter-name' => 'Enter name',
     'roles-enter-description' => 'Enter description',
+    //Wishlist
+    'wishlists-title' => 'Wishlist',
+
     //logs
     'logs-title' => 'Logs',
     'logs-level' => 'Level',

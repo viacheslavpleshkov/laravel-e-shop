@@ -54,9 +54,9 @@
                         <a class="dropdown-item {{ Request::is('*wishlists*') ? 'active' : '' }}"
                            href="{{ route('wishlists.index') }}"><i
                                     class="fas fa-list-ul"></i> {{ __('admin.nav-wishlists') }}</a>
-                        <a class="dropdown-item {{ Request::is('*wishlists*') ? 'active' : '' }}"
-                           href="{{ route('wishlists.index') }}"><i
-                                    class="fas fa-list-ol"></i> {{ __('admin.nav-wishlists') }}</a>
+                        <a class="dropdown-item {{ Request::is('*purchased-commodities*') ? 'active' : '' }}"
+                           href="{{ route('purchased-commodities.index') }}"><i
+                                    class="fas fa-list-ol"></i> {{ __('admin.nav-purchased-commodities') }}</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
