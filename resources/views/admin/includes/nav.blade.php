@@ -16,13 +16,23 @@
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-shopping-cart"></i> {{ __('admin.nav-online-shop') }}</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item {{ Request::is('*goods*') ? 'active' : '' }}"
-                           href="{{ route('users.index') }}"><i
-                                    class="fas fa-tshirt"></i> {{ __('admin.nav-goods') }}</a>
-                        <a class="dropdown-item {{ Request::is('*roles*') ? 'active' : '' }}"
-                           href="{{ route('roles.index') }}"><i
-                                    class="fas fa-user-shield"></i> {{ __('admin.roles') }}</a>
+                        <a class="dropdown-item {{ Request::is('*products*') ? 'active' : '' }}"
+                           href="{{ route('products.index') }}"><i
+                                    class="fas fa-tshirt"></i> {{ __('admin.nav-products') }}</a>
+                        <a class="dropdown-item {{ Request::is('*brands*') ? 'active' : '' }}"
+                           href="{{ route('brands.index') }}"><i
+                                    class="fas fa-anchor"></i> {{ __('admin.nav-brands') }}</a>
+                        <a class="dropdown-item {{ Request::is('*mades*') ? 'active' : '' }}"
+                           href="{{ route('mades.index') }}"><i
+                                    class="fas fa-globe"></i> {{ __('admin.nav-mades') }}</a>
+                        <a class="dropdown-item {{ Request::is('*reviews*') ? 'active' : '' }}"
+                           href="{{ route('reviews.index') }}"><i
+                                    class="fas fa-comments"></i> {{ __('admin.nav-reviews') }}</a>
                     </div>
+                </li>
+                <li class="nav-item {{ Request::is('*help*') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('admin.help') }}"><i class="fas fa-question-circle"></i> {{ __('admin.nav-help') }}
+                    </a>
                 </li>
                 <li class="nav-item {{ Request::is('*subscribes*') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('subscribes.index') }}"><i class="fas fa-bell"></i> {{ __('admin.nav-subscribes') }}

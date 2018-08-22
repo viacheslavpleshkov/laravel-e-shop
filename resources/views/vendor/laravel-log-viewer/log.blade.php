@@ -1,6 +1,6 @@
 @extends('admin.layouts.logs')
 
-@section('title',__('admin.logs'))
+@section('title',__('admin.logs-title'))
 
 @section('content')
     @include('admin.includes.title')

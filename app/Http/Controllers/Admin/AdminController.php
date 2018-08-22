@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App;
 use App\Setting;
+use App\Help;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -17,6 +18,18 @@ class AdminController extends Controller
     public function index()
     {
         return view('admin.pages.index');
+    }
+
+    public function help()
+    {
+        $main = Help::find(1);
+        return view('admin.pages.help', compact('main'));
+    }
+
+    public function helpupdate(Request $request)
+    {
+        Help::find(1)->update($request->all());
+        return redirect()->route('admin.settings')->with('success', __('admin.updated-success'));
     }
 
     public function settings()

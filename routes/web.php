@@ -16,10 +16,17 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
         Route::get('/', 'AdminController@index')->name('admin.index');
     });
     Route::group(['roles' => ['Moderator', 'Admin']], function () {
+        Route::resource('products', 'ProductController');
+        Route::resource('brands', 'BrandController');
+        Route::resource('mades', 'MadeController');
+        Route::resource('reviews', 'FeedbackController');
+        Route::get('help', 'AdminController@help')->name('admin.help');
+        Route::put('help', 'AdminController@helpupdate');
         Route::resource('subscribes', 'SubscribeController');
     });
     Route::group(['roles' => ['Admin']], function () {
         Route::resource('users', 'UserController');
+        Route::resource('wishlists', 'WishlistController');
         Route::get('roles', 'RoleController@index')->name('roles.index');
         Route::get('role/{id}', 'RoleController@show')->name('roles.show');
         Route::get('roles/{id}/edit', 'RoleController@edit')->name('roles.edit');
