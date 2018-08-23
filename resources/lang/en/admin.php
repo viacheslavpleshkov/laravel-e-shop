@@ -24,6 +24,12 @@ return [
     'home-hello' => 'Hello',
     'home-welcome' => 'Improve your skills every day.)',
     'home-url' => 'Go to the site',
+    //Products
+    'products-title' => 'Products',
+    'create-products' => 'Create product',
+    'show-products' => 'Show product',
+    'edit-products' => 'Edit product',
+    'products-id' => 'ID',
     //Brands
     'brands-title' => 'Brands',
     'create-brands' => 'Create brand',
@@ -34,6 +40,8 @@ return [
     'brands-images' => 'Images',
     'brands-description' => 'Description',
     'brands-url' => 'Url',
+    'brands-upload' => 'Upload',
+    'brands-choose-file' => 'Choose file',
     'brands-enter-name' => 'Enter name',
     'brands-enter-description' => 'Enter description',
     'brands-enter-url' => 'Enter url',

@@ -1,14 +1,14 @@
 @extends('admin.layouts.main')
 
-@section('title',__('admin.show-brands'))
+@section('title',__('admin.show-subscribes'))
 
 @section('content')
     @include('admin.includes.title')
     <ul class="nav mb-md-3">
         <li>
-            <a href="{{ route('brands.index') }}" class="btn btn-dark">{{ __('admin.back') }}</a>
-            <a href="{{ route('brands.edit', $main->id) }}" class="btn btn-primary">{{ __('admin.update') }}</a>
-            <form action="{{ route('brands.destroy', $main->id) }}" method="POST">
+            <a href="{{ route('subscribes.index') }}" class="btn btn-dark">{{ __('admin.back') }}</a>
+            <a href="{{ route('subscribes.edit', $main->id) }}" class="btn btn-primary">{{ __('admin.update') }}</a>
+            <form action="{{ route('subscribes.destroy', $main->id) }}" method="POST">
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="btn btn-danger">{{ __('admin.delete') }}</button>
@@ -17,24 +17,13 @@
     </ul>
     <table class="table">
         <tr>
-            <th>{{ __('admin.brands-id') }}</th>
+            <th>{{ __('admin.subscribes-id') }}</th>
             <td>{{ $main->id }}</td>
         </tr>
+
         <tr>
-            <th>{{ __('admin.brands-name') }}</th>
-            <td>{{ $main->name }}</td>
-        </tr>
-        <tr>
-            <th>{{ __('admin.brands-images') }}</th>
-            <td><img src="{{ asset('storage/'.$main->images) }}" width="100px"></td>
-        </tr>
-        <tr>
-            <th>{{ __('admin.brands-description') }}</th>
-            <td>{{ $main->description }}</td>
-        </tr>
-        <tr>
-            <th>{{ __('admin.brands-url') }}</th>
-            <td>{{ $main->url }}</td>
+            <th>{{ __('admin.subscribes-email') }}</th>
+            <td>{{ $main->email }}</td>
         </tr>
         <tr>
             <th>{{ __('admin.status') }}</th>

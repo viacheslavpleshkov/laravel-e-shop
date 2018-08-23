@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Brand;
-use App\Http\Requests\Brand as Request;
+use App\Product;
+use App\Http\Requests\Product as Request;
 
 
-class BrandController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,8 @@ class BrandController extends Controller
      */
     public function index()
     {
-        $main = Brand::all();
-        return view('admin.brands.index', compact('main'));
+        $main = Product::all();
+        return view('admin.products.index', compact('main'));
     }
 
     /**
@@ -27,7 +27,7 @@ class BrandController extends Controller
      */
     public function create()
     {
-        return view('admin.brands.create');
+        return view('admin.products.create');
     }
 
     /**
@@ -38,14 +38,8 @@ class BrandController extends Controller
      */
     public function store(Request $request)
     {
-        Brand::create([
-            'name' => $request->name,
-            'images' => $request->file('images')->store('brands','public'),
-            'description' => $request->description,
-            'url' => $request->url,
-            'status' => $request->status,
-        ]);
-        return redirect()->route('brands.index')->with('success', __('admin.created-success'));
+        Product::create($request->all());
+        return redirect()->route('products.index')->with('success', __('admin.created-success'));
     }
 
     /**
@@ -56,8 +50,8 @@ class BrandController extends Controller
      */
     public function show($id)
     {
-        $main = Brand::find($id);
-        return view('admin.brands.show', compact('main'));
+        $main = Product::find($id);
+        return view('admin.products.show', compact('main'));
     }
 
     /**
@@ -68,8 +62,8 @@ class BrandController extends Controller
      */
     public function edit($id)
     {
-        $main = Brand::find($id);
-        return view('admin.brands.edit', compact('main'));
+        $main = Product::find($id);
+        return view('admin.products.edit', compact('main'));
     }
 
     /**
@@ -81,14 +75,8 @@ class BrandController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Brand::find($id)->update([
-            'name' => $request->name,
-            'images' => $request->file('images')->store('brands','public'),
-            'description' => $request->description,
-            'url' => $request->url,
-            'status' => $request->status,
-        ]);
-        return redirect()->route('brands.index')->with('success', __('admin.updated-success'));
+        Product::find($id)->update($request->all());
+        return redirect()->route('products.index')->with('success', __('admin.updated-success'));
     }
 
     /**
@@ -99,7 +87,7 @@ class BrandController extends Controller
      */
     public function destroy($id)
     {
-        Brand::find($id)->delete();
-        return redirect()->route('brands.index')->with('success', __('admin.information-deleted'));
+        Product::find($id)->delete();
+        return redirect()->route('products.index')->with('success', __('admin.information-deleted'));
     }
 }

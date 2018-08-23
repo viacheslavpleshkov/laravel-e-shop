@@ -12,10 +12,15 @@
             <input type="text" class="form-control" name="name" value="{{ old('name') }}"
                    placeholder="{{ __('admin.brands-enter-name') }}" required>
         </div>
-
-        <div class="form-group">
-            <label>{{ __('admin.brands-images') }}</label>
-            <input type="file" id="images" name="images">
+        <label>{{ __('admin.brands-images') }}</label>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">{{ __('admin.brands-upload') }}</span>
+            </div>
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" name="images">
+                <label class="custom-file-label">{{ __('admin.brands-choose-file') }}</label>
+            </div>
         </div>
 
         <div class="form-group">

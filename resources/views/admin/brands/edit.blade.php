@@ -1,19 +1,43 @@
 @extends('admin.layouts.main')
 
-@section('title',__('admin.edit-subscribes'))
+@section('title',__('admin.edit-brands'))
 
 @section('content')
     @include('admin.includes.title')
     @include('admin.includes.error')
-    <form action="{{ route('subscribes.update',$main->id) }}" method="POST">
+    <form action="{{ route('brands.update',$main->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <div class="form-group">
-            <label>{{ __('admin.subscribes-email') }}</label>
-            <input type="email" class="form-control" name="email" value="{{ $main->email }}"
-                   placeholder="{{ __('admin.subscribes-email') }}" required>
+            <label>{{ __('admin.brands-name') }}</label>
+            <input type="text" class="form-control" name="name" value="{{ $main->name }}"
+                   placeholder="{{ __('admin.brands-name') }}" required>
         </div>
 
+        <label>{{ __('admin.brands-images') }}</label><br>
+        <img src="{{ asset('storage/'.$main->images) }}" width="100px" class="mb-3">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">{{ __('admin.brands-upload') }}</span>
+            </div>
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" name="images" value="{{ $main->images }}">
+                <label class="custom-file-label">{{ $main->images }}</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>{{ __('admin.brands-description') }}</label>
+            <input type="text" class="form-control" name="description" value="{{ $main->description }}"
+                   placeholder="{{ __('admin.brands-description') }}" required>
+        </div>
+
+        <div class="form-group">
+            <label>{{ __('admin.brands-url') }}</label>
+            <input type="text" class="form-control" name="url" value="{{ $main->url }}"
+                   placeholder="{{ __('admin.brands-url') }}" required>
+        </div>
+        
         <div class="form-group">
             <label>{{ __('admin.status') }}</label>
             <select class="form-control" name="status" required>
