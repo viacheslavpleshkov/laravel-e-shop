@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Site;
 
 use App\Http\Controllers\Controller;
+use App\Product;
 use App\Subscribe;
 use App\Http\Requests\Subscribe as SubscribeRequest;
 use App\Setting;
@@ -20,6 +21,12 @@ class SiteController extends Controller
     {
         $setting = Setting::find(1);
         return view('site.pages.index', compact('setting'));
+    }
+
+    public function men()
+    {
+        $main = Product::where('type_id', 1)->where('status', 1)->get();
+        return view('site.pages.men',compact('main'));
     }
 
     public function contact()
