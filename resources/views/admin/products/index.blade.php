@@ -23,7 +23,12 @@
             <thead>
             <tr>
                 <th scope="col">{{ __('admin.products-id') }}</th>
-                <th scope="col">{{ __('admin.products-email') }}</th>
+                <th scope="col">{{ __('admin.products-name') }}</th>
+                <th scope="col">{{ __('admin.products-images') }}</th>
+                <th scope="col">{{ __('admin.products-price') }}</th>
+                <th scope="col">{{ __('admin.products-sale') }}</th>
+                <th scope="col">{{ __('admin.products-new') }}</th>
+                <th scope="col">{{ __('admin.products-url') }}</th>
                 <th scope="col">{{ __('admin.status') }}</th>
                 <th scope="col"></th>
             </tr>
@@ -32,7 +37,18 @@
             @foreach($main as $item)
                 <tr>
                     <th scope="row">{{ $item->id }}</th>
-                    <td scope="row">{{ $item->email }}</td>
+                    <td scope="row">{{ $item->name }}</td>
+                    <td scope="row" class="text-center"><img src="{{ asset('storage/'.$item->images) }}" width="100px"></td>
+                    <td scope="row">{{ $item->price }}</td>
+                    <td scope="row">{{ $item->sale }}</td>
+                    <td scope="row">
+                        @if($item->new)
+                            {{ __('admin.enabled') }}
+                        @else
+                            {{ __('admin.disabled') }}
+                        @endif
+                    </td>
+                    <td scope="row">{{ $item->url }}</td>
                     <td scope="row">
                         @if($item->status)
                             {{ __('admin.enabled') }}
@@ -41,9 +57,9 @@
                         @endif
                     </td>
                     <td scope="row">
-                        <a href="{{ route('subscribes.show',$item->id) }}"><i class="far fa-eye"></i></a>
-                        <a href="{{ route('subscribes.edit',$item->id) }}"><i class="fas fa-edit"></i></a>
-                        <form action="{{ route('subscribes.destroy',$item->id) }}" method="POST">
+                        <a href="{{ route('products.show',$item->id) }}"><i class="far fa-eye"></i></a>
+                        <a href="{{ route('products.edit',$item->id) }}"><i class="fas fa-edit"></i></a>
+                        <form action="{{ route('products.destroy',$item->id) }}" method="POST">
                             @csrf
                             @method('DELETE')
                             <button type="submit"><i class="fas fa-trash-alt"></i></button>

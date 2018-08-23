@@ -11,36 +11,18 @@ use Illuminate\Support\Facades\Hash;
 
 class ProfileController extends Controller
 {
-    /**
-     * Display a listing of the resAboProfileProfileutmeource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $main = User::find(Auth::user()->id);
         return view('site.profile.index', compact('main'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         $main = User::find($id);
         return view('site.profile.edit', compact('main'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
     public function updateedit(RequestEdit $request, $id)
     {
         User::find($id)->update([
@@ -52,25 +34,12 @@ class ProfileController extends Controller
         return redirect()->route('profile.index')->with('success', __('admin.updated-success'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
     public function password($id)
     {
         $main = User::find($id);
         return view('site.profile.password', compact('main'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
     public function updatepassword(RequestPassword $request, $id)
     {
         if ($request->password === $request->confirmpassword) {
@@ -81,12 +50,6 @@ class ProfileController extends Controller
         }
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         User::find($id)->delete();

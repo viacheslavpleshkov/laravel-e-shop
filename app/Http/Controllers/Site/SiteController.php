@@ -13,11 +13,6 @@ use Illuminate\Support\Facades\Mail;
 
 class SiteController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $setting = Setting::find(1);
