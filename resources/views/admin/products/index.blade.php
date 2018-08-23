@@ -28,6 +28,7 @@
                 <th scope="col">{{ __('admin.products-price') }}</th>
                 <th scope="col">{{ __('admin.products-sale') }}</th>
                 <th scope="col">{{ __('admin.products-new') }}</th>
+                <th scope="col">{{ __('admin.products-trend') }}</th>
                 <th scope="col">{{ __('admin.products-url') }}</th>
                 <th scope="col">{{ __('admin.status') }}</th>
                 <th scope="col"></th>
@@ -43,6 +44,13 @@
                     <td scope="row">{{ $item->sale }}</td>
                     <td scope="row">
                         @if($item->new)
+                            {{ __('admin.enabled') }}
+                        @else
+                            {{ __('admin.disabled') }}
+                        @endif
+                    </td>
+                    <td scope="row">
+                        @if($item->trend)
                             {{ __('admin.enabled') }}
                         @else
                             {{ __('admin.disabled') }}

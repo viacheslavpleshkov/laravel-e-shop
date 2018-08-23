@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Brand;
 use App\Http\Controllers\Controller;
+use App\Made;
 use App\Product;
 use App\Http\Requests\Product as Request;
-
+use App\Type;
+use App\User;
+use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
@@ -27,7 +31,10 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('admin.products.create');
+        $type = Type::all();
+        $brand = Brand::where('status', 1)->get();
+        $made = Made::where('status', 1)->get();
+        return view('admin.products.create', compact('type', 'brand', 'made'));
     }
 
     /**
@@ -38,7 +45,24 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        Product::create($request->all());
+        Product::create([
+            'name' => $request->name,
+            'images' => $request->file('images')->store('products','public'),
+            'description' => $request->description,
+            'type_id' => $request->type_id,
+            'price' => $request->price,
+            'sale' => $request->sale,
+            'new' => $request->new,
+            'trend' => $request->trend,
+            'color' => $request->color,
+            'url' => $request->url,
+            'brand_id' => $request->brand_id,
+            'made_id' => $request->made_id,
+            'information' => $request->information,
+            'specifications' => $request->specifications,
+            'user_id' => Auth::user()->id,
+            'status' => $request->status
+        ]);
         return redirect()->route('products.index')->with('success', __('admin.created-success'));
     }
 
@@ -63,7 +87,11 @@ class ProductController extends Controller
     public function edit($id)
     {
         $main = Product::find($id);
-        return view('admin.products.edit', compact('main'));
+        $type = Type::all();
+        $brand = Brand::where('status', 1)->get();
+        $made = Made::where('status', 1)->get();
+        $user = User::all();
+        return view('admin.products.edit', compact('main', 'type', 'brand', 'made','user'));
     }
 
     /**
@@ -75,7 +103,24 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Product::find($id)->update($request->all());
+        Product::find($id)->update([
+            'name' => $request->name,
+            'images' => $request->file('images')->store('products','public'),
+            'description' => $request->description,
+            'type_id' => $request->type_id,
+            'price' => $request->price,
+            'sale' => $request->sale,
+            'new' => $request->new,
+            'trend' => $request->trend,
+            'color' => $request->color,
+            'url' => $request->url,
+            'brand_id' => $request->brand_id,
+            'made_id' => $request->made_id,
+            'information' => $request->information,
+            'specifications' => $request->specifications,
+            'user_id' => $request->user_id,
+            'status' => $request->status,
+        ]);
         return redirect()->route('products.index')->with('success', __('admin.updated-success'));
     }
 

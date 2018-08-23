@@ -55,7 +55,7 @@
                                     <div class="view view-first">
                                         <div class="inner_content clearfix">
                                             <div class="product_image">
-                                                <img src="{{ asset($item->images) }}" class="img-responsive" alt="">
+                                                <img src="{{ asset('storage/'.$item->images) }}" class="img-responsive" alt="">
                                                 <div class="mask">
                                                     <div class="info">{{ __('site.men-quick-view') }}</div>
                                                 </div>

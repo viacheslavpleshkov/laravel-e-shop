@@ -56,6 +56,16 @@
             </td>
         </tr>
         <tr>
+            <th>{{ __('admin.products-trend') }}</th>
+            <td>
+                @if($main->trend)
+                    {{ __('admin.enabled') }}
+                @else
+                    {{ __('admin.disabled') }}
+                @endif
+            </td>
+        </tr>
+        <tr>
             <th>{{ __('admin.products-color') }}</th>
             <td>{{ $main->color }}</td>
         </tr>

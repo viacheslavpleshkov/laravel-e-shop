@@ -21,7 +21,8 @@ class CreateProductsTable extends Migration
             $table->unsignedInteger('type_id');
             $table->integer('price');
             $table->integer('sale');
-            $table->integer('new');
+            $table->string('new');
+            $table->integer('trend');
             $table->string('color');
             $table->string('url')->unique();
             $table->unsignedInteger('brand_id');
