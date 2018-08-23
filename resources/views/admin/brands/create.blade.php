@@ -5,12 +5,29 @@
 @section('content')
     @include('admin.includes.title')
     @include('admin.includes.error')
-    <form action="{{ route('subscribes.store') }}" method="POST">
+    <form action="{{ route('brands.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
             <label>{{ __('admin.brands-name') }}</label>
-            <input type="email" class="form-control" name="name" value="{{ old('name') }}"
+            <input type="text" class="form-control" name="name" value="{{ old('name') }}"
                    placeholder="{{ __('admin.brands-enter-name') }}" required>
+        </div>
+
+        <div class="form-group">
+            <label>{{ __('admin.brands-images') }}</label>
+            <input type="file" id="images" name="images">
+        </div>
+
+        <div class="form-group">
+            <label>{{ __('admin.brands-description') }}</label>
+            <input type="text" class="form-control" name="description" value="{{ old('description') }}"
+                   placeholder="{{ __('admin.brands-enter-description') }}" required>
+        </div>
+
+        <div class="form-group">
+            <label>{{ __('admin.brands-url') }}</label>
+            <input type="text" class="form-control" name="url" value="{{ old('url') }}"
+                   placeholder="{{ __('admin.brands-enter-url') }}" required>
         </div>
 
         <div class="form-group">

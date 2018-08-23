@@ -38,7 +38,13 @@ class BrandController extends Controller
      */
     public function store(Request $request)
     {
-        Brand::create($request->all());
+        Brand::create([
+            'name' => $request->name,
+            'images' => $request->file('images')->store('uploads','public'),
+            'description' => $request->description,
+            'url' => $request->url,
+            'status' => $request->status,
+        ]);
         return redirect()->route('brands.index')->with('success', __('admin.created-success'));
     }
 
