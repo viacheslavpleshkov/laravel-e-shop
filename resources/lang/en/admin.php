@@ -24,6 +24,27 @@ return [
     'home-hello' => 'Hello',
     'home-welcome' => 'Improve your skills every day.)',
     'home-url' => 'Go to the site',
+    //Brands
+    'brands-title' => 'Brands',
+    'create-brands' => 'Create brand',
+    'show-brands' => 'Show brand',
+    'edit-brands' => 'Edit brand',
+    'brands-id' => 'ID',
+    'brands-name' => 'Name',
+    'brands-images' => 'Images',
+    'brands-description' => 'Description',
+    'brands-url' => 'Url',
+    'brands-enter-name' => 'Enter name',
+    'brands-enter-description' => 'Enter description',
+    'brands-enter-url' => 'Enter url',
+    //Mades
+    'mades-title' => 'Mades',
+    'create-mades' => 'Create made',
+    'show-mades' => 'Show made',
+    'edit-mades' => 'Edit made',
+    'mades-id' => 'ID',
+    'mades-name' => 'Name',
+    'mades-enter-name' => 'Enter name',
     //Help
     'help-title' => 'Help',
     'help-faq' => 'Frequently Asked Questions',
@@ -68,7 +89,6 @@ return [
     'roles-enter-description' => 'Enter description',
     //Wishlist
     'wishlists-title' => 'Wishlist',
-
     //logs
     'logs-title' => 'Logs',
     'logs-level' => 'Level',

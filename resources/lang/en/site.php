@@ -62,6 +62,11 @@ return [
     'home-latest-products-kids' => 'Latest Products Kids',
     'home-latest-products-accessories' => 'Latest Products Accessories',
     'home-quick-view' => 'Quick View',
+    //Men
+    'men-title' => 'Men',
+    'men-manufacturers' => 'Manufacturers',
+    'men-quick-view' => 'Quick View',
+    'men-add-to-cart' => 'Add to cart',
     //contact
     'contact-title' => 'Contact',
     'contact-find-us-here' => 'FIND US HERE',

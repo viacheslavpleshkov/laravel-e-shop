@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Site;
 
+use App\Brand;
 use App\Http\Controllers\Controller;
 use App\Product;
 use App\Subscribe;
@@ -26,7 +27,26 @@ class SiteController extends Controller
     public function men()
     {
         $main = Product::where('type_id', 1)->where('status', 1)->get();
-        return view('site.pages.men',compact('main'));
+        $brands = Brand::where('status', 1)->get();
+         return view('site.pages.men', compact('main','brands'));
+    }
+
+    public function women()
+    {
+        $main = Product::where('type_id', 2)->where('status', 1)->get();
+        return view('site.pages.women', compact('main'));
+    }
+
+    public function kids()
+    {
+        $main = Product::where('type_id', 3)->where('status', 1)->get();
+        return view('site.pages.kids', compact('main'));
+    }
+
+    public function accessories()
+    {
+        $main = Product::where('type_id', 4)->where('status', 1)->get();
+        return view('site.pages.accessories', compact('main'));
     }
 
     public function contact()
@@ -37,8 +57,26 @@ class SiteController extends Controller
 
     public function contactpost(ContactRequest $request)
     {
-        $setting = Setting::find(1);
-        return view('site.pages.contact', compact('setting'));
+        return redirect()->back();
+    }
+
+    public function new()
+    {
+        $main = Product::where('new', 1)->where('status', 1)->get();
+        return view('site.pages.new', compact('main'));
+
+    }
+
+    public function brands()
+    {
+    }
+
+    public function trends()
+    {
+    }
+
+    public function sale()
+    {
     }
 
     public function subscribe(SubscribeRequest $request)
@@ -46,7 +84,7 @@ class SiteController extends Controller
         Subscribe::create([
             'email' => $request['subscribe'],
             'status' => 1
-            ]);
+        ]);
         return redirect()->back();
     }
 }
