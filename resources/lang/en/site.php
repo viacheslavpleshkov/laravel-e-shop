@@ -65,6 +65,7 @@ return [
     //Men
     'men-title' => 'Men',
     'men-manufacturers' => 'Manufacturers',
+    'men-categories' => 'Categories',
     'men-quick-view' => 'Quick View',
     'men-add-to-cart' => 'Add to cart',
     //contact

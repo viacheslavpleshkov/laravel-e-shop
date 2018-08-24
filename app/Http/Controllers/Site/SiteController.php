@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Site;
 
 use App\Brand;
+use App\Category;
 use App\Http\Controllers\Controller;
 use App\Product;
 use App\Subscribe;
@@ -23,7 +24,8 @@ class SiteController extends Controller
     {
         $main = Product::where('type_id', 1)->where('status', 1)->get();
         $brands = Brand::where('status', 1)->get();
-         return view('site.pages.men', compact('main','brands'));
+        $category = Category::where('status', 1)->get();
+        return view('site.pages.men', compact('main', 'category', 'brands'));
     }
 
     public function women()

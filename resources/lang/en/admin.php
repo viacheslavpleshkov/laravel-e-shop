@@ -90,6 +90,16 @@ return [
     'mades-id' => 'ID',
     'mades-name' => 'Name',
     'mades-enter-name' => 'Enter name',
+    //reviews
+    'reviews-title' => 'Reviews',
+    'create-reviews' => 'Create review',
+    'show-reviews' => 'Show review',
+    'edit-reviews' => 'Edit review',
+    'reviews-id' => 'ID',
+    'reviews-user' => 'User',
+    'reviews-product' => 'Product',
+    'reviews-text' => 'Text',
+    'reviews-enter-text' => 'Enter text',
     //Help
     'help-title' => 'Help',
     'help-faq' => 'Frequently Asked Questions',

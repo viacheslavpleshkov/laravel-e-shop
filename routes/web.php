@@ -20,7 +20,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
         Route::resource('categories', 'CategoryController');
         Route::resource('brands', 'BrandController');
         Route::resource('mades', 'MadeController');
-        Route::resource('reviews', 'FeedbackController');
+        Route::resource('reviews', 'ReviewController');
         Route::get('help', 'AdminController@help')->name('admin.help');
         Route::put('help', 'AdminController@helpupdate');
         Route::resource('subscribes', 'SubscribeController');
@@ -41,9 +41,16 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
 Route::namespace('Site')->group(function () {
     Route::get('/', 'SiteController@index')->name('site.index');
     Route::get('men', 'SiteController@men')->name('site.men');
+    Route::get('men-brands/{url}', 'SiteController@menbrands')->name('site.men-brands')->where('url', '[\w\d\-\_]+');
+    Route::get('men-category/{url}', 'SiteController@mencategory')->name('site.men-category')->where('url', '[\w\d\-\_]+');
     Route::get('women', 'SiteController@women')->name('site.women');
+    Route::get('women-brands/{url}', 'SiteController@womenbrands')->name('site.women-brands')->where('url', '[\w\d\-\_]+');
+    Route::get('women-category/{url}', 'SiteController@womencategory')->name('site.women-category')->where('url', '[\w\d\-\_]+');
     Route::get('kids', 'SiteController@kids')->name('site.kids');
+    Route::get('kids-brands/{url}', 'SiteController@kidsbrands')->name('site.kids-brands')->where('url', '[\w\d\-\_]+');
+    Route::get('kids-category/{url}', 'SiteController@kidscategory')->name('site.kids-category')->where('url', '[\w\d\-\_]+');
     Route::get('accessories', 'SiteController@accessories')->name('site.accessories');
+    Route::get('products/{url}', 'SiteController@products')->name('site.products')->where('url', '[\w\d\-\_]+');
     Route::get('cart', 'SiteController@cart')->name('site.cart');
     Route::get('contact', 'SiteController@contact')->name('site.contact');
     Route::put('contact', 'SiteController@contactpost');

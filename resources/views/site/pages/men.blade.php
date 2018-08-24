@@ -7,10 +7,18 @@
         <div class="products-page">
             <div class="products">
                 <div class="product-listy">
+                    <h2>{{ __('site.men-categories') }}</h2>
+                    <ul class="product-list">
+                        @foreach($category as $item)
+                        <li><a href="{{ route('site.men-category',$item->url) }}">{{ $item->name }}</a></li>
+                        @endforeach
+                    </ul>
+                </div>
+                <div class="product-listy">
                     <h2>{{ __('site.men-manufacturers') }}</h2>
                     <ul class="product-list">
                         @foreach($brands as $item)
-                        <li><a href="{{ $item->url }}">{{ $item->name }}</a></li>
+                            <li><a href="{{ route('site.men-brands',$item->url) }}">{{ $item->name }}</a></li>
                         @endforeach
                     </ul>
                 </div>
@@ -55,7 +63,7 @@
                                     <div class="view view-first">
                                         <div class="inner_content clearfix">
                                             <div class="product_image">
-                                                <img src="{{ asset('storage/'.$item->images) }}" class="img-responsive" alt="">
+                                                <img src="" class="img-responsive" alt="">
                                                 <div class="mask">
                                                     <div class="info">{{ __('site.men-quick-view') }}</div>
                                                 </div>
