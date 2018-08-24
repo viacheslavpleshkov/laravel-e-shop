@@ -38,6 +38,10 @@
             <td>{{ $main->type->name }}</td>
         </tr>
         <tr>
+            <th>{{ __('admin.products-category') }}</th>
+            <td>{{ $main->category->name }}</td>
+        </tr>
+        <tr>
             <th>{{ __('admin.products-price') }}</th>
             <td>{{ $main->price }}</td>
         </tr>

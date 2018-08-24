@@ -19,6 +19,7 @@ class CreateProductsTable extends Migration
             $table->string('images');
             $table->string('description');
             $table->unsignedInteger('type_id');
+            $table->unsignedInteger('category_id');
             $table->integer('price');
             $table->integer('sale');
             $table->string('new');
@@ -33,6 +34,7 @@ class CreateProductsTable extends Migration
             $table->integer('status');
             $table->timestamps();
             $table->foreign('type_id')->references('id')->on('types');
+            $table->foreign('category_id')->references('id')->on('categories');
             $table->foreign('brand_id')->references('id')->on('brands');
             $table->foreign('made_id')->references('id')->on('mades');
             $table->foreign('user_id')->references('id')->on('users');

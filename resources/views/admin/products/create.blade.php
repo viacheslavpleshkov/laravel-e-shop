@@ -40,6 +40,15 @@
         </div>
 
         <div class="form-group">
+            <label>{{ __('admin.products-category') }}</label>
+            <select class="form-control" name="category_id" required>
+                @foreach($category as $item)
+                    <option value="{{ $item->id }}">{{ $item->name }}</option>
+                @endforeach
+            </select>
+        </div>
+
+        <div class="form-group">
             <label>{{ __('admin.products-price') }}</label>
             <input type="text" class="form-control" name="price" value="{{ old('price') }}"
                    placeholder="{{ __('admin.products-enter-price') }}" required>

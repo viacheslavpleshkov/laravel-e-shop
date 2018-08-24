@@ -19,6 +19,9 @@
                         <a class="dropdown-item {{ Request::is('*products*') ? 'active' : '' }}"
                            href="{{ route('products.index') }}"><i
                                     class="fas fa-tshirt"></i> {{ __('admin.nav-products') }}</a>
+                        <a class="dropdown-item {{ Request::is('*categories*') ? 'active' : '' }}"
+                           href="{{ route('categories.index') }}"><i
+                                    class="fab fa-amilia"></i> {{ __('admin.nav-categories') }}</a>
                         <a class="dropdown-item {{ Request::is('*brands*') ? 'active' : '' }}"
                            href="{{ route('brands.index') }}"><i
                                     class="fas fa-anchor"></i> {{ __('admin.nav-brands') }}</a>

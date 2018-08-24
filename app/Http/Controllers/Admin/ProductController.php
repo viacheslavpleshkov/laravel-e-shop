@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Brand;
+use App\Category;
 use App\Http\Controllers\Controller;
 use App\Made;
 use App\Product;
@@ -32,9 +33,10 @@ class ProductController extends Controller
     public function create()
     {
         $type = Type::all();
+        $category = Category::where('status', 1)->get();
         $brand = Brand::where('status', 1)->get();
         $made = Made::where('status', 1)->get();
-        return view('admin.products.create', compact('type', 'brand', 'made'));
+        return view('admin.products.create', compact('type', 'category', 'brand', 'made'));
     }
 
     /**
@@ -47,9 +49,10 @@ class ProductController extends Controller
     {
         Product::create([
             'name' => $request->name,
-            'images' => $request->file('images')->store('products','public'),
+            'images' => $request->file('images')->store('products', 'public'),
             'description' => $request->description,
             'type_id' => $request->type_id,
+            'category_id' => $request->category_id,
             'price' => $request->price,
             'sale' => $request->sale,
             'new' => $request->new,
@@ -88,10 +91,11 @@ class ProductController extends Controller
     {
         $main = Product::find($id);
         $type = Type::all();
+        $category = Category::where('status', 1)->get();
         $brand = Brand::where('status', 1)->get();
         $made = Made::where('status', 1)->get();
         $user = User::all();
-        return view('admin.products.edit', compact('main', 'type', 'brand', 'made','user'));
+        return view('admin.products.edit', compact('main', 'type', 'category', 'brand', 'made', 'user'));
     }
 
     /**
@@ -105,9 +109,10 @@ class ProductController extends Controller
     {
         Product::find($id)->update([
             'name' => $request->name,
-            'images' => $request->file('images')->store('products','public'),
+            'images' => $request->file('images')->store('products', 'public'),
             'description' => $request->description,
             'type_id' => $request->type_id,
+            'category_id' => $request->category_id,
             'price' => $request->price,
             'sale' => $request->sale,
             'new' => $request->new,

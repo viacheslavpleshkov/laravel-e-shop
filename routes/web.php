@@ -17,6 +17,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
     });
     Route::group(['roles' => ['Moderator', 'Admin']], function () {
         Route::resource('products', 'ProductController');
+        Route::resource('categories', 'CategoryController');
         Route::resource('brands', 'BrandController');
         Route::resource('mades', 'MadeController');
         Route::resource('reviews', 'FeedbackController');

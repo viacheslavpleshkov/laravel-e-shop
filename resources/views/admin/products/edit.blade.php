@@ -5,7 +5,7 @@
 @section('content')
     @include('admin.includes.title')
     @include('admin.includes.error')
-    <form action="{{ route('products.update',$main->id) }}" enctype="multipart/form-data">
+    <form action="{{ route('products.update',$main->id) }}" method="post" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <div class="form-group">
@@ -37,6 +37,18 @@
             <select class="form-control" name="type_id" required>
                 <option value="{{ $main->type->id }}">{{ $main->type->name }}</option>
             @foreach($type as $item)
+                    @if($main->type->id === $item->id) @continue; @endif
+                    <option value="{{ $item->id }}">{{ $item->name }}</option>
+                @endforeach
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>{{ __('admin.products-category') }}</label>
+            <select class="form-control" name="category_id" required>
+                <option value="{{ $main->category->id }}">{{ $main->category->name }}</option>
+                @foreach($category as $item)
+                    @if($main->category->id === $item->id) @continue; @endif
                     <option value="{{ $item->id }}">{{ $item->name }}</option>
                 @endforeach
             </select>
@@ -97,6 +109,7 @@
             <select class="form-control" name="brand_id" required>
                 <option value="{{ $main->brand->id }}">{{ $main->brand->name }}</option>
             @foreach($brand as $item)
+                    @if($main->brand->id === $item->id) @continue; @endif
                     <option value="{{ $item->id }}">{{ $item->name }}</option>
                 @endforeach
             </select>
@@ -107,6 +120,7 @@
             <select class="form-control" name="made_id" required>
                 <option value="{{ $main->made->id }}">{{ $main->made->name }}</option>
             @foreach($made as $item)
+                    @if($main->made->id === $item->id) @continue; @endif
                     <option value="{{ $item->id }}">{{ $item->name }}</option>
                 @endforeach
             </select>
@@ -129,6 +143,7 @@
             <select class="form-control" name="user_id" required>
                 <option value="{{ $main->user->id }}">{{ $main->user->firstname.' '.$main->user->lastname }}</option>
             @foreach($user as $item)
+                 @if($main->user->id === $item->id) @continue; @endif
                     <option value="{{ $item->id }}">{{ $item->firstname.' '.$item->lastname }}</option>
                 @endforeach
             </select>
