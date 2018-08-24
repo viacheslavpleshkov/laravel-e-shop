@@ -47,11 +47,7 @@
                             <a href=""><img src="images/arrow2.gif" alt="" class="v-middle"></a>
                         </div>
                     </div>
-                    <ul class="women_pagenation">
-                        <li>Page:</li>
-                        <li class="active"><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                    </ul>
+                    {{ $main->links('vendor.pagination.default') }}
                     <div class="clearfix"></div>
                 </div>
                 <div id="cbp-vm" class="cbp-vm-switcher cbp-vm-view-grid">

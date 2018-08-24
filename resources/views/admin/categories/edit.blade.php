@@ -21,6 +21,58 @@
         </div>
 
         <div class="form-group">
+            <label>{{ __('admin.categories-men') }}</label>
+            <select class="form-control" name="men" required>
+                @if($main->men)
+                    <option value="1">{{ __('admin.enabled') }}</option>
+                    <option value="0">{{ __('admin.disabled') }}</option>
+                @else
+                    <option value="0">{{ __('admin.disabled') }}</option>
+                    <option value="1">{{ __('admin.enabled') }}</option>
+                @endif
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>{{ __('admin.categories-women') }}</label>
+            <select class="form-control" name="women" required>
+                @if($main->women)
+                    <option value="1">{{ __('admin.enabled') }}</option>
+                    <option value="0">{{ __('admin.disabled') }}</option>
+                @else
+                    <option value="0">{{ __('admin.disabled') }}</option>
+                    <option value="1">{{ __('admin.enabled') }}</option>
+                @endif
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>{{ __('admin.categories-kids') }}</label>
+            <select class="form-control" name="kids" required>
+                @if($main->kids)
+                    <option value="1">{{ __('admin.enabled') }}</option>
+                    <option value="0">{{ __('admin.disabled') }}</option>
+                @else
+                    <option value="0">{{ __('admin.disabled') }}</option>
+                    <option value="1">{{ __('admin.enabled') }}</option>
+                @endif
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>{{ __('admin.categories-accessories') }}</label>
+            <select class="form-control" name="accessories" required>
+                @if($main->accessories)
+                    <option value="1">{{ __('admin.enabled') }}</option>
+                    <option value="0">{{ __('admin.disabled') }}</option>
+                @else
+                    <option value="0">{{ __('admin.disabled') }}</option>
+                    <option value="1">{{ __('admin.enabled') }}</option>
+                @endif
+            </select>
+        </div>
+
+        <div class="form-group">
             <label>{{ __('admin.status') }}</label>
             <select class="form-control" name="status" required>
                 @if($main->status)

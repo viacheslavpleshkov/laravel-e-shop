@@ -30,6 +30,46 @@
             <td>{{ $main->url }}</td>
         </tr>
         <tr>
+            <th>{{ __('admin.categories-men') }}</th>
+            <td>
+                @if($main->men)
+                    {{ __('admin.enabled') }}
+                @else
+                    {{ __('admin.disabled') }}
+                @endif
+            </td>
+        </tr>
+        <tr>
+            <th>{{ __('admin.categories-women') }}</th>
+            <td>
+                @if($main->women)
+                    {{ __('admin.enabled') }}
+                @else
+                    {{ __('admin.disabled') }}
+                @endif
+            </td>
+        </tr>
+        <tr>
+            <th>{{ __('admin.categories-kids') }}</th>
+            <td>
+                @if($main->kids)
+                    {{ __('admin.enabled') }}
+                @else
+                    {{ __('admin.disabled') }}
+                @endif
+            </td>
+        </tr>
+        <tr>
+            <th>{{ __('admin.categories-accessories') }}</th>
+            <td>
+                @if($main->accessories)
+                    {{ __('admin.enabled') }}
+                @else
+                    {{ __('admin.disabled') }}
+                @endif
+            </td>
+        </tr>
+        <tr>
             <th>{{ __('admin.status') }}</th>
             <td>
                 @if($main->status)

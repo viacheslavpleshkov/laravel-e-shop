@@ -25,6 +25,10 @@
                 <th scope="col">{{ __('admin.categories-id') }}</th>
                 <th scope="col">{{ __('admin.categories-name') }}</th>
                 <th scope="col">{{ __('admin.categories-url') }}</th>
+                <th scope="col">{{ __('admin.categories-men') }}</th>
+                <th scope="col">{{ __('admin.categories-women') }}</th>
+                <th scope="col">{{ __('admin.categories-kids') }}</th>
+                <th scope="col">{{ __('admin.categories-accessories') }}</th>
                 <th scope="col">{{ __('admin.status') }}</th>
                 <th scope="col"></th>
             </tr>
@@ -35,6 +39,34 @@
                     <th scope="row">{{ $item->id }}</th>
                     <td scope="row">{{ $item->name }}</td>
                     <td scope="row">{{ $item->url }}</td>
+                    <td scope="row">
+                        @if($item->men)
+                            {{ __('admin.enabled') }}
+                        @else
+                            {{ __('admin.disabled') }}
+                        @endif
+                    </td>
+                    <td scope="row">
+                        @if($item->women)
+                            {{ __('admin.enabled') }}
+                        @else
+                            {{ __('admin.disabled') }}
+                        @endif
+                    </td>
+                    <td scope="row">
+                        @if($item->kids)
+                            {{ __('admin.enabled') }}
+                        @else
+                            {{ __('admin.disabled') }}
+                        @endif
+                    </td>
+                    <td scope="row">
+                        @if($item->accessories)
+                            {{ __('admin.enabled') }}
+                        @else
+                            {{ __('admin.disabled') }}
+                        @endif
+                    </td>
                     <td scope="row">
                         @if($item->status)
                             {{ __('admin.enabled') }}

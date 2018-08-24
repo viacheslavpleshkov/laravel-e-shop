@@ -4,6 +4,7 @@ return [
     //general
     'title' => 'E-shop',
     'all-rights-reserved' => 'All rights reserved.',
+    'page' => 'Page:',
     //nav
     'nav-home' => 'Home',
     'nav-men' => 'Men',
@@ -68,6 +69,13 @@ return [
     'men-categories' => 'Categories',
     'men-quick-view' => 'Quick View',
     'men-add-to-cart' => 'Add to cart',
+    //trends
+    'trends-title' => 'Trends',
+    'trends-brands' => 'Brands',
+    'trends-mades' => 'Mades',
+    'trends-categories' => 'Categories',
+    'trends-quick-view' => 'Quick View',
+    'trends-add-to-cart' => 'Add to cart',
     //contact
     'contact-title' => 'Contact',
     'contact-find-us-here' => 'FIND US HERE',

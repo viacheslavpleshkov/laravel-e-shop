@@ -17,6 +17,10 @@ class CreateCategoriesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('url')->unique();
+            $table->integer('men');
+            $table->integer('women');
+            $table->integer('kids');
+            $table->integer('accessories');
             $table->integer('status');
             $table->timestamps();
         });

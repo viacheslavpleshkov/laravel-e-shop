@@ -26,6 +26,10 @@ class Category extends FormRequest
         return [
             'name' => 'required',
             'url' => 'required',
+            'men' => 'required',
+            'women' => 'required',
+            'kids' => 'required',
+            'accessories' => 'required',
             'status' => 'required',
         ];
     }

@@ -40,31 +40,44 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
 });
 Route::namespace('Site')->group(function () {
     Route::get('/', 'SiteController@index')->name('site.index');
-    Route::get('men', 'SiteController@men')->name('site.men');
-    Route::get('men-brands/{url}', 'SiteController@menbrands')->name('site.men-brands')->where('url', '[\w\d\-\_]+');
-    Route::get('men-category/{url}', 'SiteController@mencategory')->name('site.men-category')->where('url', '[\w\d\-\_]+');
-    Route::get('women', 'SiteController@women')->name('site.women');
-    Route::get('women-brands/{url}', 'SiteController@womenbrands')->name('site.women-brands')->where('url', '[\w\d\-\_]+');
-    Route::get('women-category/{url}', 'SiteController@womencategory')->name('site.women-category')->where('url', '[\w\d\-\_]+');
-    Route::get('kids', 'SiteController@kids')->name('site.kids');
-    Route::get('kids-brands/{url}', 'SiteController@kidsbrands')->name('site.kids-brands')->where('url', '[\w\d\-\_]+');
-    Route::get('kids-category/{url}', 'SiteController@kidscategory')->name('site.kids-category')->where('url', '[\w\d\-\_]+');
-    Route::get('accessories', 'SiteController@accessories')->name('site.accessories');
-    Route::get('products/{url}', 'SiteController@products')->name('site.products')->where('url', '[\w\d\-\_]+');
+    Route::get('men', 'ProductController@men')->name('site.men');
+    Route::get('men/{url}', 'ProductController@menview')->name('site.men-view')->where('url', '[\w\d\-\_]+');
+    Route::get('men-brands/{url}', 'ProductController@menbrands')->name('site.men-brands')->where('url', '[\w\d\-\_]+');
+    Route::get('men-category/{url}', 'ProductController@mencategory')->name('site.men-category')->where('url', '[\w\d\-\_]+');
+
+    Route::get('women', 'ProductController@women')->name('site.women');
+    Route::get('women-brands/{url}', 'ProductController@womenbrands')->name('site.women-brands')->where('url', '[\w\d\-\_]+');
+    Route::get('women-category/{url}', 'ProductController@womencategory')->name('site.women-category')->where('url', '[\w\d\-\_]+');
+
+    Route::get('kids', 'ProductController@kids')->name('site.kids');
+    Route::get('kids-brands/{url}', 'ProductController@kidsbrands')->name('site.kids-brands')->where('url', '[\w\d\-\_]+');
+    Route::get('kids-category/{url}', 'ProductController@kidscategory')->name('site.kids-category')->where('url', '[\w\d\-\_]+');
+
+    Route::get('accessories', 'ProductController@accessories')->name('site.accessories');
+    Route::get('men-brands/{url}', 'ProductController@menbrands')->name('site.men-brands')->where('url', '[\w\d\-\_]+');
+
+    Route::get('new', 'ProductController@new')->name('site.new');
+    Route::get('brands', 'ProductController@brands')->name('site.brands');
+    Route::get('trends', 'ProductController@trends')->name('site.trends');
+    Route::get('sale', 'ProductController@sale')->name('site.sale');
+
+    Route::get('category/{url}', 'ProductController@categoryurl')->name('site.categoryurl')->where('url', '[\w\d\-\_]+');
+    Route::get('brands/{url}', 'ProductController@categoryurl')->name('site.categoryurl')->where('url', '[\w\d\-\_]+');
+    Route::get('products/{url}', 'ProductController@productsurl')->name('site.productsurl')->where('url', '[\w\d\-\_]+');
+
     Route::get('cart', 'SiteController@cart')->name('site.cart');
     Route::get('contact', 'SiteController@contact')->name('site.contact');
     Route::put('contact', 'SiteController@contactpost');
-    Route::get('new', 'SiteController@new')->name('site.new');
-    Route::get('brands', 'SiteController@brands')->name('site.brands');
-    Route::get('trends', 'SiteController@trends')->name('site.trends');
-    Route::get('sale', 'SiteController@sale')->name('site.sale');
+
     Route::get('help-faq', 'HelpController@faq')->name('site.help-faq');
     Route::get('help-men', 'HelpController@men')->name('site.help-men');
     Route::get('help-women', 'HelpController@women')->name('site.help-women');
     Route::get('help-kids', 'HelpController@kids')->name('site.help-kids');
     Route::get('help-accessories', 'HelpController@accessories')->name('site.help-accessories');
     Route::get('help-brands', 'HelpController@brands')->name('site.help-brands');
+
     Route::put('subscribe', 'SiteController@subscribe')->name('site.subscribe');
+
     Route::get('profile', 'ProfileController@index')->name('profile.index');
     Route::get('profile/{id}/edit', 'ProfileController@edit')->name('profile.edit');
     Route::put('profile/{id}/edit', 'ProfileController@updateedit');
