@@ -65,6 +65,10 @@ return [
     'categories-id' => 'ID',
     'categories-name' => 'Name',
     'categories-url' => 'Url',
+    'categories-men' => 'Men',
+    'categories-women' => 'Women',
+    'categories-kids' => 'Kids',
+    'categories-accessories' => 'Accessories',
     'categories-enter-name' => 'Enter name',
     'categories-enter-url' => 'Enter url',
     //Brands
@@ -90,7 +94,7 @@ return [
     'mades-id' => 'ID',
     'mades-name' => 'Name',
     'mades-enter-name' => 'Enter name',
-    //reviews
+    //Reviews
     'reviews-title' => 'Reviews',
     'create-reviews' => 'Create review',
     'show-reviews' => 'Show review',

@@ -20,6 +20,14 @@ class BrandsTableSeeder extends Seeder
         $category_gucci->status = 1;
         $category_gucci->save();
 
+        $category_tommyhilfiger = new Brand();
+        $category_tommyhilfiger->name = 'Tommy Hilfiger';
+        $category_tommyhilfiger->images = 'brands/tommyhilfiger.png';
+        $category_tommyhilfiger->description = 'Tommy Hilfiger, formerly known as Tommy Hilfiger Corporation and Tommy Hilfiger Inc., is an American multinational corporation that designs and manufactures lower market apparel for men, women and ...';
+        $category_tommyhilfiger->url = 'tommyhilfiger';
+        $category_tommyhilfiger->status = 1;
+        $category_tommyhilfiger->save();
+
         $category_reserved = new Brand();
         $category_reserved->name = 'Reserved';
         $category_reserved->images = 'brands/reserved.png';
