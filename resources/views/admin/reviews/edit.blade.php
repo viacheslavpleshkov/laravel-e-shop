@@ -11,10 +11,10 @@
         <div class="form-group">
             <label>{{ __('admin.reviews-user') }}</label>
             <select class="form-control" name="user_id" required>
-                <option value="{{ $main->user->id }}">{{ $main->user->firstname.' '.$main->user->lastname }}</option>
+                <option value="{{ $main->user->id }}">{{ $main->user->name }}</option>
                 @foreach($user as $item)
                     @if($main->user->id === $item->id) @continue; @endif
-                    <option value="{{ $item->id }}">{{ $item->firstname.' '.$item->lastname }}</option>
+                    <option value="{{ $item->id }}">{{ $item->name }}</option>
                 @endforeach
             </select>
         </div>

@@ -23,8 +23,7 @@
             <thead>
             <tr>
                 <th scope="col">{{ __('admin.users-id') }}</th>
-                <th scope="col">{{ __('admin.users-firstname') }}</th>
-                <th scope="col">{{ __('admin.users-lastname') }}</th>
+                <th scope="col">{{ __('admin.users-name') }}</th>
                 <th scope="col">{{ __('admin.users-number') }}</th>
                 <th scope="col">{{ __('admin.users-email') }}</th>
                 <th scope="col">{{ __('admin.users-password') }}</th>
@@ -36,8 +35,7 @@
             @foreach($main as $item)
                 <tr>
                     <th scope="row">{{ $item->id }}</th>
-                    <td scope="row">{{ $item->firstname }}</td>
-                    <td scope="row">{{ $item->lastname }}</td>
+                    <td scope="row">{{ $item->name }}</td>
                     <td scope="row">{{ $item->number }}</td>
                     <td scope="row">{{ $item->email }}</td>
                     <td scope="row">

@@ -21,12 +21,8 @@
             <td>{{ $main->id }}</td>
         </tr>
         <tr>
-            <th>{{ __('admin.users-firstname') }}</th>
-            <td>{{ $main->firstname }}</td>
-        </tr>
-        <tr>
-            <th>{{ __('admin.users-lastname') }}</th>
-            <td>{{ $main->lastname }}</td>
+            <th>{{ __('admin.users-name') }}</th>
+            <td>{{ $main->name }}</td>
         </tr>
         <tr>
             <th>{{ __('admin.users-number') }}</th>

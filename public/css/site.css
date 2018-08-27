@@ -11264,3 +11264,67 @@ a.cbp-vm-icon.cbp-vm-grid.cbp-vm-selected {
   }
 }
 
+.btn-github {
+  background: #292d32;
+  color: #FFFFFF;
+  font-size: 1em;
+  padding: 0.7em 1.2em;
+  transition: 0.5s all;
+  -webkit-transition: 0.5s all;
+  -moz-transition: 0.5s all;
+  -o-transition: 0.5s all;
+  display: inline-block;
+  text-transform: uppercase;
+  border: none;
+  outline: none;
+  width: 48%;
+}
+
+.btn-google {
+  background: #f6002c;
+  color: #FFFFFF;
+  font-size: 1em;
+  padding: 0.7em 1.2em;
+  transition: 0.5s all;
+  -webkit-transition: 0.5s all;
+  -moz-transition: 0.5s all;
+  -o-transition: 0.5s all;
+  display: inline-block;
+  text-transform: uppercase;
+  border: none;
+  outline: none;
+  width: 48%;
+}
+
+.btn-facebook {
+  background: #49459e;
+  color: #FFFFFF;
+  font-size: 1em;
+  padding: 0.7em 1.2em;
+  transition: 0.5s all;
+  -webkit-transition: 0.5s all;
+  -moz-transition: 0.5s all;
+  -o-transition: 0.5s all;
+  display: inline-block;
+  text-transform: uppercase;
+  border: none;
+  outline: none;
+  width: 48%;
+}
+
+.btn-twitter {
+  background: #00a2f0;
+  color: #FFFFFF;
+  font-size: 1em;
+  padding: 0.7em 1.2em;
+  transition: 0.5s all;
+  -webkit-transition: 0.5s all;
+  -moz-transition: 0.5s all;
+  -o-transition: 0.5s all;
+  display: inline-block;
+  text-transform: uppercase;
+  border: none;
+  outline: none;
+  width: 48%;
+}
+

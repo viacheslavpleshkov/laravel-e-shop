@@ -30,12 +30,8 @@
                         <div class="bs-docs-example">
                             <table class="table table-bordered">
                                 <tr>
-                                    <th>{{ __('site.profile-firstname') }}</th>
-                                    <td>{{ $main->firstname }}</td>
-                                </tr>
-                                <tr>
-                                    <th>{{ __('site.profile-lastname') }}</th>
-                                    <td>{{ $main->lastname }}</td>
+                                    <th>{{ __('site.profile-name') }}</th>
+                                    <td>{{ $main->name }}</td>
                                 </tr>
                                 <tr>
                                     <th>{{ __('site.profile-number') }}</th>

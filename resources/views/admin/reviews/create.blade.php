@@ -11,7 +11,7 @@
             <label>{{ __('admin.reviews-user') }}</label>
             <select class="form-control" name="user_id" required>
                 @foreach($user as $item)
-                    <option value="{{ $item->id }}">{{ $item->firstname.' '.$item->lastname }}</option>
+                    <option value="{{ $item->id }}">{{ $item->name }}</option>
                 @endforeach
             </select>
         </div>

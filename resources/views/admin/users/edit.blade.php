@@ -9,15 +9,9 @@
         @csrf
         @method('PUT')
         <div class="form-group">
-            <label>{{ __('admin.users-firstname') }}</label>
-            <input type="text" class="form-control" name="firstname" value="{{ $main->firstname }}"
-                   placeholder="{{ __('admin.users-enter-firstname') }}" required>
-        </div>
-
-        <div class="form-group">
-            <label>{{ __('admin.users-lastname') }}</label>
-            <input type="text" class="form-control" name="lastname" value="{{ $main->lastname }}"
-                   placeholder="{{ __('admin.users-enter-lastname') }}" required>
+            <label>{{ __('admin.users-name') }}</label>
+            <input type="text" class="form-control" name="name" value="{{ $main->name }}"
+                   placeholder="{{ __('admin.users-enter-name') }}" required>
         </div>
 
         <div class="form-group">

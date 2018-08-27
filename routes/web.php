@@ -9,6 +9,8 @@ Route::group(['prefix' => 'auth', 'namespace' => 'Auth'], function () {
     Route::post('password/email', 'ForgotPasswordController@sendResetLinkEmail')->name('password.email');
     Route::get('password/reset/{token}', 'ResetPasswordController@showResetForm')->name('password.reset');
     Route::post('password/reset', 'ResetPasswordController@reset');
+    Route::get('socialite/{provider}', 'AuthController@redirectToProvider');
+    Route::get('socialite/{provider}/callback', 'AuthController@handleProviderCallback');
     Route::get('policy-terms-and-conditions', 'AuthController@policytermsandconditions')->name('policy-terms-and-conditions');
 });
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth', 'roles'], 'block' => ['User']], function () {

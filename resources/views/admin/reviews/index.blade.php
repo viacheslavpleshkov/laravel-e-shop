@@ -34,7 +34,7 @@
             @foreach($main as $item)
                 <tr>
                     <th scope="row">{{ $item->id }}</th>
-                    <td scope="row">{{ $item->user->firstname.' '.$item->user->lastname }}</td>
+                    <td scope="row">{{ $item->user->name }}</td>
                     <td scope="row">{{ $item->product->name }}</td>
                     <td scope="row">{{ $item->text }}</td>
                     <td scope="row">

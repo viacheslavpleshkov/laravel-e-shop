@@ -26,10 +26,9 @@ class ProfileController extends Controller
     public function updateedit(RequestEdit $request, $id)
     {
         User::find($id)->update([
-            'firstname' =>$request->firstname,
-            'lastname' =>$request->lastname,
-            'number' =>$request->number,
-            'email' =>$request->email,
+            'name' => $request->name,
+            'number' => $request->number,
+            'email' => $request->email,
         ]);
         return redirect()->route('profile.index')->with('success', __('admin.updated-success'));
     }

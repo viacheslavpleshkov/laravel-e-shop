@@ -62,9 +62,19 @@
                                     {{ $errors->first('g-recaptcha-response') }}
                                 @endif
                             </div>
-                            <a class="forgot"
-                               href="{{ route('password.request') }}">{{ __('auth.login-forgot-your-password') }}</a>
-                            <input type="submit" value="{{ __('auth.login-submit') }}">
+                            <div>
+                                <a class="forgot"
+                                   href="{{ route('password.request') }}">{{ __('auth.login-forgot-your-password') }}</a>
+                                <input type="submit" value="{{ __('auth.login-submit') }}">
+                            </div>
+                            <div>
+                                <a href="{{ url('auth/socialite/github') }}" class="btn-github text-center">{{ __('auth.login-with-github') }}</a>
+                                <a href="{{ url('auth/socialite/google') }}" class="btn-google text-center">{{ __('auth.login-with-google+') }}</a>
+                            </div>
+                            <div>
+                                <a href="{{ url('auth/socialite/facebook') }}" class="btn-facebook text-center">{{ __('auth.login-with-facebook') }}</a>
+                                <a href="{{ url('auth/socialite/twitter') }}" class="btn-twitter text-center">{{ __('auth.login-with-twitter') }}</a>
+                            </div>
                         </form>
                     </div>
                     <div class="clearfix"></div>

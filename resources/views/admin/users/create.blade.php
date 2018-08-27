@@ -8,15 +8,9 @@
     <form action="{{ route('users.store') }}" method="POST">
         @csrf
         <div class="form-group">
-            <label>{{ __('admin.users-firstname') }}</label>
-            <input type="text" class="form-control" name="firstname" value="{{ old('firstname') }}"
-                   placeholder="{{ __('admin.users-enter-firstname') }}" required>
-        </div>
-
-        <div class="form-group">
-            <label>{{ __('admin.users-lastname') }}</label>
-            <input type="text" class="form-control" name="lastname" value="{{ old('lastname') }}"
-                   placeholder="{{ __('admin.users-enter-lastname') }}" required>
+            <label>{{ __('admin.users-name') }}</label>
+            <input type="text" class="form-control" name="name" value="{{ old('name') }}"
+                   placeholder="{{ __('admin.users-enter-name') }}" required>
         </div>
 
         <div class="form-group">

@@ -22,7 +22,7 @@
         </tr>
         <tr>
             <th>{{ __('admin.reviews-user') }}</th>
-            <td>{{ $main->user->firstname.' '.$main->user->lastname }}</td>
+            <td>{{ $main->user->name }}</td>
         </tr>
         <tr>
             <th>{{ __('admin.reviews-product') }}</th>

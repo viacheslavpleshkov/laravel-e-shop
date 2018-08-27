@@ -95,7 +95,7 @@
         </tr>
         <tr>
             <th>{{ __('admin.products-user') }}</th>
-            <td>{{ $main->user->firstname.' '.$main->user->lastname }}</td>
+            <td>{{ $main->user->name }}</td>
         </tr>
         <tr>
             <th>{{ __('admin.status') }}</th>

@@ -32,26 +32,14 @@
                               aria-label="{{ __('auth.registration-title') }}">
                             @csrf
                             <ul>
-                                <li class="text-info">{{ __('auth.registration-first-name') }}</li>
+                                <li class="text-info">{{ __('auth.registration-name') }}</li>
                                 <li>
                                     <input id="email" type="text"
-                                           class="{{ $errors->has('firstname') ? ' is-invalid' : '' }}"
-                                           name="firstname" value="{{ old('firstname') }}" required>
+                                           class="{{ $errors->has('name') ? ' is-invalid' : '' }}"
+                                           name="name" value="{{ old('name') }}" required>
 
-                                    @if ($errors->has('firstname'))
-                                            {{ $errors->first('firstname') }}
-                                    @endif
-                                </li>
-                            </ul>
-                            <ul>
-                                <li class="text-info">{{ __('auth.registration-last-name') }}</li>
-                                <li>
-                                    <input id="email" type="text"
-                                           class="{{ $errors->has('lastname') ? ' is-invalid' : '' }}"
-                                           name="lastname" value="{{ old('lastname') }}" required>
-
-                                    @if ($errors->has('lastname'))
-                                            {{ $errors->first('lastname') }}
+                                    @if ($errors->has('name'))
+                                            {{ $errors->first('name') }}
                                     @endif
                                 </li>
                             </ul>
@@ -105,6 +93,16 @@
                                 </li>
                             </ul>
                             <input type="submit" value="{{ __('auth.registration-submit') }}">
+                            <div>
+                                <a href="{{ url('auth/socialite/github') }}" class="btn-github text-center">{{ __('auth.register-with-github') }}</a>
+                                <a href="{{ url('auth/socialite/google') }}" class="btn-google text-center">{{ __('auth.register-with-google+') }}</a>
+                            </div>
+                            <br>
+                            <div>
+                                <a href="{{ url('auth/socialite/facebook') }}" class="btn-facebook text-center">{{ __('auth.register-with-facebook') }}</a>
+                                <a href="{{ url('auth/socialite/twitter') }}" class="btn-twitter text-center">{{ __('auth.register-with-twitter') }}</a>
+                            </div>
+                            <br>
                             <p class="click">{{ __('auth.registration-policy-terms-and-conditions-text') }} <a
                                         href="{{ route('policy-terms-and-conditions') }}">{{ __('auth.registration-policy-terms-and-conditions') }}</a>
                             </p>

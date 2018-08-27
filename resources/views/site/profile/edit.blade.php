@@ -29,15 +29,9 @@
                             @csrf
                             @method('PUT')
                             <div class="form-group">
-                                <label>{{ __('site.profile-firstname') }}</label>
-                                <input type="text" class="form-control" name="firstname" value="{{ $main->firstname }}"
-                                       placeholder="{{ __('site.profile-enter-firstname') }}" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label>{{ __('site.profile-lastname') }}</label>
-                                <input type="text" class="form-control" name="lastname" value="{{ $main->lastname }}"
-                                       placeholder="{{ __('site.profile-enter-lastname') }}" required>
+                                <label>{{ __('site.profile-name') }}</label>
+                                <input type="text" class="form-control" name="name" value="{{ $main->name }}"
+                                       placeholder="{{ __('site.profile-enter-name') }}" required>
                             </div>
 
                             <div class="form-group">

@@ -85,10 +85,9 @@ return [
     'contact-subject' => 'Subject',
     'contact-message' => 'Message',
     'contact-submit' => 'SUBMIT',
-    //profile
+    //Profile
     'profile-title' => 'Profile',
-    'profile-firstname' => 'First name:',
-    'profile-lastname' => 'Last name:',
+    'profile-name' => 'Name:',
     'profile-number' => 'Mobile Number:',
     'profile-email' => 'Email:',
     'profile-password' => 'Password:',
