@@ -1,12 +1,12 @@
 let mix = require('laravel-mix');
 
-mix.sass('resources/assets/sass/site.scss', 'public/css');
+mix.sass('resources/sass/site.scss', 'public/css');
 
-mix.js('resources/assets/js/admin.js', 'public/js')
-    .sass('resources/assets/sass/admin.scss', 'public/css');
+mix.js('resources/js/admin.js', 'public/js')
+    .sass('resources/sass/admin.scss', 'public/css');
 
-mix.js('resources/assets/js/logs.js', 'public/js')
-    .sass('resources/assets/sass/logs.scss', 'public/css');
+mix.js('resources/js/logs.js', 'public/js')
+    .sass('resources/sass/logs.scss', 'public/css');
 
-mix.js('resources/assets/js/error.js', 'public/js')
-    .sass('resources/assets/sass/error.scss', 'public/css');
+mix.js('resources/js/error.js', 'public/js')
+    .sass('resources/sass/error.scss', 'public/css');
