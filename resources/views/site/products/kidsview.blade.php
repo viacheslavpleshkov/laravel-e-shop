@@ -7,10 +7,10 @@
         <div class="products-page">
             <div class="products">
                 <div class="product-listy">
-                    <h2>{{ __('site.menview-categories') }}</h2>
+                    <h2>{{ __('site.kidsview-categories') }}</h2>
                     <ul class="product-list">
                         @foreach($category as $item)
-                            <li><a href="{{ route('site.men-category',$item->url) }}" class="{{ Request::is("*$item->url*") ? 'acti' : '' }}">{{ $item->name }}</a></li>
+                            <li><a href="{{ route('site.kids-category',$item->url) }}" class="{{ Request::is("*$item->url*") ? 'acti' : '' }}">{{ $item->name }}</a></li>
                         @endforeach
                     </ul>
                 </div>
@@ -18,7 +18,7 @@
                     <h2>{{ __('site.menview-brands') }}</h2>
                     <ul class="product-list">
                         @foreach($brands as $item)
-                            <li><a href="{{ route('site.men-brands',$item->url) }}" class="{{ Request::is("*$item->url*") ? 'acti' : '' }}">{{ $item->name }}</a></li>
+                            <li><a href="{{ route('site.kids-brands',$item->url) }}" class="{{ Request::is("*$item->url*") ? 'acti' : '' }}">{{ $item->name }}</a></li>
                         @endforeach
                     </ul>
                 </div>
@@ -44,30 +44,30 @@
                     </div>
 
                     <div class="span span1">
-                        <p class="left">{{ __('site.menview-sale') }}</p>
+                        <p class="left">{{ __('site.kidsview-sale') }}</p>
                         <p class="right">{{ $main->sale }}%</p>
                         <div class="clearfix"></div>
                     </div>
 
                     <div class="span span2">
-                        <p class="left">{{ __('site.menview-brand') }}</p>
+                        <p class="left">{{ __('site.kidsview-brand') }}</p>
                         <p class="right">{{ $main->brand->name }}</p>
                         <div class="clearfix"></div>
                     </div>
 
                     <div class="span span3">
-                        <p class="left">{{ __('site.menview-madein') }}</p>
+                        <p class="left">{{ __('site.kidsview-madein') }}</p>
                         <p class="right">{{ $main->made->name }}</p>
                         <div class="clearfix"></div>
                     </div>
 
                     <div class="span span4">
-                        <p class="left">{{ __('site.menview-color') }}</p>
+                        <p class="left">{{ __('site.kidsview-color') }}</p>
                         <p class="right">{{ $main->color }}</p>
                         <div class="clearfix"></div>
                     </div>
                     <div class="span span5">
-                        <p class="left">{{ __('site.menview-trend') }}</p>
+                        <p class="left">{{ __('site.kidsview-trend') }}</p>
                         <p class="right">
                             @if($main->trend)
                                 {{ __('admin.enabled') }}
@@ -85,13 +85,13 @@
                                 @method('PUT')
                                 <input class="simpleCart_shelfItem cbp-vm-icon cbp-vm-add item_add btn-form"
                                        type="submit"
-                                       value="{{ __('site.menview-add-to-wishlist') }}">
+                                       value="{{ __('site.kidsview-add-to-wishlist') }}">
                             </form>
                         @endif
                         <div class="clearfix"></div>
                         <div class="simpleCart_shelfItem">
                             <div class="pricey hide"><span class="item_price">$ {{ $main->price }}</span></div>
-                            <a class="cbp-vm-icon cbp-vm-add item_add" href="#">{{ __('site.menview-add-to-cart') }}</a>
+                            <a class="cbp-vm-icon cbp-vm-add item_add" href="#">{{ __('site.kidsview-add-to-cart') }}</a>
                         </div>
                         <div class="clearfix"></div>
                     </div>
@@ -99,7 +99,7 @@
                 <div class="clearfix"></div>
                 <div class="reviews-tabs">
                     <ul class="nav nav-tabs responsive hidden-xs hidden-sm" id="myTab">
-                        <li class="test-class active text-content">{{ __('site.menview-moreinformation') }}</li>
+                        <li class="test-class active text-content">{{ __('site.kidsview-moreinformation') }}</li>
                     </ul>
                     <div class="tab-content responsive hidden-xs hidden-sm">
                         <div class="tab-pane active">
@@ -109,7 +109,7 @@
                 </div>
                 <div class="reviews-tabs">
                     <ul class="nav nav-tabs responsive hidden-xs hidden-sm" id="myTab">
-                        <li class="test-class active text-content">{{ __('site.menview-specifications') }}</li>
+                        <li class="test-class active text-content">{{ __('site.kidsview-specifications') }}</li>
                     </ul>
                     <div class="tab-content responsive hidden-xs hidden-sm">
                         <div class="tab-pane active">
@@ -119,7 +119,7 @@
                 </div>
                 <div class="reviews-tabs">
                     <ul class="nav nav-tabs responsive hidden-xs hidden-sm" id="myTab">
-                        <li class="test-class active text-content">{{ __('site.menview-reviews') }}</li>
+                        <li class="test-class active text-content">{{ __('site.kidsview-reviews') }}</li>
                     </ul>
                     <div class="tab-content responsive hidden-xs hidden-sm">
                         <div class="tab-pane active">

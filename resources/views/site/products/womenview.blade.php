@@ -10,8 +10,7 @@
                     <h2>{{ __('site.womenview-categories') }}</h2>
                     <ul class="product-list">
                         @foreach($category as $item)
-                            <li><a href="{{ route('site.womenview-category',$item->url) }}"
-                                   class="{{ Request::is("*$item->url*") ? 'acti' : '' }}">{{ $item->name }}</a></li>
+                            <li><a href="{{ route('site.women-category',$item->url) }}" class="{{ Request::is("*$item->url*") ? 'acti' : '' }}">{{ $item->name }}</a></li>
                         @endforeach
                     </ul>
                 </div>
@@ -19,8 +18,7 @@
                     <h2>{{ __('site.womenview-brands') }}</h2>
                     <ul class="product-list">
                         @foreach($brands as $item)
-                            <li><a href="{{ route('site.womenview-brands',$item->url) }}"
-                                   class="{{ Request::is("*$item->url*") ? 'acti' : '' }}">{{ $item->name }}</a></li>
+                            <li><a href="{{ route('site.women-brands',$item->url) }}" class="{{ Request::is("*$item->url*") ? 'acti' : '' }}">{{ $item->name }}</a></li>
                         @endforeach
                     </ul>
                 </div>
@@ -87,7 +85,7 @@
                                 @method('PUT')
                                 <input class="simpleCart_shelfItem cbp-vm-icon cbp-vm-add item_add btn-form"
                                        type="submit"
-                                       value="{{ __('site.menview-add-to-cart') }}">
+                                       value="{{ __('site.womenview-add-to-wishlist') }}">
                             </form>
                         @endif
                         <div class="clearfix"></div>

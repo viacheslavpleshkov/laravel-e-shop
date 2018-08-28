@@ -75,6 +75,7 @@ return [
     'menview-madein' => 'MADE IN',
     'menview-color' => 'COLOR',
     'menview-trend' => 'TREND',
+    'menview-add-to-wishlist' => 'Add to Wishlist',
     'menview-add-to-cart' => 'Add to cart',
     'menview-moreinformation' => 'More Information',
     'menview-specifications' => 'Specifications',

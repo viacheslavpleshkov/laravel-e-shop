@@ -69,11 +69,12 @@ class ProductController extends Controller
         $review = Review::where('product_id', $main->id)->where('status', 1)->get();
         return view('site.products.womenview', compact('main', 'brands', 'category', 'review'));
     }
+
     public function womencategory($url)
     {
-        $womencategory = Category::where('url', $url)->where('status', 1)->where('women', 1)->first();
-        $id = $womencategory->id;
-        $title = $womencategory->name;
+        $mencategory = Category::where('url', $url)->where('status', 1)->where('women', 1)->first();
+        $id = $mencategory->id;
+        $title = $mencategory->name;
         $main = Product::where('type_id', 2)->where('status', 1)->where('category_id', $id)->paginate(20);
         $brands = Brand::where('status', 1)->get();
         $category = Category::where('status', 1)->where('women', 1)->get();
@@ -93,18 +94,80 @@ class ProductController extends Controller
 
     public function kids()
     {
-        $main = Product::where('type_id', 1)->where('status', 1)->get();
+        $main = Product::where('type_id', 3)->where('status', 1)->paginate(20);
         $brands = Brand::where('status', 1)->get();
-        $category = Category::where('status', 1)->get();
-        return view('site.products.men', compact('main', 'category', 'brands'));
+        $category = Category::where('status', 1)->where('kids', 1)->get();
+        return view('site.products.kids', compact('main', 'category', 'brands'));
+    }
+
+    public function kidsview($url)
+    {
+        $main = Product::where('url', "$url")->where('type_id', 3)->where('status', 1)->first();
+        $brands = Brand::where('status', 1)->get();
+        $category = Category::where('status', 1)->where('kids', 1)->get();
+        $review = Review::where('product_id', $main->id)->where('status', 1)->get();
+        return view('site.products.kidsview', compact('main', 'brands', 'category', 'review'));
+    }
+
+    public function kidscategory($url)
+    {
+        $mencategory = Category::where('url', $url)->where('status', 1)->where('kids', 1)->first();
+        $id = $mencategory->id;
+        $title = $mencategory->name;
+        $main = Product::where('type_id', 3)->where('status', 1)->where('category_id', $id)->paginate(20);
+        $brands = Brand::where('status', 1)->get();
+        $category = Category::where('status', 1)->where('kids', 1)->get();
+        return view('site.products.kidscategory', compact('main', 'title', 'category', 'brands'));
+    }
+
+    public function kidsbrands($url)
+    {
+        $menbrands = Brand::where('url', $url)->where('status', 1)->first();
+        $id = $menbrands->id;
+        $title = $menbrands->name;
+        $main = Product::where('type_id', 3)->where('status', 1)->where('brand_id', $id)->paginate(20);
+        $brands = Brand::where('status', 1)->get();
+        $category = Category::where('status', 1)->where('kids', 1)->get();
+        return view('site.products.kidsbrands', compact('main', 'title', 'category', 'brands'));
     }
 
     public function accessories()
     {
-        $main = Product::where('type_id', 1)->where('status', 1)->get();
+        $main = Product::where('type_id', 4)->where('status', 1)->paginate(20);
         $brands = Brand::where('status', 1)->get();
-        $category = Category::where('status', 1)->get();
-        return view('site.products.men', compact('main', 'category', 'brands'));
+        $category = Category::where('status', 1)->where('accessories', 1)->get();
+        return view('site.products.accessories', compact('main', 'category', 'brands'));
+    }
+
+    public function accessoriesview($url)
+    {
+        $main = Product::where('url', "$url")->where('type_id', 4)->where('status', 1)->first();
+        $brands = Brand::where('status', 1)->get();
+        $category = Category::where('status', 1)->where('accessories', 1)->get();
+        $review = Review::where('product_id', $main->id)->where('status', 1)->get();
+        return view('site.products.accessoriesview', compact('main', 'brands', 'category', 'review'));
+    }
+
+    public function accessoriescategory($url)
+    {
+        $mencategory = Category::where('url', $url)->where('status', 1)->where('accessories', 1)->first();
+        $id = $mencategory->id;
+        $title = $mencategory->name;
+        $main = Product::where('type_id', 4)->where('status', 1)->where('category_id', $id)->paginate(20);
+        $brands = Brand::where('status', 1)->get();
+        $category = Category::where('status', 1)->where('accessories', 1)->get();
+        return view('site.products.accessoriescategory', compact('main', 'title', 'category', 'brands'));
+    }
+
+    public function accessoriesbrands($url)
+    {
+        $menbrands = Brand::where('url', $url)->where('status', 1)->first();
+        $id = $menbrands->id;
+        $title = $menbrands->name;
+        $main = Product::where('type_id', 4)->where('status', 1)->where('brand_id', $id)->paginate(20);
+        $brands = Brand::where('status', 1)->get();
+        $category = Category::where('status', 1)->where('accessories', 1)->get();
+        return view('site.products.accessoriesbrands', compact('main', 'title', 'category', 'brands'));
     }
 
     public function new()

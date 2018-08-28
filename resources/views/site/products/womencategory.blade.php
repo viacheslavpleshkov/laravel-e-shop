@@ -18,7 +18,7 @@
                     <h2>{{ __('site.womencategory-brands') }}</h2>
                     <ul class="product-list">
                         @foreach($brands as $item)
-                            <li><a href="{{ route('site.women-category',$item->url) }}" class="{{ Request::is("*$item->url*") ? 'acti' : '' }}">{{ $item->name }}</a></li>
+                            <li><a href="{{ route('site.women-brands',$item->url) }}" class="{{ Request::is("*$item->url*") ? 'acti' : '' }}">{{ $item->name }}</a></li>
                         @endforeach
                     </ul>
                 </div>
@@ -42,7 +42,7 @@
                         @foreach($main as $item)
                             <li>
                                 <a class="cbp-vm-image" href="{{ asset('storage').'/'.$item->images }}">
-                                </a><div class="simpleCart_shelfItem"><a class="cbp-vm-image" href="{{ route('site.womencategory-view',$item->url) }}">
+                                </a><div class="simpleCart_shelfItem"><a class="cbp-vm-image" href="{{ route('site.women-view',$item->url) }}">
                                         <div class="view view-first">
                                             <div class="inner_content clearfix">
                                                 <div class="product_image">
