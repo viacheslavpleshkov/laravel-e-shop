@@ -1,13 +1,13 @@
 @extends('site.layouts.main')
 
-@section('title',$title.' | '.__('site.womencategory-title'))
+@section('title',$title.' | '.__('site.womencategories-title'))
 
 @section('content')
     <div class="container">
         <div class="products-page">
             <div class="products">
                 <div class="product-listy">
-                    <h2>{{ __('site.womencategory-categories') }}</h2>
+                    <h2>{{ __('site.womencategories-categories') }}</h2>
                     <ul class="product-list">
                         @foreach($category as $item)
                             <li><a href="{{ route('site.women-category',$item->url) }}" class="{{ Request::is("*$item->url*") ? 'acti' : '' }}">{{ $item->name }}</a></li>
@@ -15,7 +15,7 @@
                     </ul>
                 </div>
                 <div class="product-listy">
-                    <h2>{{ __('site.womencategory-brands') }}</h2>
+                    <h2>{{ __('site.womencategories-brands') }}</h2>
                     <ul class="product-list">
                         @foreach($brands as $item)
                             <li><a href="{{ route('site.women-brands',$item->url) }}" class="{{ Request::is("*$item->url*") ? 'acti' : '' }}">{{ $item->name }}</a></li>
@@ -48,7 +48,7 @@
                                                 <div class="product_image">
                                                     <img src="{{ asset('storage').'/'.$item->images }}" class="img-responsive" alt="">
                                                     <div class="mask">
-                                                        <div class="info">{{ __('site.womencategory-quick-view') }}</div>
+                                                        <div class="info">{{ __('site.womencategories-quick-view') }}</div>
                                                     </div>
                                                     <div class="product_container">
                                                         <div class="cart-left">
@@ -62,7 +62,7 @@
                                         </div>
                                     </a>
                                     <div class="cbp-vm-details">{{ $item->description }}</div>
-                                    <a class="cbp-vm-icon cbp-vm-add item_add" href="#">{{ __('site.womencategory-add-to-cart') }}</a>
+                                    <a class="cbp-vm-icon cbp-vm-add item_add" href="#">{{ __('site.womencategories-add-to-cart') }}</a>
                                 </div>
                             </li>
                         @endforeach

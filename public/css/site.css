@@ -9634,22 +9634,39 @@ p.right {
 }
 
 .span1 {
-  margin: 18px 0;
+  padding: 15px 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.span2 {
   padding: 15px 0;
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
 }
 
 .span3 {
-  margin: 18px 0;
   padding: 15px 0;
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
 }
 
 .span4 {
-  border-bottom: 1px solid #Eee;
-  padding-bottom: 18px;
+  padding: 15px 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.span5 {
+  padding: 15px 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.span6 {
+  padding: 15px 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
 }
 
 .purchase {

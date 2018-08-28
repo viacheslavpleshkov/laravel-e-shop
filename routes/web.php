@@ -68,9 +68,9 @@ Route::namespace('Site')->group(function () {
     Route::get('trends', 'ProductController@trends')->name('site.trends');
     Route::get('sale', 'ProductController@sale')->name('site.sale');
 
-    Route::get('category/{url}', 'ProductController@categoryurl')->name('site.categoryurl')->where('url', '[\w\d\-\_]+');
-    Route::get('brands/{url}', 'ProductController@categoryurl')->name('site.categoryurl')->where('url', '[\w\d\-\_]+');
-    Route::get('products/{url}', 'ProductController@productsurl')->name('site.productsurl')->where('url', '[\w\d\-\_]+');
+    Route::get('category/{url}', 'ProductController@category')->name('site.category')->where('url', '[\w\d\-\_]+');
+    Route::get('brands/{url}', 'ProductController@brandsurl')->name('site.brandsurl')->where('url', '[\w\d\-\_]+');
+    Route::get('products/{url}', 'ProductController@products')->name('site.products')->where('url', '[\w\d\-\_]+');
 
     Route::put('review/{id}', 'ProductController@review')->name('site.review')->where('id', '[\w\d\-\_]+');
     Route::put('wishlist/{id}', 'ProductController@wishlist')->name('site.wishlist')->where('id', '[\w\d\-\_]+');

@@ -33,16 +33,6 @@
                     <div class="clearfix"></div>
                 </div>
                 <div class="mens-toolbar">
-                    <div class="sort">
-                        <div class="sort-by">
-                            <label>Sort By</label>
-                            <select>
-                                <option value="">Position</option>
-                                <option value="">Name</option>
-                                <option value="">Price</option>
-                            </select>
-                        </div>
-                    </div>
                     {{ $main->links('vendor.pagination.default') }}
                     <div class="clearfix"></div>
                 </div>

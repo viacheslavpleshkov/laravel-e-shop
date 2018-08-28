@@ -1,13 +1,13 @@
 @extends('site.layouts.main')
 
-@section('title',$title.' | '.__('site.accessoriescategory-title'))
+@section('title',$title.' | '.__('site.accessoriescategories-title'))
 
 @section('content')
     <div class="container">
         <div class="products-page">
             <div class="products">
                 <div class="product-listy">
-                    <h2>{{ __('site.accessoriescategory-categories') }}</h2>
+                    <h2>{{ __('site.accessoriescategories-categories') }}</h2>
                     <ul class="product-list">
                         @foreach($category as $item)
                             <li><a href="{{ route('site.accessories-category',$item->url) }}" class="{{ Request::is("*$item->url*") ? 'acti' : '' }}">{{ $item->name }}</a></li>
@@ -15,7 +15,7 @@
                     </ul>
                 </div>
                 <div class="product-listy">
-                    <h2>{{ __('site.accessoriescategory-brands') }}</h2>
+                    <h2>{{ __('site.accessoriescategories-brands') }}</h2>
                     <ul class="product-list">
                         @foreach($brands as $item)
                             <li><a href="{{ route('site.accessories-brands',$item->url) }}" class="{{ Request::is("*$item->url*") ? 'acti' : '' }}">{{ $item->name }}</a></li>
