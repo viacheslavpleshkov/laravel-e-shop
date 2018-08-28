@@ -222,6 +222,26 @@ return [
     'category-categories' => 'Categories',
     'category-quick-view' => 'Quick View',
     'category-add-to-cart' => 'Add to cart',
+    //Brands products
+    'brandsurl-title' => 'Brands',
+    'brandsurl-brands' => 'Brands',
+    'brandsurl-categories' => 'Categories',
+    'brandsurl-quick-view' => 'Quick View',
+    'brandsurl-add-to-cart' => 'Add to cart',
+    //Products View
+    'products-sale' => 'SALE',
+    'products-brand' => 'BRAND',
+    'products-madein' => 'MADE IN',
+    'products-color' => 'COLOR',
+    'products-trend' => 'TREND',
+    'products-brands' => 'Brands',
+    'products-categories' => 'Categories',
+    'products-quick-view' => 'Quick View',
+    'products-add-to-cart' => 'Add to cart',
+    'products-add-to-wishlist' => 'Add to Wishlist',
+    'products-moreinformation' => 'More Information',
+    'products-specifications' => 'Specifications',
+    'products-reviews' => 'Reviews',
     //Review
     'review-text' => 'To leave a review you need to log in.',
     //Contact
