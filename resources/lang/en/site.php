@@ -75,6 +75,7 @@ return [
     'menview-madein' => 'MADE IN',
     'menview-color' => 'COLOR',
     'menview-trend' => 'TREND',
+    'menview-add-to-cart' => 'Add to cart',
     'menview-moreinformation' => 'More Information',
     'menview-specifications' => 'Specifications',
     'menview-reviews' => 'Reviews',
@@ -97,7 +98,9 @@ return [
     'trends-categories' => 'Categories',
     'trends-quick-view' => 'Quick View',
     'trends-add-to-cart' => 'Add to cart',
-    //contact
+    //Review
+    'review-text' => 'To leave a review you need to log in.',
+    //Contact
     'contact-title' => 'Contact',
     'contact-find-us-here' => 'FIND US HERE',
     'contact-contact-form' => 'CONTACT FORM',

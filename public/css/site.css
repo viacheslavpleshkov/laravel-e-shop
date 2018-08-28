@@ -11360,3 +11360,14 @@ a.cbp-vm-icon.cbp-vm-grid.cbp-vm-selected {
   margin-top: 1px;
 }
 
+.btn-form {
+  float: left;
+  width: 50%;
+  font-size: 14px;
+  color: #FFFFFF;
+  text-decoration: underline;
+  text-align: center;
+  letter-spacing: 1px;
+  margin-top: 1px;
+}
+

@@ -7,19 +7,19 @@
         <div class="products-page">
             <div class="products">
                 <div class="product-listy">
-                    <h2>{{ __('site.menview-categories') }}</h2>
+                    <h2>{{ __('site.womenview-categories') }}</h2>
                     <ul class="product-list">
                         @foreach($category as $item)
-                            <li><a href="{{ route('site.menview-category',$item->url) }}"
+                            <li><a href="{{ route('site.womenview-category',$item->url) }}"
                                    class="{{ Request::is("*$item->url*") ? 'acti' : '' }}">{{ $item->name }}</a></li>
                         @endforeach
                     </ul>
                 </div>
                 <div class="product-listy">
-                    <h2>{{ __('site.menview-brands') }}</h2>
+                    <h2>{{ __('site.womenview-brands') }}</h2>
                     <ul class="product-list">
                         @foreach($brands as $item)
-                            <li><a href="{{ route('site.menview-brands',$item->url) }}"
+                            <li><a href="{{ route('site.womenview-brands',$item->url) }}"
                                    class="{{ Request::is("*$item->url*") ? 'acti' : '' }}">{{ $item->name }}</a></li>
                         @endforeach
                     </ul>
@@ -46,30 +46,30 @@
                     </div>
 
                     <div class="span span1">
-                        <p class="left">{{ __('site.menview-sale') }}</p>
+                        <p class="left">{{ __('site.womenview-sale') }}</p>
                         <p class="right">{{ $main->sale }}%</p>
                         <div class="clearfix"></div>
                     </div>
 
                     <div class="span span2">
-                        <p class="left">{{ __('site.menview-brand') }}</p>
+                        <p class="left">{{ __('site.womenview-brand') }}</p>
                         <p class="right">{{ $main->brand->name }}</p>
                         <div class="clearfix"></div>
                     </div>
 
                     <div class="span span3">
-                        <p class="left">{{ __('site.menview-madein') }}</p>
+                        <p class="left">{{ __('site.womenview-madein') }}</p>
                         <p class="right">{{ $main->made->name }}</p>
                         <div class="clearfix"></div>
                     </div>
 
                     <div class="span span4">
-                        <p class="left">{{ __('site.menview-color') }}</p>
+                        <p class="left">{{ __('site.womenview-color') }}</p>
                         <p class="right">{{ $main->color }}</p>
                         <div class="clearfix"></div>
                     </div>
                     <div class="span span5">
-                        <p class="left">{{ __('site.menview-trend') }}</p>
+                        <p class="left">{{ __('site.womenview-trend') }}</p>
                         <p class="right">
                             @if($main->trend)
                                 {{ __('admin.enabled') }}
@@ -93,7 +93,7 @@
                         <div class="clearfix"></div>
                         <div class="simpleCart_shelfItem">
                             <div class="pricey hide"><span class="item_price">$ {{ $main->price }}</span></div>
-                            <a class="cbp-vm-icon cbp-vm-add item_add" href="#">{{ __('site.menview-add-to-cart') }}</a>
+                            <a class="cbp-vm-icon cbp-vm-add item_add" href="#">{{ __('site.womenview-add-to-cart') }}</a>
                         </div>
                         <div class="clearfix"></div>
                     </div>
@@ -101,7 +101,7 @@
                 <div class="clearfix"></div>
                 <div class="reviews-tabs">
                     <ul class="nav nav-tabs responsive hidden-xs hidden-sm" id="myTab">
-                        <li class="test-class active text-content">{{ __('site.menview-moreinformation') }}</li>
+                        <li class="test-class active text-content">{{ __('site.womenview-moreinformation') }}</li>
                     </ul>
                     <div class="tab-content responsive hidden-xs hidden-sm">
                         <div class="tab-pane active">
@@ -111,7 +111,7 @@
                 </div>
                 <div class="reviews-tabs">
                     <ul class="nav nav-tabs responsive hidden-xs hidden-sm" id="myTab">
-                        <li class="test-class active text-content">{{ __('site.menview-specifications') }}</li>
+                        <li class="test-class active text-content">{{ __('site.womenview-specifications') }}</li>
                     </ul>
                     <div class="tab-content responsive hidden-xs hidden-sm">
                         <div class="tab-pane active">
@@ -121,7 +121,7 @@
                 </div>
                 <div class="reviews-tabs">
                     <ul class="nav nav-tabs responsive hidden-xs hidden-sm" id="myTab">
-                        <li class="test-class active text-content">{{ __('site.menview-reviews') }}</li>
+                        <li class="test-class active text-content">{{ __('site.womenview-reviews') }}</li>
                     </ul>
                     <div class="tab-content responsive hidden-xs hidden-sm">
                         <div class="tab-pane active">

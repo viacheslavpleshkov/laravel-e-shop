@@ -7,7 +7,10 @@ use App\Category;
 use App\Http\Controllers\Controller;
 use App\Made;
 use App\Product;
-use App\Setting;
+use App\Review;
+use App\Wishlist;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
@@ -24,7 +27,8 @@ class ProductController extends Controller
         $main = Product::where('url', "$url")->where('type_id', 1)->where('status', 1)->first();
         $brands = Brand::where('status', 1)->get();
         $category = Category::where('status', 1)->where('men', 1)->get();
-        return view('site.products.menview', compact('main','brands','category'));
+        $review = Review::where('product_id', $main->id)->where('status', 1)->get();
+        return view('site.products.menview', compact('main', 'brands', 'category', 'review'));
     }
 
     public function mencategory($url)
@@ -51,10 +55,40 @@ class ProductController extends Controller
 
     public function women()
     {
-        $main = Product::where('type_id', 1)->where('status', 1)->get();
+        $main = Product::where('type_id', 2)->where('status', 1)->paginate(20);
         $brands = Brand::where('status', 1)->get();
-        $category = Category::where('status', 1)->get();
-        return view('site.products.men', compact('main', 'category', 'brands'));
+        $category = Category::where('status', 1)->where('women', 1)->get();
+        return view('site.products.women', compact('main', 'category', 'brands'));
+    }
+
+    public function womenview($url)
+    {
+        $main = Product::where('url', "$url")->where('type_id', 2)->where('status', 1)->first();
+        $brands = Brand::where('status', 1)->get();
+        $category = Category::where('status', 1)->where('women', 1)->get();
+        $review = Review::where('product_id', $main->id)->where('status', 1)->get();
+        return view('site.products.womenview', compact('main', 'brands', 'category', 'review'));
+    }
+    public function womencategory($url)
+    {
+        $womencategory = Category::where('url', $url)->where('status', 1)->where('women', 1)->first();
+        $id = $womencategory->id;
+        $title = $womencategory->name;
+        $main = Product::where('type_id', 2)->where('status', 1)->where('category_id', $id)->paginate(20);
+        $brands = Brand::where('status', 1)->get();
+        $category = Category::where('status', 1)->where('women', 1)->get();
+        return view('site.products.womencategory', compact('main', 'title', 'category', 'brands'));
+    }
+
+    public function womenbrands($url)
+    {
+        $womenbrands = Brand::where('url', $url)->where('status', 1)->first();
+        $id = $womenbrands->id;
+        $title = $womenbrands->name;
+        $main = Product::where('type_id', 2)->where('status', 1)->where('brand_id', $id)->paginate(20);
+        $brands = Brand::where('status', 1)->get();
+        $category = Category::where('status', 1)->where('women', 1)->get();
+        return view('site.products.womenbrands', compact('main', 'title', 'category', 'brands'));
     }
 
     public function kids()
@@ -98,5 +132,28 @@ class ProductController extends Controller
     {
         $main = Product::where('new', 1)->where('status', 1)->get();
         return view('site.products.new', compact('main'));
+    }
+
+    public function review(Request $request, $id)
+    {
+        $request->validate([
+            'text' => 'required|string|max:255',
+        ]);
+        Review::create([
+            'user_id' => Auth::user()->id,
+            'product_id' => $id,
+            'text' => $request['text'],
+            'status' => 1
+        ]);
+        return redirect()->back();
+    }
+
+    public function wishlist($id)
+    {
+        Wishlist::create([
+            'product_id' => $id,
+            'user_id' => Auth::user()->id,
+        ]);
+        return redirect()->back();
     }
 }
