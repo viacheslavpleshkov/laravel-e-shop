@@ -24,8 +24,7 @@ class Profileedit extends FormRequest
     public function rules()
     {
         return [
-            'firstname' => 'required',
-            'lastname' => 'required',
+            'name' => 'required',
             'number' => 'required',
             'email' => 'required',
         ];

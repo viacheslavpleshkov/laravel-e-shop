@@ -81,7 +81,7 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-user"></i> {{ Auth::user()->firstname.' '.Auth::user()->lastname }}
+                    <i class="fas fa-user"></i> {{ Auth::user()->name }}
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item {{ url()->current() == route('profile.index') ? 'active' : '' }}"

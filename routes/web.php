@@ -44,8 +44,8 @@ Route::namespace('Site')->group(function () {
     Route::get('/', 'SiteController@index')->name('site.index');
     Route::get('men', 'ProductController@men')->name('site.men');
     Route::get('men/{url}', 'ProductController@menview')->name('site.men-view')->where('url', '[\w\d\-\_]+');
-    Route::get('men-brands/{url}', 'ProductController@menbrands')->name('site.men-brands')->where('url', '[\w\d\-\_]+');
     Route::get('men-category/{url}', 'ProductController@mencategory')->name('site.men-category')->where('url', '[\w\d\-\_]+');
+    Route::get('men-brands/{url}', 'ProductController@menbrands')->name('site.men-brands')->where('url', '[\w\d\-\_]+');
 
     Route::get('women', 'ProductController@women')->name('site.women');
     Route::get('women-brands/{url}', 'ProductController@womenbrands')->name('site.women-brands')->where('url', '[\w\d\-\_]+');

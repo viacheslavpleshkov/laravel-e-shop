@@ -15,13 +15,38 @@ class ProductController extends Controller
     {
         $main = Product::where('type_id', 1)->where('status', 1)->paginate(20);
         $brands = Brand::where('status', 1)->get();
-        $category = Category::where('status', 1)->get();
+        $category = Category::where('status', 1)->where('men', 1)->get();
         return view('site.products.men', compact('main', 'category', 'brands'));
     }
 
     public function menview($url)
     {
-        return view('site.products.simgle');
+        $main = Product::where('url', "$url")->where('type_id', 1)->where('status', 1)->first();
+        $brands = Brand::where('status', 1)->get();
+        $category = Category::where('status', 1)->where('men', 1)->get();
+        return view('site.products.menview', compact('main','brands','category'));
+    }
+
+    public function mencategory($url)
+    {
+        $mencategory = Category::where('url', $url)->where('status', 1)->where('men', 1)->first();
+        $id = $mencategory->id;
+        $title = $mencategory->name;
+        $main = Product::where('type_id', 1)->where('status', 1)->where('category_id', $id)->paginate(20);
+        $brands = Brand::where('status', 1)->get();
+        $category = Category::where('status', 1)->where('men', 1)->get();
+        return view('site.products.mencategory', compact('main', 'title', 'category', 'brands'));
+    }
+
+    public function menbrands($url)
+    {
+        $menbrands = Brand::where('url', $url)->where('status', 1)->first();
+        $id = $menbrands->id;
+        $title = $menbrands->name;
+        $main = Product::where('type_id', 1)->where('status', 1)->where('brand_id', $id)->paginate(20);
+        $brands = Brand::where('status', 1)->get();
+        $category = Category::where('status', 1)->where('men', 1)->get();
+        return view('site.products.menbrands', compact('main', 'title', 'category', 'brands'));
     }
 
     public function women()

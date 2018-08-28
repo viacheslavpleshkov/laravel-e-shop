@@ -35,15 +35,33 @@
                                 </tr>
                                 <tr>
                                     <th>{{ __('site.profile-number') }}</th>
-                                    <td>{{ $main->number }}</td>
+                                    <td>
+                                        @if ($main->number)
+                                            {{ $main->number }}
+                                        @else
+                                            {{ __('admin.disabled') }}
+                                        @endif
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th>{{ __('site.profile-email') }}</th>
-                                    <td>{{ $main->email }}</td>
+                                    <td>
+                                        @if ($main->email)
+                                            {{ $main->email }}
+                                        @else
+                                            {{ __('admin.disabled') }}
+                                        @endif
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th>{{ __('site.profile-password') }}</th>
-                                    <td>{{ $main->password }}</td>
+                                    <td>
+                                        @if ($main->password)
+                                            {{ $main->password }}
+                                        @else
+                                            {{ __('admin.disabled') }}
+                                        @endif
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th>{{ __('site.profile-role') }}</th>

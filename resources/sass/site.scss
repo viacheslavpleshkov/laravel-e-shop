@@ -9889,3 +9889,34 @@ a.cbp-vm-icon.cbp-vm-grid.cbp-vm-selected {
   outline: none;
   width: 49%;
 }
+
+.acti {
+  background: #816263;
+  color: #fff;
+  padding: 5px 2em;
+  transition: 0.5s all;
+  -webkit-transition: 0.5s all;
+  -o-transition: 0.5s all;
+  -moz-transition: 0.5s all;
+  -ms-transition: 0.5s all;
+}
+
+.text-content {
+  color: #816263;
+  font-size: 1.2em;
+  font-weight: 600;
+  border: none;
+  background-color: transparent;
+  border-radius: 0;
+  padding: 0 10px;
+}
+.purchase a {
+  float: left;
+  width: 50%;
+  font-size: 14px;
+  color: #FFFFFF;
+  text-decoration: underline;
+  text-align: center;
+  letter-spacing: 1px;
+  margin-top: 1px;
+}

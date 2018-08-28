@@ -37,7 +37,7 @@
                                         class="glyphicon glyphicon-lock"> </span>{{ __('site.nav-register') }}</a></li>
                     @else
                         <li class="while">
-                            <span class="glyphicon glyphicon-volume-up"></span> {{ __('site.nav-hello').', '.Auth::user()->firstname .' '. Auth::user()->lastname }}
+                            <span class="glyphicon glyphicon-volume-up"></span> {{ __('site.nav-hello').', '.Auth::user()->name }}
                         </li>
                         <li><a href="{{ route('profile.index') }}"><span
                                         class="glyphicon glyphicon-user"> </span>{{ __('site.nav-personal-area') }}</a>
