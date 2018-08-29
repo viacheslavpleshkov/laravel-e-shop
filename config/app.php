@@ -148,6 +148,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Anhskohbo\NoCaptcha\NoCaptchaServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
+        Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -211,6 +212,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+        'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
     ],
 
 ];

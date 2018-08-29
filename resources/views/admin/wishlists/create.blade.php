@@ -1,23 +1,28 @@
 @extends('admin.layouts.main')
 
-@section('title',__('admin.create-subscribes'))
+@section('title',__('admin.create-wishlists'))
 
 @section('content')
     @include('admin.includes.title')
     @include('admin.includes.error')
-    <form action="{{ route('subscribes.store') }}" method="POST">
+    <form action="{{ route('wishlists.store') }}" method="POST">
         @csrf
+
         <div class="form-group">
-            <label>{{ __('admin.subscribes-email') }}</label>
-            <input type="email" class="form-control" name="email" value="{{ old('email') }}"
-                   placeholder="{{ __('admin.subscribes-enter-email') }}" required>
+            <label>{{ __('admin.wishlists-product') }}</label>
+            <select class="form-control" name="product_id" required>
+                @foreach($product as $item)
+                    <option value="{{ $item->id }}">{{ $item->name }}</option>
+                @endforeach
+            </select>
         </div>
 
         <div class="form-group">
-            <label>{{ __('admin.status') }}</label>
-            <select class="form-control" name="status" required>
-                <option value="1">{{ __('admin.enabled') }}</option>
-                <option value="0">{{ __('admin.disabled') }}</option>
+            <label>{{ __('admin.wishlists-user') }}</label>
+            <select class="form-control" name="user_id" required>
+                @foreach($user as $item)
+                    <option value="{{ $item->id }}">{{ $item->name }}</option>
+                @endforeach
             </select>
         </div>
 

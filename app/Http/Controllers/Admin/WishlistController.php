@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Product;
+use App\User;
 use App\Wishlist;
 use App\Http\Requests\Wishlist as Request;
 
@@ -27,7 +29,9 @@ class WishlistController extends Controller
      */
     public function create()
     {
-        return view('admin.wishlists.create');
+        $user = User::all();
+        $product = Product::where('status', 1)->get();
+        return view('admin.wishlists.create', compact('user', 'product'));
     }
 
     /**
@@ -63,7 +67,9 @@ class WishlistController extends Controller
     public function edit($id)
     {
         $main = Wishlist::find($id);
-        return view('admin.wishlists.edit', compact('main'));
+        $user = User::all();
+        $product = Product::where('status', 1)->get();
+        return view('admin.wishlists.edit', compact('main', 'user', 'product'));
     }
 
     /**

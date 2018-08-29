@@ -145,7 +145,13 @@ return [
     'roles-enter-name' => 'Enter name',
     'roles-enter-description' => 'Enter description',
     //Wishlist
-    'wishlists-title' => 'Wishlist',
+    'wishlists-title' => 'Wishlists',
+    'create-wishlists' => 'Create wishlists',
+    'show-wishlists' => 'Show wishlist',
+    'edit-wishlists' => 'Edit wishlist',
+    'wishlists-id' => 'ID',
+    'wishlists-product' => 'Product',
+    'wishlists-user' => 'User',
     //logs
     'logs-title' => 'Logs',
     'logs-level' => 'Level',

@@ -60,7 +60,7 @@
             </div>
             <div class="header-right">
                 <div class="cart box_1">
-                    <a href="{{ route('site.cart') }}">
+                    <a href="{{ route('cart.index') }}">
                         <h3><span class="simpleCart_total"> $0.00 </span> (<span id="simpleCart_quantity"
                                                                                  class="simpleCart_quantity"> 0 </span>)<img
                                     src="images/bag.png" alt=""></h3>
@@ -162,7 +162,7 @@
                         <li><a href="{{ route('register') }}">{{ __('site.footer-create-an-account') }}</a></li>
                         <li><a href="{{ route('profile.wishlist') }}">{{ __('site.footer-create-wishlist') }}</a>
                         </li>
-                        <li><a href="{{ route('site.cart') }}">{{ __('site.footer-my-shopping-bag') }}</a></li>
+                        <li><a href="{{ route('cart.index') }}">{{ __('site.footer-my-shopping-bag') }}</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3 span1_of_4">

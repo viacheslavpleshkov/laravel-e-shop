@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Site;
 
 use App\Http\Controllers\Controller;
+use App\Product;
 use App\Subscribe;
 use App\Http\Requests\Subscribe as SubscribeRequest;
 use App\Setting;
@@ -13,8 +14,12 @@ class SiteController extends Controller
 {
     public function index()
     {
+        $men = Product::where('status', 1)->where('type_id', 1)->orderBy('id', 'desc')->limit(3)->get();
+        $women = Product::where('status', 1)->where('type_id', 2)->orderBy('id', 'desc')->limit(3)->get();
+        $kids = Product::where('status', 1)->where('type_id', 3)->orderBy('id', 'desc')->limit(3)->get();
+        $accessories = Product::where('status', 1)->where('type_id', 4)->orderBy('id', 'desc')->limit(3)->get();
         $setting = Setting::find(1);
-        return view('site.pages.index', compact('setting'));
+        return view('site.pages.index', compact('setting', 'men', 'women', 'kids', 'accessories'));
     }
 
     public function contact()

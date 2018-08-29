@@ -75,8 +75,12 @@ Route::namespace('Site')->group(function () {
     Route::put('review/{id}', 'ProductController@review')->name('site.review')->where('id', '[\w\d\-\_]+');
     Route::put('wishlist/{id}', 'ProductController@wishlist')->name('site.wishlist')->where('id', '[\w\d\-\_]+');
 
+    Route::get('cart', 'CartController@index')->name('cart.index');
+    Route::post('cart/{product}', 'CartController@store')->name('cart.store');
+    Route::patch('cart/{product}', 'CartController@update')->name('cart.update');
+    Route::delete('cart/{product}', 'CartController@destroy')->name('cart.destroy');
+    Route::post('cart/switchToSaveForLater/{product}', 'CartController@switchToSaveForLater')->name('cart.switchToSaveForLater');
 
-    Route::get('cart', 'SiteController@cart')->name('site.cart');
     Route::get('contact', 'SiteController@contact')->name('site.contact');
     Route::put('contact', 'SiteController@contactpost');
 

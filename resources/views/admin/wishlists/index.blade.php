@@ -32,8 +32,8 @@
             @foreach($main as $item)
                 <tr>
                     <th scope="row">{{ $item->id }}</th>
-                    <td scope="row">{{ $item->product_id }}</td>
-                    <td scope="row">{{ $item->user_id }}</td>
+                    <td scope="row">{{ $item->product->name }}</td>
+                    <td scope="row">{{ $item->user->name }}</td>
                     <td scope="row">
                         <a href="{{ route('wishlists.show',$item->id) }}"><i class="far fa-eye"></i></a>
                         <a href="{{ route('wishlists.edit',$item->id) }}"><i class="fas fa-edit"></i></a>
