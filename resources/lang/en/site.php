@@ -14,6 +14,7 @@ return [
     'nav-contact' => 'Contact',
     'nav-login' => 'Login',
     'nav-register' => 'Create an Account',
+    'nav-reset-password' => 'Reset Password',
     'nav-hello' => 'Hello',
     'nav-personal-area' => 'Personal Area',
     'nav-admin-panel' => 'Admin panel',

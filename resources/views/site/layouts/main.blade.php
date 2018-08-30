@@ -35,6 +35,8 @@
                                         class="glyphicon glyphicon-user"> </span>{{ __('site.nav-login') }}</a></li>
                         <li><a href="{{ route('register') }}"><span
                                         class="glyphicon glyphicon-lock"> </span>{{ __('site.nav-register') }}</a></li>
+                        <li><a href="{{ route('password.request') }}"><span
+                                        class="glyphicon glyphicon-edit"> </span> {{ __('site.nav-reset-password') }}</a></li>
                     @else
                         <li class="while">
                             <span class="glyphicon glyphicon-volume-up"></span> {{ __('site.nav-hello').', '.Auth::user()->name }}

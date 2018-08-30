@@ -53,4 +53,15 @@ return [
     'registration-completely-free-account-text' => 'Pellentesque neque leo, dictum sit amet accumsan non, dignissim ac mauris. Mauris rhoncus, lectus tincidunt tempus aliquam, odio libero tincidunt metus, sed euismod elit enim ut mi. Nulla porttitor et dolor sed condimentum. Praesent porttitor lorem dui, in pulvinar enim rhoncus vitae. Curabitur tincidunt, turpis ac lobortis hendrerit, ex elit vestibulum est, at faucibus erat ligula non neque.',
     //Policy Terms and Conditions.
     'policy-terms-and-conditions-title' => 'Policy Terms and Conditions',
+    //Reset Password
+    'reset-password-title' => 'Reset Password',
+    'reset-password-email' => 'Email',
+    'reset-password-password' => 'Password',
+    'reset-password-confirm-password' => 'Confirm Password',
+    'reset-password-captcha' => 'Captcha',
+    'reset-password-new-customers' => 'NEW CUSTOMERS',
+    'reset-password-new-customers-description' => 'By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.',
+    'reset-password-create-an-account' => 'Create an Account',
+    'send-password-reset-link' => 'Send Password Reset Link',
+
 ];

@@ -1,65 +1,80 @@
-@extends('layouts.app')
+@extends('site.layouts.main')
+
+@section('title', __('auth.reset-password-title'))
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('password.request') }}" aria-label="{{ __('Reset Password') }}">
-                        @csrf
-
-                        <input type="hidden" name="token" value="{{ $token }}">
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ $email ?? old('email') }}" required autofocus>
+    <div class="content">
+        <div class="container">
+            <div class="login-page">
+                <div class="dreamcrub">
+                    <ul class="breadcrumbs">
+                        <li class="home">
+                            <a href="{{ route('site.index') }}"
+                               title="{{ __('site.breadcrumbs-home-description') }}">{{ __('site.breadcrumbs-home') }}</a>&nbsp;
+                            <span>&gt;</span>
+                        </li>
+                        <li class="women">
+                            {{ __('auth.reset-password-title') }}
+                        </li>
+                    </ul>
+                    <ul class="previous">
+                        <li><a href="{{ URL::previous() }}">{{ __('site.breadcrumbs-back-to-previous-page') }}</a></li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="account_grid">
+                    <div class="col-md-6 login-left wow fadeInLeft" data-wow-delay="0.4s">
+                        <h2>{{ __('auth.reset-password-new-customers') }}</h2>
+                        <p>{{ __('auth.reset-password-new-customers-description') }}</p>
+                        <a class="acount-btn"
+                           href="{{ route('register') }}">{{ __('auth.reset-password-create-an-account') }}</a>
+                    </div>
+                    <div class="col-md-6 login-right wow fadeInRight" data-wow-delay="0.4s">
+                        <h3>{{ __('auth.reset-password-title') }}</h3>
+                        <form method="post" action="{{ route('password.request') }}"
+                              aria-label="{{ __('auth.reset-password-title') }}">
+                            @csrf
+                            <input type="hidden" name="token" value="{{ $token }}">
+                            <div>
+                                <span>{{ __('auth.reset-password-email') }}<label>*</label></span>
+                                <input id="email" type="email" class="{{ $errors->has('email') ? ' is-invalid' : '' }}"
+                                       name="email" value="{{ old('email') }}" required autofocus>
 
                                 @if ($errors->has('email'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
+                                    {{ $errors->first('email') }}
                                 @endif
                             </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+                            <div>
+                                <span>{{ __('auth.reset-password-password') }}<label>*</label></span>
+                                <input id="password" type="password"
+                                       class="{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password"
+                                       required>
 
                                 @if ($errors->has('password'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
+                                    {{ $errors->first('password') }}
                                 @endif
                             </div>
-                        </div>
+                            <div>
+                                <span>{{ __('auth.reset-password-confirm-password') }}<label>*</label></span>
+                                <input id="password-confirm" type="password" name="password_confirmation" required>
 
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                             </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Reset Password') }}
-                                </button>
+                            <div>
+                                <span>{{ __('auth.reset-password-captcha') }}<label>*</label></span>
+                                {!! NoCaptcha::renderJs('en') !!}
+                                {!! NoCaptcha::display(['data-theme' => 'light','data-size'=>'normal']) !!}
+                                @if ($errors->has('g-recaptcha-response'))
+                                    {{ $errors->first('g-recaptcha-response') }}
+                                @endif
                             </div>
-                        </div>
-                    </form>
+                            <div>
+                                <input type="submit" value="{{ __('auth.reset-password-title') }}">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="clearfix"></div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 @endsection
