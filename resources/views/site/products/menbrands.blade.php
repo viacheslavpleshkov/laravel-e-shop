@@ -62,7 +62,10 @@
                                         </div>
                                     </a>
                                     <div class="cbp-vm-details">{{ $item->description }}</div>
-                                    <a class="cbp-vm-icon cbp-vm-add item_add" href="#">{{ __('site.menbrands-add-to-cart') }}</a>
+                                    <form action="{{ route('cart.store', $item) }}" method="POST">
+                                        @csrf
+                                        <button type="submit" class="cbp-vm-icon cbp-vm-add item_add">{{ __('site.men-add-to-cart') }}</button>
+                                    </form>
                                 </div>
                             </li>
                         @endforeach

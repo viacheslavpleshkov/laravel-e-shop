@@ -17,14 +17,7 @@ class CartController extends Controller
      */
     public function index()
     {
-        $mightAlsoLike = Product::mightAlsoLike()->get();
-        return view('cart')->with([
-            'mightAlsoLike' => $mightAlsoLike,
-            'discount' => getNumbers()->get('discount'),
-            'newSubtotal' => getNumbers()->get('newSubtotal'),
-            'newTax' => getNumbers()->get('newTax'),
-            'newTotal' => getNumbers()->get('newTotal'),
-        ]);
+        return view('site.pages.cart');
     }
 
     /**
@@ -39,10 +32,10 @@ class CartController extends Controller
             return $cartItem->id === $product->id;
         });
         if ($duplicates->isNotEmpty()) {
-            return redirect()->route('cart.index')->with('success_message', 'Item is already in your cart!');
+            return redirect()->route('cart.index')->with('success', 'Item is already in your cart!');
         }
-        Cart::add($product->id, $product->name, 1, $product->price)->associate('App\Product');
-        return redirect()->route('cart.index')->with('success_message', 'Item was added to your cart!');
+        Cart::add($product->id, $product->name, 1, $product->price, ['images' => $product->images, 'description' => $product->description, 'sale' => $product->sale,'url' => $product->url])->associate('App\Product');
+        return redirect()->route('cart.index')->with('success', 'Item was added to your cart!');
     }
 
     /**
@@ -79,7 +72,7 @@ class CartController extends Controller
     public function destroy($id)
     {
         Cart::remove($id);
-        return back()->with('success_message', 'Item has been removed!');
+        return back()->with('success', 'Item has been removed!');
     }
 
     /**
@@ -96,10 +89,9 @@ class CartController extends Controller
             return $rowId === $id;
         });
         if ($duplicates->isNotEmpty()) {
-            return redirect()->route('cart.index')->with('success_message', 'Item is already Saved For Later!');
+            return redirect()->route('cart.index')->with('success', 'Item is already Saved For Later!');
         }
-        Cart::instance('saveForLater')->add($item->id, $item->name, 1, $item->price)
-            ->associate('App\Product');
-        return redirect()->route('cart.index')->with('success_message', 'Item has been Saved For Later!');
+        Cart::instance('saveForLater')->add($item->id, $item->name, 1, $item->price)->associate('App\Product');
+        return redirect()->route('cart.index')->with('success', 'Item has been Saved For Later!');
     }
 }

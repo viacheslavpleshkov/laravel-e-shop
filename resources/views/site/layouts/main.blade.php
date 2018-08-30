@@ -62,11 +62,7 @@
             </div>
             <div class="header-right">
                 <div class="cart box_1">
-                    <a href="{{ route('cart.index') }}">
-                        <h3><span class="simpleCart_total"> $0.00 </span> (<span id="simpleCart_quantity"
-                                                                                 class="simpleCart_quantity"> 0 </span>)<img
-                                    src="images/bag.png" alt=""></h3>
-                    </a>
+                    <a href="{{ route('cart.index') }}"><h3>$ {{ Cart::subtotal() }} ({{ Cart::count() }}) </h3></a>
                     <p><a href="javascript:;" class="simpleCart_empty">{{ __('site.nav-empty-cart') }}</a></p>
                     <div class="clearfix"></div>
                 </div>

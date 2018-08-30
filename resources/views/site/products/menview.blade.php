@@ -91,7 +91,10 @@
                         <div class="clearfix"></div>
                         <div class="simpleCart_shelfItem">
                             <div class="pricey hide"><span class="item_price">$ {{ $main->price }}</span></div>
-                            <a class="cbp-vm-icon cbp-vm-add item_add" href="#">{{ __('site.menview-add-to-cart') }}</a>
+                            <form action="{{ route('cart.store', $main->id) }}" method="post">
+                                {{ csrf_field() }}
+                                <button type="submit" class="simpleCart_shelfItem cbp-vm-icon cbp-vm-add item_add btn-form" value="{{ __('site.menview-add-to-cart') }}">
+                            </form>
                         </div>
                         <div class="clearfix"></div>
                     </div>
