@@ -9842,6 +9842,7 @@ a.cbp-vm-icon.cbp-vm-grid.cbp-vm-selected {
     font-size: 0.8em;
   }
 }
+
 .btn-github {
   background: $color-github;
   color: #FFFFFF;
@@ -9962,12 +9963,37 @@ a.cbp-vm-icon.cbp-vm-grid.cbp-vm-selected {
 .cart-img {
   margin-left: 3px;
 }
+
 .btn-original {
   color: #ffffff;
   background: #816263;
   border-color: #816263
 }
-.checkout{
+
+.checkout {
   font-size: 18px;
   color: #ffffff;
+}
+
+/**
+ * The CSS shown here will not be introduced in the Quickstart guide, but shows
+ * how you can use CSS to style your Element's container.
+ */
+.StripeElement {
+  background-color: white;
+  height: 40px;
+  padding: 10px 12px;
+  border: 1px solid #e6e6e6;
+}
+
+.StripeElement--focus {
+  box-shadow: 0 1px 3px 0 #cfd7df;
+}
+
+.StripeElement--invalid {
+  border-color: #fa755a;
+}
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;
 }

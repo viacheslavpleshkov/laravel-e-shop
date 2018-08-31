@@ -302,6 +302,12 @@ return [
     //Checkout
     'checkout-title' => 'Checkout',
     'checkout-name-and-surname' => 'Name and surname',
+    'checkout-email' => 'Email',
+    'checkout-number' => 'Number',
     'checkout-city' => 'City',
     'checkout-address' => 'Address',
+    'checkout-postal-code' => 'Postal Code',
+    'checkout-name-on-card' => 'Name on Card',
+    'checkout-credit-or-debit-card' => 'Credit or debit card',
+    'checkout-complete-order' => 'Complete Order',
 ];

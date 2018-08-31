@@ -35,8 +35,7 @@
                         </form>
                         <div class="cart-sec simpleCart_shelfItem">
                             <div class="cart-item cyc">
-                                <img src="{{ asset('storage/'.$item->options->images) }}" class="img-responsive"
-                                     alt="{{ $item->name }}">
+                                <a href="{{ route('site.products',$item->options->url) }}"><img src="{{ asset('storage/'.$item->options->images) }}" class="img-responsive" alt="{{ $item->name }}"></a>
                             </div>
                             <div class="cart-item-info">
                                 <h3><a href="{{ route('site.products',$item->options->url) }}">{{ $item->name }}</a></h3>
@@ -78,7 +77,7 @@
                 @endforeach
             </div>
             <div class="row">
-                <h4 class="text-center btn-original col-lg-9">{{ __('site.cart-count').Cart::count().' | '.__('site.cart-tax').'$ '.Cart::tax().' | '.__('site.cart-total').'$ '.Cart::total() }}</h4>
+                <h4 class="text-center btn-original col-lg-9">{{ __('site.cart-count').Cart::count().' | '.__('site.cart-tax').'$ '.Cart::tax().' | '.__('site.cart-total').'$ '.Cart::subtotal() }}</h4>
                 <h4 class="text-center btn-primary col-2 checkout"><a href="{{ route('checkout.index') }}" class="checkout">{{ __('site.cart-proceed-to-checkout') }}</a></h4>
             </div>
 
