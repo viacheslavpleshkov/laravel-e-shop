@@ -244,7 +244,7 @@ class ProductController extends Controller
 
     public function sale()
     {
-        $main = Product::where('status', 1)->orderBy('sale')->paginate(10);
+        $main = Product::where('status', 1)->orderBy('sale','ABS')->paginate(10);
         $brands = Brand::where('status', 1)->get();
         $category = Category::where('status', 1)->get();
         return view('site.products.sale', compact('main', 'category', 'brands'));

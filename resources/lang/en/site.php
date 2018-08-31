@@ -42,6 +42,7 @@ return [
     'footer-faq' => 'Frequently asked questions',
     'footer-login' => 'Login',
     'footer-create-an-account' => 'Create an account',
+    'footer-reset-password' => 'Reset Password',
     'footer-create-wishlist' => 'Create wishlist',
     'footer-my-shopping-bag' => 'My shopping bag',
     'footer-popular' => 'Popular',
@@ -267,6 +268,7 @@ return [
     'cart-count' => 'Number of goods: ',
     'cart-tax' => 'Tax: ',
     'cart-total' => 'Amount for goods: ',
+    'cart-proceed-to-checkout' => 'Proceed to Checkout',
 
     //Profile
     'profile-title' => 'Profile',
@@ -297,6 +299,9 @@ return [
     'help-kids' => 'Help kids',
     'help-accessories' => 'Help accessories',
     'help-brands' => 'Help brands',
-
-
+    //Checkout
+    'checkout-title' => 'Checkout',
+    'checkout-name-and-surname' => 'Name and surname',
+    'checkout-city' => 'City',
+    'checkout-address' => 'Address',
 ];

@@ -1,6 +1,6 @@
 @extends('site.layouts.main')
 
-@section('title',$main->name)
+@section('title',$main->name.' | '.__('site.accessories-title'))
 
 @section('content')
     <div class="container">
@@ -10,7 +10,8 @@
                     <h2>{{ __('site.accessoriesview-categories') }}</h2>
                     <ul class="product-list">
                         @foreach($category as $item)
-                            <li><a href="{{ route('site.accessories-category',$item->url) }}" class="{{ Request::is("*$item->url*") ? 'acti' : '' }}">{{ $item->name }}</a></li>
+                            <li><a href="{{ route('site.accessories-category',$item->url) }}"
+                                   class="{{ Request::is("*$item->url*") ? 'acti' : '' }}">{{ $item->name }}</a></li>
                         @endforeach
                     </ul>
                 </div>
@@ -18,7 +19,8 @@
                     <h2>{{ __('site.accessoriesview-brands') }}</h2>
                     <ul class="product-list">
                         @foreach($brands as $item)
-                            <li><a href="{{ route('site.accessories-brands',$item->url) }}" class="{{ Request::is("*$item->url*") ? 'acti' : '' }}">{{ $item->name }}</a></li>
+                            <li><a href="{{ route('site.accessories-brands',$item->url) }}"
+                                   class="{{ Request::is("*$item->url*") ? 'acti' : '' }}">{{ $item->name }}</a></li>
                         @endforeach
                     </ul>
                 </div>
@@ -70,9 +72,9 @@
                         <p class="left">{{ __('site.accessoriesview-trend') }}</p>
                         <p class="right">
                             @if($main->trend)
-                                {{ __('admin.enabled') }}
+                                {{ __('site.enabled') }}
                             @else
-                                {{ __('admin.disabled') }}
+                                {{ __('site.disabled') }}
                             @endif
                         </p>
                         <div class="clearfix"></div>
@@ -90,8 +92,12 @@
                         @endif
                         <div class="clearfix"></div>
                         <div class="simpleCart_shelfItem">
-                            <div class="pricey hide"><span class="item_price">$ {{ $main->price }}</span></div>
-                            <a class="cbp-vm-icon cbp-vm-add item_add" href="#">{{ __('site.accessoriesview-add-to-cart') }}</a>
+                            <form action="{{ route('cart.store', $main->id) }}" method="post">
+                                @csrf
+                                <input type="submit"
+                                       class="border-none simpleCart_shelfItem cbp-vm-icon cbp-vm-add item_add btn-form"
+                                       value="{{ __('site.accessoriesview-add-to-cart') }}">
+                            </form>
                         </div>
                         <div class="clearfix"></div>
                     </div>
@@ -147,7 +153,7 @@
                                     <form action="{{ route('site.review',$main->id) }}" method="post">
                                         @csrf
                                         @method('PUT')
-                                        <textarea name="text" id="" cols="130" rows="4"></textarea>
+                                        <textarea name="text" cols="130" rows="4"></textarea>
                                         @if ($errors->has('text'))
                                             {{ $errors->first('text') }}
                                         @endif

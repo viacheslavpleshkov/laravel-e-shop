@@ -70,9 +70,9 @@
                         <p class="left">{{ __('site.products-trend') }}</p>
                         <p class="right">
                             @if($main->trend)
-                                {{ __('admin.enabled') }}
+                                {{ __('site.enabled') }}
                             @else
-                                {{ __('admin.disabled') }}
+                                {{ __('site.disabled') }}
                             @endif
                         </p>
                         <div class="clearfix"></div>
@@ -90,8 +90,12 @@
                         @endif
                         <div class="clearfix"></div>
                         <div class="simpleCart_shelfItem">
-                            <div class="pricey hide"><span class="item_price">$ {{ $main->price }}</span></div>
-                            <a class="cbp-vm-icon cbp-vm-add item_add" href="#">{{ __('site.products-add-to-cart') }}</a>
+                            <form action="{{ route('cart.store', $main->id) }}" method="post">
+                                @csrf
+                                <input type="submit"
+                                       class="border-none simpleCart_shelfItem cbp-vm-icon cbp-vm-add item_add btn-form"
+                                       value="{{ __('site.products-add-to-cart') }}">
+                            </form>
                         </div>
                         <div class="clearfix"></div>
                     </div>

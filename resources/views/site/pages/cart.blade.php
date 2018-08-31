@@ -79,7 +79,7 @@
             </div>
             <div class="row">
                 <h4 class="text-center btn-original col-lg-9">{{ __('site.cart-count').Cart::count().' | '.__('site.cart-tax').'$ '.Cart::tax().' | '.__('site.cart-total').'$ '.Cart::total() }}</h4>
-                <h4 class="text-center btn-primary col-2"><a href="{{ route('checkout.index') }}" class="card-color">Proceed to Checkout</a></h4>
+                <h4 class="text-center btn-primary col-2 checkout"><a href="{{ route('checkout.index') }}" class="checkout">{{ __('site.cart-proceed-to-checkout') }}</a></h4>
             </div>
 
         </div>

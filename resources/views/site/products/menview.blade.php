@@ -1,6 +1,6 @@
 @extends('site.layouts.main')
 
-@section('title',$main->name)
+@section('title',$main->name.' | '.__('site.men-title'))
 
 @section('content')
     <div class="container">
@@ -90,7 +90,6 @@
                         @endif
                         <div class="clearfix"></div>
                         <div class="simpleCart_shelfItem">
-                            <div class="pricey hide"><span class="item_price">$ {{ $main->price }}</span></div>
                             <form action="{{ route('cart.store', $main->id) }}" method="post">
                                 @csrf
                                 <input type="submit" class="border-none simpleCart_shelfItem cbp-vm-icon cbp-vm-add item_add btn-form" value="{{ __('site.menview-add-to-cart') }}">

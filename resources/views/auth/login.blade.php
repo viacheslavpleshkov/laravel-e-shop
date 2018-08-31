@@ -32,6 +32,9 @@
                     <div class="col-md-6 login-right wow fadeInRight" data-wow-delay="0.4s">
                         <h3>{{ __('auth.login-registered-customers') }}</h3>
                         <p>{{ __('auth.login-registered-customers-description') }}</p>
+                        @if (session('success'))
+                            <h5 class="btn-danger text-center">{{ session('success') }}</h5>
+                        @endif
                         <form method="post" action="{{ route('login') }}" aria-label="{{ __('auth.login-title') }}">
                             @csrf
                             <div>
@@ -68,12 +71,16 @@
                                 <input type="submit" value="{{ __('auth.login-submit') }}">
                             </div>
                             <div>
-                                <a href="{{ url('auth/socialite/github') }}" class="btn-github text-center">{{ __('auth.login-with-github') }}</a>
-                                <a href="{{ url('auth/socialite/google') }}" class="btn-google text-center">{{ __('auth.login-with-google+') }}</a>
+                                <a href="{{ url('auth/socialite/github') }}"
+                                   class="btn-github text-center">{{ __('auth.login-with-github') }}</a>
+                                <a href="{{ url('auth/socialite/google') }}"
+                                   class="btn-google text-center">{{ __('auth.login-with-google+') }}</a>
                             </div>
                             <div>
-                                <a href="{{ url('auth/socialite/facebook') }}" class="btn-facebook text-center">{{ __('auth.login-with-facebook') }}</a>
-                                <a href="{{ url('auth/socialite/twitter') }}" class="btn-twitter text-center">{{ __('auth.login-with-twitter') }}</a>
+                                <a href="{{ url('auth/socialite/facebook') }}"
+                                   class="btn-facebook text-center">{{ __('auth.login-with-facebook') }}</a>
+                                <a href="{{ url('auth/socialite/twitter') }}"
+                                   class="btn-twitter text-center">{{ __('auth.login-with-twitter') }}</a>
                             </div>
                         </form>
                     </div>

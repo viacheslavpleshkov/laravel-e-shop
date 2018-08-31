@@ -47,7 +47,7 @@
                                                 <div class="product_image">
                                                     <img src="{{ asset('storage').'/'.$item->images }}" class="img-responsive" alt="">
                                                     <div class="mask">
-                                                        <div class="info">{{ __('site.new-quick-view') }}</div>
+                                                        <div class="info">{{ __('site.brands-quick-view') }}</div>
                                                     </div>
                                                     <div class="product_container">
                                                         <div class="cart-left">

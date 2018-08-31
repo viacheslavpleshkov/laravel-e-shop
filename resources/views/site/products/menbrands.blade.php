@@ -62,9 +62,9 @@
                                         </div>
                                     </a>
                                     <div class="cbp-vm-details">{{ $item->description }}</div>
-                                    <form action="{{ route('cart.store', $item) }}" method="POST">
+                                    <form action="{{ route('cart.store', $item) }}" method="post">
                                         @csrf
-                                        <button type="submit" class="cbp-vm-icon cbp-vm-add item_add">{{ __('site.men-add-to-cart') }}</button>
+                                        <input type="submit" class="cbp-vm-icon cbp-vm-add item_add border-none" value="{{ __('site.menbrands-add-to-cart') }}">
                                     </form>
                                 </div>
                             </li>
