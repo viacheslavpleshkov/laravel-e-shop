@@ -77,9 +77,11 @@ Route::namespace('Site')->group(function () {
 
     Route::get('cart', 'CartController@index')->name('cart.index');
     Route::post('cart/{product}', 'CartController@store')->name('cart.store');
-    Route::patch('cart/{product}', 'CartController@update')->name('cart.update');
     Route::delete('cart/{product}', 'CartController@destroy')->name('cart.destroy');
-    Route::post('cart/switchToSaveForLater/{product}', 'CartController@switchToSaveForLater')->name('cart.switchToSaveForLater');
+    Route::delete('emptycart', 'CartController@emptycart')->name('cart.emptycart');
+
+    Route::get('checkout', 'CheckoutController@index')->name('checkout.index')->middleware('auth');
+    Route::post('checkout', 'CheckoutController@store')->name('checkout.store');
 
     Route::get('contact', 'SiteController@contact')->name('site.contact');
     Route::put('contact', 'SiteController@contactpost');

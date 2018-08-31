@@ -63,7 +63,12 @@
             <div class="header-right">
                 <div class="cart box_1">
                     <a href="{{ route('cart.index') }}"><h3>$ {{ Cart::subtotal() }} ({{ Cart::count() }}) </h3></a>
-                    <p><a href="javascript:;" class="simpleCart_empty">{{ __('site.nav-empty-cart') }}</a></p>
+                    <img src="{{ asset('images/bag.png') }}"  class="img cart-img">
+                    <form action="{{ route('cart.emptycart') }}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <input type="submit"  class="border-none card-color" value="{{ __('site.nav-empty-cart') }}">
+                    </form>
                     <div class="clearfix"></div>
                 </div>
             </div>
@@ -158,6 +163,7 @@
                     <ul class="f_nav">
                         <li><a href="{{ route('login') }}">{{ __('site.footer-login') }}</a></li>
                         <li><a href="{{ route('register') }}">{{ __('site.footer-create-an-account') }}</a></li>
+                        <li><a href="{{ route('password.request') }}">{{ __('site.footer-reset-password') }}</a></li>
                         <li><a href="{{ route('profile.wishlist') }}">{{ __('site.footer-create-wishlist') }}</a>
                         </li>
                         <li><a href="{{ route('cart.index') }}">{{ __('site.footer-my-shopping-bag') }}</a></li>

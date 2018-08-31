@@ -73,8 +73,8 @@
                                         </a>
                                         <div class="cbp-vm-details">{{ $item->description }}</div>
                                         <form action="{{ route('cart.store', $item) }}" method="POST">
-                                            {{ csrf_field() }}
-                                            <button type="submit" class="cbp-vm-icon cbp-vm-add item_add">{{ __('site.men-add-to-cart') }}</button>
+                                             @csrf
+                                            <input type="submit" class="cbp-vm-icon cbp-vm-add item_add border-none" value="{{ __('site.men-add-to-cart') }}">
                                         </form>
                                     </div>
                                 </li>

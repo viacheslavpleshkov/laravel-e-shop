@@ -83,7 +83,7 @@
                             <form action="{{ route('site.wishlist',$main->id) }}" method="post">
                                 @csrf
                                 @method('PUT')
-                                <input class="simpleCart_shelfItem cbp-vm-icon cbp-vm-add item_add btn-form"
+                                <input class="border-none simpleCart_shelfItem cbp-vm-icon cbp-vm-add item_add btn-form"
                                        type="submit"
                                        value="{{ __('site.menview-add-to-wishlist') }}">
                             </form>
@@ -92,8 +92,8 @@
                         <div class="simpleCart_shelfItem">
                             <div class="pricey hide"><span class="item_price">$ {{ $main->price }}</span></div>
                             <form action="{{ route('cart.store', $main->id) }}" method="post">
-                                {{ csrf_field() }}
-                                <button type="submit" class="simpleCart_shelfItem cbp-vm-icon cbp-vm-add item_add btn-form" value="{{ __('site.menview-add-to-cart') }}">
+                                @csrf
+                                <input type="submit" class="border-none simpleCart_shelfItem cbp-vm-icon cbp-vm-add item_add btn-form" value="{{ __('site.menview-add-to-cart') }}">
                             </form>
                         </div>
                         <div class="clearfix"></div>

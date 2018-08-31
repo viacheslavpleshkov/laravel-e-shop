@@ -1,6 +1,6 @@
 @extends('site.layouts.main')
 
-@section('title', 'Shopping Cart')
+@section('title', __('site.cart-title'))
 
 @section('content')
 
@@ -9,15 +9,15 @@
             <div class="dreamcrub">
                 <ul class="breadcrumbs">
                     <li class="home">
-                        <a href="index.html" title="Go to Home Page">Home</a>&nbsp;
-                        <span>&gt;</span>
+                        <a href="{{ route('site.index') }}"
+                           title="{{ __('site.breadcrumbs-home-description') }}">{{ __('site.breadcrumbs-home') }}</a>&nbsp;                        <span>&gt;</span>
                     </li>
                     <li class="women">
-                        Cart
+                        {{ __('site.cart-title') }}
                     </li>
                 </ul>
                 <ul class="previous">
-                    <li><a href="index.html">Back to Previous Page</a></li>
+                    <li><a href="{{ URL::previous() }}">{{ __('site.breadcrumbs-back-to-previous-page') }}</a></li>
                 </ul>
                 <div class="clearfix"></div>
             </div>
@@ -28,35 +28,60 @@
             <div class="cart-gd">
                 @foreach(Cart::content() as $item)
                     <div class="cart-header">
-                        <form action="{{ route('cart.destroy', $item->rowId) }}" method="POST">
-                            {{ csrf_field() }}
-                            {{ method_field('DELETE') }}
-                            <button type="submit" class="close1"></button>
+                        <form action="{{ route('cart.destroy', $item->rowId) }}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <input type="submit" class="close1 border-none" value="">
                         </form>
-
                         <div class="cart-sec simpleCart_shelfItem">
                             <div class="cart-item cyc">
                                 <img src="{{ asset('storage/'.$item->options->images) }}" class="img-responsive"
                                      alt="{{ $item->name }}">
                             </div>
                             <div class="cart-item-info">
-                                <h3><a href="{{ route('site.products',$item->options->url) }}">{{ $item->name }}</a>
-                                </h3>
+                                <h3><a href="{{ route('site.products',$item->options->url) }}">{{ $item->name }}</a></h3>
+                                <p>{{ $item->options->description }}</p>
                                 <ul class="qty">
-                                    <li><p>Min. order value:</p></li>
-                                    <li><p>FREE delivery</p></li>
+                                    <li><p>{{ __('site.cart-sale') }}</p></li>
+                                    <li><p>{{ $item->options->sale }}%</p><li>
                                 </ul>
-                                <div class="delivery">
-                                    <p>Service Charges : $ {{ $item->price }}</p>
-                                    <span>Delivered in 1-1:30 hours</span>
-                                    <div class="clearfix"></div>
-                                </div>
+                                <ul class="qty">
+                                    <li><p>{{ __('site.cart-brand') }}</p></li>
+                                    <li><p>{{ $item->options->brand->name }}</p></li>
+                                </ul>
+                                <ul class="qty">
+                                    <li><p>{{ __('site.cart-madein') }}</p></li>
+                                    <li><p>{{ $item->options->made->name }}</p></li>
+                                </ul>
+                                <ul class="qty">
+                                    <li><p>{{ __('site.cart-color') }}</p></li>
+                                    <li><p>{{ $item->options->color }}</p></li>
+                                </ul>
+                                <ul class="qty">
+                                    <li><p>{{ __('site.cart-trend') }}</p></li>
+                                    <li><p>
+                                            @if($item->options->trend)
+                                                {{ __('site.enabled') }}
+                                            @else
+                                                {{ __('site.disabled') }}
+                                            @endif
+                                        </p></li>
+                                </ul>
+                                <ul class="qty">
+                                    <li><p>{{ __('site.cart-price') }}</p></li>
+                                    <li><p>$ {{ $item->price }}</p></li>
+                                </ul>
                             </div>
                             <div class="clearfix"></div>
                         </div>
                     </div>
                 @endforeach
             </div>
+            <div class="row">
+                <h4 class="text-center btn-original col-lg-9">{{ __('site.cart-count').Cart::count().' | '.__('site.cart-tax').'$ '.Cart::tax().' | '.__('site.cart-total').'$ '.Cart::total() }}</h4>
+                <h4 class="text-center btn-primary col-2"><a href="{{ route('checkout.index') }}" class="card-color">Proceed to Checkout</a></h4>
+            </div>
+
         </div>
     </div>
 

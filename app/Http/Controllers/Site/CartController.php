@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Site;
 
 use App\Http\Controllers\Controller;
+use App\Brand;
+use App\Made;
 use App\Product;
-use Illuminate\Http\Request;
 use Gloudemans\Shoppingcart\Facades\Cart;
-use Illuminate\Support\Facades\Validator;
 
 class CartController extends Controller
 {
@@ -34,33 +34,10 @@ class CartController extends Controller
         if ($duplicates->isNotEmpty()) {
             return redirect()->route('cart.index')->with('success', 'Item is already in your cart!');
         }
-        Cart::add($product->id, $product->name, 1, $product->price, ['images' => $product->images, 'description' => $product->description, 'sale' => $product->sale,'url' => $product->url])->associate('App\Product');
+        $brand = Brand::where('id', $product->brand_id)->first();
+        $made = Made::where('id', $product->made_id)->first();
+        Cart::add($product->id, $product->name, 1, $product->price, ['images' => $product->images, 'description' => $product->description, 'sale' => $product->sale, 'brand' => $brand, 'made' => $made, 'color' => $product->color, 'trend' => $product->trend, 'url' => $product->url])->associate('App\Product');
         return redirect()->route('cart.index')->with('success', 'Item was added to your cart!');
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        $validator = Validator::make($request->all(), [
-            'quantity' => 'required|numeric|between:1,5'
-        ]);
-        if ($validator->fails()) {
-            session()->flash('errors', collect(['Quantity must be between 1 and 5.']));
-            return response()->json(['success' => false], 400);
-        }
-        if ($request->quantity > $request->productQuantity) {
-            session()->flash('errors', collect(['We currently do not have enough items in stock.']));
-            return response()->json(['success' => false], 400);
-        }
-        Cart::update($id, $request->quantity);
-        session()->flash('success_message', 'Quantity was updated successfully!');
-        return response()->json(['success' => true]);
     }
 
     /**
@@ -75,23 +52,9 @@ class CartController extends Controller
         return back()->with('success', 'Item has been removed!');
     }
 
-    /**
-     * Switch item for shopping cart to Save for Later.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function switchToSaveForLater($id)
+    public function emptycart()
     {
-        $item = Cart::get($id);
-        Cart::remove($id);
-        $duplicates = Cart::instance('saveForLater')->search(function ($cartItem, $rowId) use ($id) {
-            return $rowId === $id;
-        });
-        if ($duplicates->isNotEmpty()) {
-            return redirect()->route('cart.index')->with('success', 'Item is already Saved For Later!');
-        }
-        Cart::instance('saveForLater')->add($item->id, $item->name, 1, $item->price)->associate('App\Product');
-        return redirect()->route('cart.index')->with('success', 'Item has been Saved For Later!');
+        Cart::destroy();
+        return redirect()->back();
     }
 }

@@ -8506,6 +8506,7 @@ p.right {
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
 }
+
 .span6 {
   padding: 15px 0;
   border-top: 1px solid #eee;
@@ -9841,7 +9842,6 @@ a.cbp-vm-icon.cbp-vm-grid.cbp-vm-selected {
     font-size: 0.8em;
   }
 }
-
 .btn-github {
   background: $color-github;
   color: #FFFFFF;
@@ -9947,4 +9947,23 @@ a.cbp-vm-icon.cbp-vm-grid.cbp-vm-selected {
   text-align: center;
   letter-spacing: 1px;
   margin-top: 1px;
+}
+
+.border-none {
+  border: none;
+}
+
+.card-color {
+  background: none;
+  font-size: 14px;
+  color: #FFC6CF;
+}
+
+.cart-img {
+  margin-left: 3px;
+}
+.btn-original {
+  color: #ffffff;
+  background: #816263;
+  border-color: #816263
 }

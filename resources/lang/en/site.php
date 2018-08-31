@@ -5,6 +5,8 @@ return [
     'title' => 'E-shop',
     'all-rights-reserved' => 'All rights reserved.',
     'page' => 'Page:',
+    'enabled' => 'Enabled',
+    'disabled' => 'Disabled',
     //nav
     'nav-home' => 'Home',
     'nav-men' => 'Men',
@@ -254,6 +256,18 @@ return [
     'contact-subject' => 'Subject',
     'contact-message' => 'Message',
     'contact-submit' => 'SUBMIT',
+    //Cart
+    'cart-title' => 'Cart',
+    'cart-sale' => 'SALE',
+    'cart-brand' => 'BRAND',
+    'cart-madein' => 'MADE IN',
+    'cart-color' => 'COLOR',
+    'cart-trend' => 'TREND',
+    'cart-price' => 'PRICE',
+    'cart-count' => 'Number of goods: ',
+    'cart-tax' => 'Tax: ',
+    'cart-total' => 'Amount for goods: ',
+
     //Profile
     'profile-title' => 'Profile',
     'profile-name' => 'Name:',
