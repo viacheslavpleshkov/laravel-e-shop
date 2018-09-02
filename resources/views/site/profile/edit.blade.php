@@ -1,21 +1,16 @@
 @extends('site.layouts.main')
 
-@section('title',__('site.profile-edit-profile'))
+@section('title',__('site.profile-edit-profile').' | '.__('site.profile-title'))
 
 @section('content')
     <div class="content">
         <div class="container">
             <div class="login-page">
                 <div class="dreamcrub">
-                    <ul class="breadcrumbs">
-                        <li class="home">
-                            <a href="{{ route('site.index') }}"
-                               title="{{ __('site.breadcrumbs-home-description') }}">{{ __('site.breadcrumbs-home') }}</a>&nbsp;
-                            <span>&gt;</span>
-                        </li>
-                        <li class="women">
-                            {{ __('site.profile-edit-profile') }}
-                        </li>
+                    <ul class="product-top-list">
+                        <li><a href="{{ route('site.index') }}" title="{{ __('site.breadcrumbs-home-description') }}">{{ __('site.breadcrumbs-home') }}</a>&nbsp;<span>&gt;</span></li>
+                        <li><a href="{{ route('profile.index') }}">{{ __('site.profile-title') }}</a>&nbsp;<span>&gt;</span></li>
+                        <li><span class="act">{{ __('site.profile-edit-profile') }}</span>&nbsp;</li>
                     </ul>
                     <ul class="previous">
                         <li><a href="{{ URL::previous() }}">{{ __('site.breadcrumbs-back-to-previous-page') }}</a></li>

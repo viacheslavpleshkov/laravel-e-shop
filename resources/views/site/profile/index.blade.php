@@ -25,7 +25,7 @@
                 <div class="account_grid">
                     <div class="col-md-12 login-left wow fadeInLeft">
                         @if (session('success'))
-                            {{ session('success') }}
+                            <h3 class="btn-success text-center">{{ session('success') }}</h3>
                         @endif
                         <div class="bs-docs-example">
                             <table class="table table-bordered">
@@ -69,7 +69,7 @@
                                 </tr>
                             </table>
                         </div>
-                        <a href="{{ route('profile.wishlist',$main->id) }}"
+                        <a href="{{ route('profile.wishlist') }}"
                            class="btn btn-warning">{{ __('site.profile-wishlist') }}</a>
                         <a href="{{ route('profile.purchased-commodities',$main->id) }}"
                            class="btn btn-info">{{ __('site.profile-purchased-commodities') }}</a>
@@ -77,11 +77,6 @@
                            class="btn btn-success">{{ __('site.profile-edit-profile') }}</a>
                         <a href="{{ route('profile.password',$main->id) }}"
                            class="btn btn-primary">{{ __('site.profile-edit-password') }}</a>
-                        <form action="{{ route('profile.destroy',$main->id) }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger">{{ __('site.profile-delete-user') }}</button>
-                        </form>
                     </div>
                     <div class="clearfix"></div>
                 </div>

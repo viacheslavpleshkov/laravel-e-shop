@@ -7,6 +7,7 @@ return [
     'page' => 'Page:',
     'enabled' => 'Enabled',
     'disabled' => 'Disabled',
+    'information-deleted' => 'Information has been deleted.',
     //nav
     'nav-home' => 'Home',
     'nav-men' => 'Men',
@@ -269,6 +270,9 @@ return [
     'cart-tax' => 'Tax: ',
     'cart-total' => 'Amount for goods: ',
     'cart-proceed-to-checkout' => 'Proceed to Checkout',
+    'cart-success-item-already' => 'Item is already in your cart!',
+    'cart-success-item-added' => 'Item was added to your cart!',
+    'cart-success-item-removed' => 'Item has been removed!',
 
     //Profile
     'profile-title' => 'Profile',
@@ -292,6 +296,12 @@ return [
     'profile-password-success' => 'Password changed successfully.',
     'profile-password-error' => 'Sorry, passwords do not match.',
     'profile-user-deleted' => 'Your user has been deleted.',
+    //Profile wishlist
+    'profile-wishlist-title' => 'Wishlist',
+    'profile-wishlist-id' => 'ID',
+    'profile-wishlist-name' => 'Name',
+    'profile-wishlist-url' => 'URL',
+    'profile-wishlist-price' => 'Price',
     //help
     'help-faq' => 'Frequently Asked Questions',
     'help-men' => 'Help men',

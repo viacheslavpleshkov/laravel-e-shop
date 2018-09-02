@@ -32,12 +32,12 @@ class CartController extends Controller
             return $cartItem->id === $product->id;
         });
         if ($duplicates->isNotEmpty()) {
-            return redirect()->route('cart.index')->with('success', 'Item is already in your cart!');
+            return redirect()->route('cart.index')->with('success', __('site.cart-success-item-already'));
         }
         $brand = Brand::where('id', $product->brand_id)->first();
         $made = Made::where('id', $product->made_id)->first();
         Cart::add($product->id, $product->name, 1, $product->price, ['images' => $product->images, 'description' => $product->description, 'sale' => $product->sale, 'brand' => $brand, 'made' => $made, 'color' => $product->color, 'trend' => $product->trend, 'url' => $product->url])->associate('App\Product');
-        return redirect()->route('cart.index')->with('success', 'Item was added to your cart!');
+        return redirect()->route('cart.index')->with('success', __('site.cart-success-item-added'));
     }
 
     /**
@@ -49,7 +49,7 @@ class CartController extends Controller
     public function destroy($id)
     {
         Cart::remove($id);
-        return back()->with('success', 'Item has been removed!');
+        return back()->with('success', __('site.cart-success-item-removed'));
     }
 
     public function emptycart()

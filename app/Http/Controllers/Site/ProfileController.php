@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Site;
 
 use App\Http\Controllers\Controller;
 use App\User;
+use App\Wishlist;
 use App\Http\Requests\Profileedit as RequestEdit;
 use App\Http\Requests\Profilepassword as RequestPassword;
 use Illuminate\Support\Facades\Auth;
@@ -49,9 +50,16 @@ class ProfileController extends Controller
         }
     }
 
+    public function wishlist()
+    {
+        $main = Wishlist::where('user_id', Auth::user()->id)->get();
+        return view('site.profile.wishlist',compact('main'));
+
+    }
+
     public function destroy($id)
     {
-        User::find($id)->delete();
-        return redirect()->route('login')->with('success', __('admin.profile-user-deleted'));
+        Wishlist::find($id)->delete();
+        return redirect()->route('profile.index')->with('success', __('site.information-deleted'));
     }
 }

@@ -100,7 +100,7 @@ Route::namespace('Site')->group(function () {
     Route::put('profile/{id}/edit', 'ProfileController@updateedit');
     Route::get('profile/{id}/password', 'ProfileController@password')->name('profile.password');
     Route::put('profile/{id}/password', 'ProfileController@updatepassword');
-    Route::delete('profile/{id}', 'ProfileController@destroy')->name('profile.destroy');
     Route::get('profile/wishlist', 'ProfileController@wishlist')->name('profile.wishlist');
+    Route::delete('profile/wishlist{id}', 'ProfileController@destroy')->name('profile.wishlistdestroy');
     Route::get('profile/purchased-commodities', 'ProfileController@purchasedcommodities')->name('profile.purchased-commodities');
 });
