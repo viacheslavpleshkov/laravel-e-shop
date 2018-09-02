@@ -59,4 +59,7 @@ return [
         'redirect' => env('TWITTER_URL'),
     ],
 
+    'stripe' => [
+        'secret' => env('STRIPE_SECRET'),
+    ],
 ];

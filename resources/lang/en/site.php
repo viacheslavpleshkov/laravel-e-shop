@@ -310,4 +310,5 @@ return [
     'checkout-name-on-card' => 'Name on Card',
     'checkout-credit-or-debit-card' => 'Credit or debit card',
     'checkout-complete-order' => 'Complete Order',
+    'checkout-payment-success' => 'Thank you! Your payment has been successfully accepted!',
 ];

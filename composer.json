@@ -9,10 +9,12 @@
         "anhskohbo/no-captcha": "^3.0",
         "fideloper/proxy": "^4.0",
         "gloudemans/shoppingcart": "^2.5",
+        "cartalyst/stripe-laravel": "^8.0",
         "laravel/framework": "5.6.*",
         "laravel/socialite": "^3.1",
         "laravel/tinker": "^1.0",
-        "rap2hpoutre/laravel-log-viewer": "^0.16.0"
+        "rap2hpoutre/laravel-log-viewer": "^0.16.0",
+        "stripe/stripe-php": "^6.16"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.1",

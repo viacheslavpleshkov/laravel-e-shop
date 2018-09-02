@@ -22,6 +22,7 @@
     <meta name="theme-color" content="#f8f8f8">
     <link rel="stylesheet" href="{{ asset('css/site.css') }}">
     <script src="{{ asset('js/site.js') }}"></script>
+    <script src="https://js.stripe.com/v3/"></script>
 </head>
 <body>
 <!-- header-section-starts -->
