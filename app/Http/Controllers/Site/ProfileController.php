@@ -57,7 +57,7 @@ class ProfileController extends Controller
 
     }
 
-    public function destroy($id)
+    public function wishlistdestroy($id)
     {
         Wishlist::find($id)->delete();
         return redirect()->route('profile.index')->with('success', __('site.information-deleted'));

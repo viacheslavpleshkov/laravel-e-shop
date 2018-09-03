@@ -30,6 +30,7 @@ class Checkout extends FormRequest
             'city' => 'required|string|max:255',
             'address' => 'required|string|max:255',
             'postal-code' => 'required|string|max:255',
+            'g-recaptcha-response' => 'required|captcha'
         ];
     }
 }

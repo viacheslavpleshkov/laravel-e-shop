@@ -42,4 +42,9 @@ class Product extends Model
     {
         return $this->hasMany('App\Wishlist');
     }
+
+    public function purchasedgoods()
+    {
+        return $this->hasMany('App\Purchasedgoods');
+    }
 }

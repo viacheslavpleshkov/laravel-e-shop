@@ -28,4 +28,9 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Wishlist');
     }
+
+    public function purchasedgoods()
+    {
+        return $this->hasMany('App\Purchasedgoods');
+    }
 }

@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Site;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Checkout as CheckoutRequest;
+use App\Purchasedgoods;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Cartalyst\Stripe\Laravel\Facades\Stripe;
+use Illuminate\Support\Facades\Auth;
 
 
 class CheckoutController extends Controller
@@ -48,6 +50,13 @@ class CheckoutController extends Controller
                 'quantity' => Cart::instance('default')->count(),
             ],
         ]);
+
+        foreach (Cart::subtotal() as $item){
+            Purchasedgoods::create([
+                'user_id' => Auth::user()->id,
+                'product_id' => $item->id,
+            ]);
+        }
 
         Cart::instance('default')->destroy();
         session()->forget('coupon');
