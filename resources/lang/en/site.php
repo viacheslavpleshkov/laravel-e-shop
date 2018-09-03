@@ -302,6 +302,12 @@ return [
     'profile-wishlist-name' => 'Name',
     'profile-wishlist-url' => 'URL',
     'profile-wishlist-price' => 'Price',
+    //Purchased commodities
+    'profile-purchased-commodities-title' => 'Purchased commodities',
+    'profile-purchased-commodities-id' => 'ID',
+    'profile-purchased-commodities-username' => 'User name',
+    'profile-purchased-commodities-productsusername' => 'Products name',
+    'profile-purchased-commodities-price' => 'Price',
     //help
     'help-faq' => 'Frequently Asked Questions',
     'help-men' => 'Help men',

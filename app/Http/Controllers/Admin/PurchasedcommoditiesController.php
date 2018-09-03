@@ -3,11 +3,13 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Made;
-use App\Http\Requests\Made as Request;
+use App\Purchasedgoods;
+use App\Http\Requests\Purchasedgoods as Request;
+use App\Product;
+use App\User;
 
 
-class MadeController extends Controller
+class PurchasedcommoditiesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +18,8 @@ class MadeController extends Controller
      */
     public function index()
     {
-        $main = Made::all();
-        return view('admin.mades.index', compact('main'));
+        $main = Purchasedgoods::all();
+        return view('admin.purchased-commodities.index', compact('main'));
     }
 
     /**
@@ -27,7 +29,9 @@ class MadeController extends Controller
      */
     public function create()
     {
-        return view('admin.mades.create');
+        $user = User::all();
+        $product = Product::where('status', 1)->get();
+        return view('admin.purchased-commodities.create', compact('user', 'product'));
     }
 
     /**
@@ -38,8 +42,8 @@ class MadeController extends Controller
      */
     public function store(Request $request)
     {
-        Made::create($request->all());
-        return redirect()->route('mades.index')->with('success', __('admin.created-success'));
+        Purchasedgoods::create($request->all());
+        return redirect()->route('purchased-commodities.index')->with('success', __('admin.created-success'));
     }
 
     /**
@@ -50,8 +54,8 @@ class MadeController extends Controller
      */
     public function show($id)
     {
-        $main = Made::find($id);
-        return view('admin.mades.show', compact('main'));
+        $main = Purchasedgoods::find($id);
+        return view('admin.purchased-commodities.show', compact('main'));
     }
 
     /**
@@ -62,8 +66,10 @@ class MadeController extends Controller
      */
     public function edit($id)
     {
-        $main = Made::find($id);
-        return view('admin.mades.edit', compact('main'));
+        $main = Purchasedgoods::find($id);
+        $user = User::all();
+        $product = Product::where('status', 1)->get();
+        return view('admin.purchased-commodities.edit', compact('main', 'user', 'product'));
     }
 
     /**
@@ -75,8 +81,8 @@ class MadeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Made::find($id)->update($request->all());
-        return redirect()->route('mades.index')->with('success', __('admin.updated-success'));
+        Purchasedgoods::find($id)->update($request->all());
+        return redirect()->route('purchased-commodities.index')->with('success', __('admin.updated-success'));
     }
 
     /**
@@ -87,7 +93,7 @@ class MadeController extends Controller
      */
     public function destroy($id)
     {
-        Made::find($id)->delete();
-        return redirect()->route('mades.index')->with('success', __('admin.information-deleted'));
+        Purchasedgoods::find($id)->delete();
+        return redirect()->route('purchased-commodities.index')->with('success', __('admin.information-deleted'));
     }
 }

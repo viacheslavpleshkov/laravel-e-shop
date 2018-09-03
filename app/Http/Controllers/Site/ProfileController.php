@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Site;
 
 use App\Http\Controllers\Controller;
+use App\Purchasedgoods;
 use App\User;
 use App\Wishlist;
 use App\Http\Requests\Profileedit as RequestEdit;
@@ -61,5 +62,11 @@ class ProfileController extends Controller
     {
         Wishlist::find($id)->delete();
         return redirect()->route('profile.index')->with('success', __('site.information-deleted'));
+    }
+
+    public function purchasedcommodities($id)
+    {
+        $main = Purchasedgoods::where('user_id', $id)->get();
+        return view('site.profile.purchasedcommodities',compact('main'));
     }
 }

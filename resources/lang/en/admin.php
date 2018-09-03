@@ -104,6 +104,14 @@ return [
     'reviews-product' => 'Product',
     'reviews-text' => 'Text',
     'reviews-enter-text' => 'Enter text',
+    //Reviews
+    'purchased-commodities-title' => 'Purchased commodities',
+    'create-purchased-commodities' => 'Create purchased commodities',
+    'show-purchased-commodities' => 'Show purchased commodities',
+    'edit-purchased-commodities' => 'Edit purchased commodities',
+    'purchased-commodities-id' => 'ID',
+    'purchased-commodities-user' => 'User',
+    'purchased-commodities-product' => 'Product',
     //Help
     'help-title' => 'Help',
     'help-faq' => 'Frequently Asked Questions',

@@ -19,7 +19,7 @@ class CheckoutController extends Controller
      */
     public function index()
     {
-        if (Cart::instance('default')->count() == 0) {
+        if (Cart::count() == 0) {
             return redirect()->route('site.new');
         }
 
@@ -51,15 +51,14 @@ class CheckoutController extends Controller
             ],
         ]);
 
-        foreach (Cart::subtotal() as $item){
+        foreach (Cart::content() as $item){
             Purchasedgoods::create([
                 'user_id' => Auth::user()->id,
                 'product_id' => $item->id,
             ]);
         }
 
-        Cart::instance('default')->destroy();
-        session()->forget('coupon');
+        Cart::destroy();
 
         return redirect()->route('cart.index')->with('success', __('site.checkout-payment-success'));
     }
