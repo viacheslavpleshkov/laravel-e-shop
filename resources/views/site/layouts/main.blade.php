@@ -112,23 +112,28 @@
 @yield('content')
 <div class="news-letter">
     <div class="container">
-        <div class="join">
-            <h6>{{ __('site.subscribe-join-our-mailing-list') }}</h6>
-            <div class="sub-left-right">
-                <form method="post" action="{{ route('site.subscribe') }}">
-                    @csrf
-                    @method('PUT')
-                    <input type="text" name="subscribe" value="{{ __('site.subscribe-enter-your-email-here') }}"
-                           onfocus="this.value = '';"
-                           onblur="if (this.value == '') {this.value = '{{ __('site.subscribe-enter-your-email-here') }}';}"/>
-                    <input type="submit" value="{{ __('site.subscribe') }}"/>
-                    @if ($errors->has('subscribe'))
-                        {{ $errors->first('subscribe') }}
-                    @endif
-                </form>
+        @if (session('success-submit'))
+            <h3  class="text-center btn-success">{{ session('success-submit') }}</h3>
+            <br>
+            @else
+            <div class="join">
+                <h6>{{ __('site.subscribe-join-our-mailing-list') }}</h6>
+                <div class="sub-left-right">
+                    <form method="post" action="{{ route('site.subscribe') }}">
+                        @csrf
+                        @method('PUT')
+                        <input type="text" name="subscribe" value="{{ __('site.subscribe-enter-your-email-here') }}"
+                               onfocus="this.value = '';"
+                               onblur="if (this.value == '') {this.value = '{{ __('site.subscribe-enter-your-email-here') }}';}"/>
+                        <input type="submit" value="{{ __('site.subscribe') }}"/>
+                        @if ($errors->has('subscribe'))
+                            {{ $errors->first('subscribe') }}
+                        @endif
+                    </form>
+                </div>
+                <div class="clearfix"></div>
             </div>
-            <div class="clearfix"></div>
-        </div>
+        @endif
     </div>
 </div>
 <div class="footer">

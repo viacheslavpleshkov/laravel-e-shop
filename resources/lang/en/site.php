@@ -8,6 +8,8 @@ return [
     'enabled' => 'Enabled',
     'disabled' => 'Disabled',
     'information-deleted' => 'Information has been deleted.',
+    'contact-success' => 'Your email has been sent successfully',
+    'success-submit' => 'Your subscription is complete',
     //nav
     'nav-home' => 'Home',
     'nav-men' => 'Men',
@@ -257,6 +259,7 @@ return [
     'contact-email' => 'E-mail',
     'contact-subject' => 'Subject',
     'contact-message' => 'Message',
+    'contact-captcha' => 'Captcha',
     'contact-submit' => 'SUBMIT',
     //Cart
     'cart-title' => 'Cart',
