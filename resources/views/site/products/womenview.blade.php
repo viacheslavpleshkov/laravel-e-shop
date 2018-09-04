@@ -10,7 +10,8 @@
                     <h2>{{ __('site.womenview-categories') }}</h2>
                     <ul class="product-list">
                         @foreach($category as $item)
-                            <li><a href="{{ route('site.women-category',$item->url) }}" class="{{ Request::is("*$item->url*") ? 'acti' : '' }}">{{ $item->name }}</a></li>
+                            <li><a href="{{ route('site.women-category',$item->url) }}"
+                                   class="{{ Request::is("*$item->url*") ? 'acti' : '' }}">{{ $item->name }}</a></li>
                         @endforeach
                     </ul>
                 </div>
@@ -18,7 +19,8 @@
                     <h2>{{ __('site.womenview-brands') }}</h2>
                     <ul class="product-list">
                         @foreach($brands as $item)
-                            <li><a href="{{ route('site.women-brands',$item->url) }}" class="{{ Request::is("*$item->url*") ? 'acti' : '' }}">{{ $item->name }}</a></li>
+                            <li><a href="{{ route('site.women-brands',$item->url) }}"
+                                   class="{{ Request::is("*$item->url*") ? 'acti' : '' }}">{{ $item->name }}</a></li>
                         @endforeach
                     </ul>
                 </div>
@@ -78,8 +80,7 @@
                         <div class="clearfix"></div>
                     </div>
                     <div class="purchase">
-                        @guest
-                        @else
+                        @auth
                             <form action="{{ route('site.wishlist',$main->id) }}" method="post">
                                 @csrf
                                 @method('PUT')
@@ -92,7 +93,9 @@
                         <div class="simpleCart_shelfItem">
                             <form action="{{ route('cart.store', $main->id) }}" method="post">
                                 @csrf
-                                <input type="submit" class="border-none simpleCart_shelfItem cbp-vm-icon cbp-vm-add item_add btn-form" value="{{ __('site.womenview-add-to-cart') }}">
+                                <input type="submit"
+                                       class="border-none simpleCart_shelfItem cbp-vm-icon cbp-vm-add item_add btn-form"
+                                       value="{{ __('site.womenview-add-to-cart') }}">
                             </form>
                         </div>
                         <div class="clearfix"></div>

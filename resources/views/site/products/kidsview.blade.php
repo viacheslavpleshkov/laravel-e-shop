@@ -78,8 +78,7 @@
                         <div class="clearfix"></div>
                     </div>
                     <div class="purchase">
-                        @guest
-                        @else
+                        @auth
                             <form action="{{ route('site.wishlist',$main->id) }}" method="post">
                                 @csrf
                                 @method('PUT')

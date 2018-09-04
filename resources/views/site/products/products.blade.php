@@ -10,7 +10,8 @@
                     <h2>{{ __('site.products-categories') }}</h2>
                     <ul class="product-list">
                         @foreach($category as $item)
-                            <li><a href="{{ route('site.category',$item->url) }}" class="{{ Request::is("*$item->url*") ? 'acti' : '' }}">{{ $item->name }}</a></li>
+                            <li><a href="{{ route('site.category',$item->url) }}"
+                                   class="{{ Request::is("*$item->url*") ? 'acti' : '' }}">{{ $item->name }}</a></li>
                         @endforeach
                     </ul>
                 </div>
@@ -18,7 +19,8 @@
                     <h2>{{ __('site.products-brands') }}</h2>
                     <ul class="product-list">
                         @foreach($brands as $item)
-                            <li><a href="{{ route('site.brandsurl',$item->url) }}" class="{{ Request::is("*$item->url*") ? 'acti' : '' }}">{{ $item->name }}</a></li>
+                            <li><a href="{{ route('site.brandsurl',$item->url) }}"
+                                   class="{{ Request::is("*$item->url*") ? 'acti' : '' }}">{{ $item->name }}</a></li>
                         @endforeach
                     </ul>
                 </div>
@@ -78,8 +80,7 @@
                         <div class="clearfix"></div>
                     </div>
                     <div class="purchase">
-                        @guest
-                        @else
+                        @auth
                             <form action="{{ route('site.wishlist',$main->id) }}" method="post">
                                 @csrf
                                 @method('PUT')
