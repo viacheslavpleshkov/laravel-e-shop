@@ -47,8 +47,7 @@
                             <div>
                                 <span>{{ __('auth.reset-password-password') }}<label>*</label></span>
                                 <input id="password" type="password"
-                                       class="{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password"
-                                       required>
+                                       class="{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
 
                                 @if ($errors->has('password'))
                                     {{ $errors->first('password') }}
@@ -58,14 +57,6 @@
                                 <span>{{ __('auth.reset-password-confirm-password') }}<label>*</label></span>
                                 <input id="password-confirm" type="password" name="password_confirmation" required>
 
-                            </div>
-                            <div>
-                                <span>{{ __('auth.reset-password-captcha') }}<label>*</label></span>
-                                {!! NoCaptcha::renderJs('en') !!}
-                                {!! NoCaptcha::display(['data-theme' => 'light','data-size'=>'normal']) !!}
-                                @if ($errors->has('g-recaptcha-response'))
-                                    {{ $errors->first('g-recaptcha-response') }}
-                                @endif
                             </div>
                             <div>
                                 <input type="submit" value="{{ __('auth.reset-password-title') }}">

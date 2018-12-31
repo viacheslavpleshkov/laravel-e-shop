@@ -9,8 +9,6 @@ Route::group(['prefix' => 'auth', 'namespace' => 'Auth'], function () {
     Route::post('password/email', 'ForgotPasswordController@sendResetLinkEmail')->name('password.email');
     Route::get('password/reset/{token}', 'ResetPasswordController@showResetForm')->name('password.reset');
     Route::post('password/reset', 'ResetPasswordController@reset');
-    Route::get('socialite/{provider}', 'AuthController@redirectToProvider');
-    Route::get('socialite/{provider}/callback', 'AuthController@handleProviderCallback');
     Route::get('policy-terms-and-conditions', 'AuthController@policytermsandconditions')->name('policy-terms-and-conditions');
 });
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth', 'roles'], 'block' => ['User']], function () {
@@ -37,7 +35,6 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
         Route::put('roles/{id}', 'RoleController@update')->name('roles.update');
         Route::get('settings', 'AdminController@settings')->name('admin.settings');
         Route::put('settings', 'AdminController@settingsupdate');
-        Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index')->name('admin.logs');
     });
 });
 Route::namespace('Site')->group(function () {
@@ -46,30 +43,30 @@ Route::namespace('Site')->group(function () {
     Route::get('men', 'ProductController@men')->name('site.men');
     Route::get('men/{url}', 'ProductController@menview')->name('site.men-view')->where('url', '[\w\d\-\_]+');
     Route::get('men-category/{url}', 'CategoryController@men')->name('site.men-category')->where('url', '[\w\d\-\_]+');
-    Route::get('men-brands/{url}', 'ProductController@menbrands')->name('site.men-brands')->where('url', '[\w\d\-\_]+');
+    Route::get('men-brands/{url}', 'BrandController@men')->name('site.men-brands')->where('url', '[\w\d\-\_]+');
 
     Route::get('women', 'ProductController@women')->name('site.women');
     Route::get('women/{url}', 'ProductController@womenview')->name('site.women-view')->where('url', '[\w\d\-\_]+');
     Route::get('women-category/{url}', 'CategoryController@women')->name('site.women-category')->where('url', '[\w\d\-\_]+');
-    Route::get('women-brands/{url}', 'ProductController@womenbrands')->name('site.women-brands')->where('url', '[\w\d\-\_]+');
+    Route::get('women-brands/{url}', 'BrandController@women')->name('site.women-brands')->where('url', '[\w\d\-\_]+');
 
     Route::get('kids', 'ProductController@kids')->name('site.kids');
     Route::get('kids/{url}', 'ProductController@kidsview')->name('site.kids-view')->where('url', '[\w\d\-\_]+');
     Route::get('kids-category/{url}', 'CategoryController@kids')->name('site.kids-category')->where('url', '[\w\d\-\_]+');
-    Route::get('kids-brands/{url}', 'ProductController@kidsbrands')->name('site.kids-brands')->where('url', '[\w\d\-\_]+');
+    Route::get('kids-brands/{url}', 'BrandController@kids')->name('site.kids-brands')->where('url', '[\w\d\-\_]+');
 
     Route::get('accessories', 'ProductController@accessories')->name('site.accessories');
     Route::get('accessories/{url}', 'ProductController@accessoriesview')->name('site.accessories-view')->where('url', '[\w\d\-\_]+');
     Route::get('accessories-category/{url}', 'CategoryController@accessories')->name('site.accessories-category')->where('url', '[\w\d\-\_]+');
-    Route::get('accessories-brands/{url}', 'ProductController@accessoriesbrands')->name('site.accessories-brands')->where('url', '[\w\d\-\_]+');
+    Route::get('accessories-brands/{url}', 'BrandController@accessories')->name('site.accessories-brands')->where('url', '[\w\d\-\_]+');
 
     Route::get('new', 'ProductController@new')->name('site.new');
-    Route::get('brands', 'ProductController@brands')->name('site.brands');
+    Route::get('brands', 'BrandController@brands')->name('site.brands');
     Route::get('trends', 'ProductController@trends')->name('site.trends');
     Route::get('sale', 'ProductController@sale')->name('site.sale');
 
     Route::get('category/{url}', 'CategoryController@category')->name('site.category')->where('url', '[\w\d\-\_]+');
-    Route::get('brands/{url}', 'ProductController@brandsurl')->name('site.brandsurl')->where('url', '[\w\d\-\_]+');
+    Route::get('brands/{url}', 'BrandController@brandsurl')->name('site.brandsurl')->where('url', '[\w\d\-\_]+');
     Route::get('products/{url}', 'ProductController@products')->name('site.products')->where('url', '[\w\d\-\_]+');
 
     Route::put('review/{id}', 'ProductController@review')->name('site.review')->where('id', '[\w\d\-\_]+');

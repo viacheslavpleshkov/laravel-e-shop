@@ -83,28 +83,9 @@
                                     @endif
                                 </li>
                             </ul>
-                            <ul>
-                                <li class="text-info">{{ __('auth.registration-captcha') }}</li>
-                                {!! NoCaptcha::renderJs('en') !!}
-                                <li>{!! NoCaptcha::display(['data-theme' => 'light','data-size'=>'normal']) !!}
-                                    @if ($errors->has('g-recaptcha-response'))
-                                        {{ $errors->first('g-recaptcha-response') }}
-                                    @endif
-                                </li>
-                            </ul>
                             <input type="submit" value="{{ __('auth.registration-submit') }}">
-                            <div>
-                                <a href="{{ url('auth/socialite/github') }}" class="btn-github text-center">{{ __('auth.register-with-github') }}</a>
-                                <a href="{{ url('auth/socialite/google') }}" class="btn-google text-center">{{ __('auth.register-with-google+') }}</a>
-                            </div>
                             <br>
-                            <div>
-                                <a href="{{ url('auth/socialite/facebook') }}" class="btn-facebook text-center">{{ __('auth.register-with-facebook') }}</a>
-                                <a href="{{ url('auth/socialite/twitter') }}" class="btn-twitter text-center">{{ __('auth.register-with-twitter') }}</a>
-                            </div>
-                            <br>
-                            <p class="click">{{ __('auth.registration-policy-terms-and-conditions-text') }} <a
-                                        href="{{ route('policy-terms-and-conditions') }}">{{ __('auth.registration-policy-terms-and-conditions') }}</a>
+                            <p class="click">{{ __('auth.registration-policy-terms-and-conditions-text') }} <a href="{{ route('policy-terms-and-conditions') }}">{{ __('auth.registration-policy-terms-and-conditions') }}</a>
                             </p>
                         </form>
                     </div>

@@ -46,14 +46,6 @@
                                 @endif
                             </div>
                             <div>
-                                <span>{{ __('auth.reset-password-captcha') }}<label>*</label></span>
-                                {!! NoCaptcha::renderJs('en') !!}
-                                {!! NoCaptcha::display(['data-theme' => 'light','data-size'=>'normal']) !!}
-                                @if ($errors->has('g-recaptcha-response'))
-                                    {{ $errors->first('g-recaptcha-response') }}
-                                @endif
-                            </div>
-                            <div>
                                 <input type="submit" value="{{ __('auth.send-password-reset-link') }}">
                             </div>
                         </form>

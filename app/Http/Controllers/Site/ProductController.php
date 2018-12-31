@@ -35,36 +35,6 @@ class ProductController extends Controller
         }
     }
 
-    public function mencategory($url)
-    {
-        $mencategory = Category::where('url', $url)->where('status', 1)->where('men', 1)->first();
-        if (isset($mencategory)) {
-            $id = $mencategory->id;
-            $title = $mencategory->name;
-            $main = Product::where('type_id', 1)->where('status', 1)->where('category_id', $id)->paginate(10);
-            $brands = Brand::where('status', 1)->get();
-            $category = Category::where('status', 1)->where('men', 1)->get();
-            return view('site.products.mencategory', compact('main', 'title', 'category', 'brands'));
-        } else {
-            abort(404);
-        }
-    }
-
-    public function menbrands($url)
-    {
-        $menbrands = Brand::where('url', $url)->where('status', 1)->first();
-        if (isset($menbrands)) {
-            $id = $menbrands->id;
-            $title = $menbrands->name;
-            $main = Product::where('type_id', 1)->where('status', 1)->where('brand_id', $id)->paginate(10);
-            $brands = Brand::where('status', 1)->get();
-            $category = Category::where('status', 1)->where('men', 1)->get();
-            return view('site.products.menbrands', compact('main', 'title', 'category', 'brands'));
-        } else {
-            abort(404);
-        }
-    }
-
     public function women()
     {
         $main = Product::where('type_id', 2)->where('status', 1)->paginate(10);
@@ -81,36 +51,6 @@ class ProductController extends Controller
             $category = Category::where('status', 1)->where('women', 1)->get();
             $review = Review::where('product_id', $main->id)->where('status', 1)->get();
             return view('site.products.womenview', compact('main', 'brands', 'category', 'review'));
-        } else {
-            abort(404);
-        }
-    }
-
-    public function womencategory($url)
-    {
-        $mencategory = Category::where('url', $url)->where('status', 1)->where('women', 1)->first();
-        if (isset($mencategory)) {
-            $id = $mencategory->id;
-            $title = $mencategory->name;
-            $main = Product::where('type_id', 2)->where('status', 1)->where('category_id', $id)->paginate(10);
-            $brands = Brand::where('status', 1)->get();
-            $category = Category::where('status', 1)->where('women', 1)->get();
-            return view('site.products.womencategory', compact('main', 'title', 'category', 'brands'));
-        } else {
-            abort(404);
-        }
-    }
-
-    public function womenbrands($url)
-    {
-        $womenbrands = Brand::where('url', $url)->where('status', 1)->first();
-        if (isset($womenbrands)) {
-            $id = $womenbrands->id;
-            $title = $womenbrands->name;
-            $main = Product::where('type_id', 2)->where('status', 1)->where('brand_id', $id)->paginate(10);
-            $brands = Brand::where('status', 1)->get();
-            $category = Category::where('status', 1)->where('women', 1)->get();
-            return view('site.products.womenbrands', compact('main', 'title', 'category', 'brands'));
         } else {
             abort(404);
         }
@@ -137,36 +77,6 @@ class ProductController extends Controller
         }
     }
 
-    public function kidscategory($url)
-    {
-        $mencategory = Category::where('url', $url)->where('status', 1)->where('kids', 1)->first();
-        if (isset($mencategory)) {
-            $id = $mencategory->id;
-            $title = $mencategory->name;
-            $main = Product::where('type_id', 3)->where('status', 1)->where('category_id', $id)->paginate(10);
-            $brands = Brand::where('status', 1)->get();
-            $category = Category::where('status', 1)->where('kids', 1)->get();
-            return view('site.products.kidscategory', compact('main', 'title', 'category', 'brands'));
-        } else {
-            abort(404);
-        }
-    }
-
-    public function kidsbrands($url)
-    {
-        $menbrands = Brand::where('url', $url)->where('status', 1)->first();
-        if (isset($menbrands)) {
-            $id = $menbrands->id;
-            $title = $menbrands->name;
-            $main = Product::where('type_id', 3)->where('status', 1)->where('brand_id', $id)->paginate(10);
-            $brands = Brand::where('status', 1)->get();
-            $category = Category::where('status', 1)->where('kids', 1)->get();
-            return view('site.products.kidsbrands', compact('main', 'title', 'category', 'brands'));
-        } else {
-            abort(404);
-        }
-    }
-
     public function accessories()
     {
         $main = Product::where('type_id', 4)->where('status', 1)->paginate(10);
@@ -188,50 +98,12 @@ class ProductController extends Controller
         }
     }
 
-    public function accessoriescategory($url)
-    {
-        $mencategory = Category::where('url', $url)->where('status', 1)->where('accessories', 1)->first();
-        if (isset($mencategory)) {
-            $id = $mencategory->id;
-            $title = $mencategory->name;
-            $main = Product::where('type_id', 4)->where('status', 1)->where('category_id', $id)->paginate(10);
-            $brands = Brand::where('status', 1)->get();
-            $category = Category::where('status', 1)->where('accessories', 1)->get();
-            return view('site.products.accessoriescategory', compact('main', 'title', 'category', 'brands'));
-        } else {
-            abort(404);
-        }
-    }
-
-    public function accessoriesbrands($url)
-    {
-        $menbrands = Brand::where('url', $url)->where('status', 1)->first();
-        if (isset($menbrands)) {
-            $id = $menbrands->id;
-            $title = $menbrands->name;
-            $main = Product::where('type_id', 4)->where('status', 1)->where('brand_id', $id)->paginate(10);
-            $brands = Brand::where('status', 1)->get();
-            $category = Category::where('status', 1)->where('accessories', 1)->get();
-            return view('site.products.accessoriesbrands', compact('main', 'title', 'category', 'brands'));
-        } else {
-            abort(404);
-        }
-    }
-
     public function new()
     {
         $main = Product::where('new', 1)->where('status', 1)->paginate(10);
         $brands = Brand::where('status', 1)->get();
         $category = Category::where('status', 1)->get();
         return view('site.products.new', compact('main', 'category', 'brands'));
-    }
-
-    public function brands()
-    {
-        $main = Brand::where('status', 1)->paginate(10);
-        $brands = Brand::where('status', 1)->get();
-        $category = Category::where('status', 1)->get();
-        return view('site.products.brands', compact('main', 'category', 'brands'));
     }
 
     public function trends()
@@ -248,21 +120,6 @@ class ProductController extends Controller
         $brands = Brand::where('status', 1)->get();
         $category = Category::where('status', 1)->get();
         return view('site.products.sale', compact('main', 'category', 'brands'));
-    }
-
-    public function category($url)
-    {
-        $category = Category::where('url', $url)->where('status', 1)->first();
-        if (isset($category)) {
-            $id = $category->id;
-            $title = $category->name;
-            $main = Product::where('status', 1)->where('category_id', $id)->paginate(10);
-            $brands = Brand::where('status', 1)->get();
-            $category = Category::where('status', 1)->get();
-            return view('site.products.category', compact('main', 'title', 'category', 'brands'));
-        } else {
-            abort(404);
-        }
     }
 
     public function brandsurl($url)

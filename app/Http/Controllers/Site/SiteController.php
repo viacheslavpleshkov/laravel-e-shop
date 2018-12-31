@@ -35,17 +35,4 @@ class SiteController extends Controller
         Mail::send(new MailShipped($request));
         return redirect()->route('site.contact')->with('success', __('site.contact-success'));
     }
-
-    public function subscribe(\Illuminate\Http\Request $request)
-    {
-        $request->validate([
-            'email' => 'required|string|email|max:255',
-        ]);
-
-        Subscribe::create([
-            'email' => $request['subscribe'],
-            'status' => 1
-        ]);
-        return redirect()->back()->with('success-submit', __('site.success-submit'));
-    }
 }
