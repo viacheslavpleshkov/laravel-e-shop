@@ -58,14 +58,6 @@
                         @endif
                     </div>
                     <div class="clearfix"></div>
-                    <div>
-                        <span>{{ __('site.contact-captcha') }}</span>
-                        {!! NoCaptcha::renderJs('en') !!}
-                        {!! NoCaptcha::display(['data-theme' => 'light','data-size'=>'normal']) !!}
-                        @if ($errors->has('g-recaptcha-response'))
-                            {{ $errors->first('g-recaptcha-response') }}
-                        @endif
-                    </div>
                     <input type="submit" value="{{ __('site.contact-submit') }}">
                 </form>
             </div>

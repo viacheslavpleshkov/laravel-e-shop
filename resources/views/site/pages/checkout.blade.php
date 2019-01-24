@@ -118,15 +118,6 @@
                                     <div id="card-errors" role="alert"></div>
                                 </li>
                             </ul>
-                            <ul>
-                                <li class="text-info">{{ __('auth.registration-captcha') }}</li>
-                                {!! NoCaptcha::renderJs('en') !!}
-                                <li>{!! NoCaptcha::display(['data-theme' => 'light','data-size'=>'normal']) !!}
-                                    @if ($errors->has('g-recaptcha-response'))
-                                        {{ $errors->first('g-recaptcha-response') }}
-                                    @endif
-                                </li>
-                            </ul>
                             <input type="submit" value="{{ __('site.checkout-complete-order') }}">
                         </form>
                     </div>

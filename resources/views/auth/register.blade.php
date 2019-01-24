@@ -34,9 +34,7 @@
                             <ul>
                                 <li class="text-info">{{ __('auth.registration-name') }}</li>
                                 <li>
-                                    <input id="email" type="text"
-                                           class="{{ $errors->has('name') ? ' is-invalid' : '' }}"
-                                           name="name" value="{{ old('name') }}" required>
+                                    <input id="email" type="text" class="{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required>
 
                                     @if ($errors->has('name'))
                                             {{ $errors->first('name') }}
