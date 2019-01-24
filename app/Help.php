@@ -6,5 +6,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class Help extends Model
 {
-    protected $fillable = ['faq', 'men', 'women', 'kids', 'accessories', 'brands'];
+	/**
+	 * @var array
+	 */
+	protected $guarded = ['id'];
+
+	/**
+	 * @var string
+	 */
+	protected $table = 'helps';
+
+	/**
+	 * @var array
+	 */
+	protected $fillable = ['faq', 'men', 'women', 'kids', 'accessories', 'brands'];
 }
