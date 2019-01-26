@@ -9,6 +9,7 @@
     <br>
 </p>
 <p align="center">The online store was created using the Laravel Framework</p>
+
 ## Installation Dev
 
 1. Clone the repo and `cd` into it
@@ -22,8 +23,8 @@
 1. Set your `STRIPE_SECRET` in your `.env` file
 1. Run this command `php artisan config:cache`
 1. Run this command `php artisan db:seed`
-1. Run this command `npm install`
-1. Run this command `npm run dev`
+1. Run this command `yarn install`
+1. Run this command `yarn run dev`
 1. Run this command `php artisan serve` or use Laravel Valet or Laravel Homestead
 1. Visit `localhost:8000` in your browser
 
@@ -42,5 +43,5 @@
 1. Set your `STRIPE_SECRET` in your `.env` file
 1. Run this command `php artisan config:cache`
 1. Run this command `php artisan db:seed`
-1. Run this command `npm install`
-1. Run this command `npm run production`
+1. Run this command `yarn install`
+1. Run this command `yarn run production`
