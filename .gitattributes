@@ -1,5 +1,7 @@
 * text=auto
-*.html linguist-language=PHP
+*.html linguistic-language=PHP
+*.blade.php linguistic-language=PHP
+*.html.twig linguistic-language=PHP
 *.css linguist-vendored
 *.scss linguist-vendored
 *.js linguist-vendored
