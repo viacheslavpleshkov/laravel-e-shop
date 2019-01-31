@@ -20,6 +20,7 @@
 1. Set your mail credentials in your `.env` file
 1. Set your `APP_URL` in your `.env` file
 1. Set your `APP_DEBUG` in your `.env` file with the value `true`
+1. Set your `TELESCOPE_ENABLED` in your `.env` file with the value `true`
 1. Set your `STRIPE_SECRET` in your `.env` file
 1. Run this command `php artisan config:cache`
 1. Run this command `php artisan db:seed`
@@ -40,6 +41,7 @@
 1. Set your mail credentials in your `.env` file
 1. Set your `APP_URL` in your `.env` file
 1. Set your `APP_DEBUG` in your `.env` file with the value `false`
+1. Set your `TELESCOPE_ENABLED` in your `.env` file with the value `false`
 1. Set your `STRIPE_SECRET` in your `.env` file
 1. Run this command `php artisan config:cache`
 1. Run this command `php artisan db:seed`
