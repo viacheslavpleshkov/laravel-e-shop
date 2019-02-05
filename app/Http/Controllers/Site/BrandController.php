@@ -17,13 +17,13 @@ class BrandController extends Controller
 
     public function men($url)
     {
-        $menbrands = Brand::where('url', $url)->where('status', 1)->first();
+        $menbrands = Brand::findurl($url)->status()->first();
         if (isset($menbrands)) {
             $id = $menbrands->id;
             $title = $menbrands->name;
-            $main = Product::where('type_id', 1)->where('status', 1)->where('brand_id', $id)->paginate(10);
-            $brands = Brand::where('status', 1)->get();
-            $category = Category::where('status', 1)->where('men', 1)->get();
+            $main = Product::men()->status()->findbrand($id)->paginate(10);
+            $brands = Brand::status()->get();
+            $category = Category::status()->men()->get();
             return view('site.products.menbrands', compact('main', 'title', 'category', 'brands'));
         } else {
             abort(404);
@@ -32,13 +32,13 @@ class BrandController extends Controller
 
     public function women($url)
     {
-        $womenbrands = Brand::where('url', $url)->where('status', 1)->first();
+        $womenbrands = Brand::findurl($url)->status()->first();
         if (isset($womenbrands)) {
             $id = $womenbrands->id;
             $title = $womenbrands->name;
-            $main = Product::where('type_id', 2)->where('status', 1)->where('brand_id', $id)->paginate(10);
-            $brands = Brand::where('status', 1)->get();
-            $category = Category::where('status', 1)->where('women', 1)->get();
+            $main = Product::women()->status()->findbrand($id)->paginate(10);
+            $brands = Brand::status()->get();
+            $category = Category::status()->women()->get();
             return view('site.products.womenbrands', compact('main', 'title', 'category', 'brands'));
         } else {
             abort(404);
@@ -47,13 +47,13 @@ class BrandController extends Controller
 
     public function kids($url)
     {
-        $menbrands = Brand::where('url', $url)->where('status', 1)->first();
+        $menbrands =  Brand::findurl($url)->status()->first();
         if (isset($menbrands)) {
             $id = $menbrands->id;
             $title = $menbrands->name;
-            $main = Product::where('type_id', 3)->where('status', 1)->where('brand_id', $id)->paginate(10);
-            $brands = Brand::where('status', 1)->get();
-            $category = Category::where('status', 1)->where('kids', 1)->get();
+            $main = Product::kids()->status()->findbrand($id)->paginate(10);
+            $brands = Brand::status()->get();
+            $category = Category::status()->kids()->get();
             return view('site.products.kidsbrands', compact('main', 'title', 'category', 'brands'));
         } else {
             abort(404);
@@ -62,13 +62,13 @@ class BrandController extends Controller
 
     public function accessories($url)
     {
-        $menbrands = Brand::where('url', $url)->where('status', 1)->first();
+        $menbrands =  Brand::findurl($url)->status()->first();
         if (isset($menbrands)) {
             $id = $menbrands->id;
             $title = $menbrands->name;
-            $main = Product::where('type_id', 4)->where('status', 1)->where('brand_id', $id)->paginate(10);
-            $brands = Brand::where('status', 1)->get();
-            $category = Category::where('status', 1)->where('accessories', 1)->get();
+            $main = Product::accessories()->status()->findbrand($id)->paginate(10);
+            $brands = Brand::status()->get();
+            $category = Category::status()->accessories()->get();
             return view('site.products.accessoriesbrands', compact('main', 'title', 'category', 'brands'));
         } else {
             abort(404);
@@ -77,21 +77,21 @@ class BrandController extends Controller
 
     public function brands()
     {
-        $main = Brand::where('status', 1)->paginate(10);
-        $brands = Brand::where('status', 1)->get();
-        $category = Category::where('status', 1)->get();
+        $main = Brand::status()->paginate(10);
+        $brands = Brand::status()->get();
+        $category = Category::status()->get();
         return view('site.products.brands', compact('main', 'category', 'brands'));
     }
 
     public function brandsurl($url)
     {
-        $brandsurl = Brand::where('url', $url)->where('status', 1)->first();
+        $brandsurl = Brand::findurl($url)->status()->first();
         if (isset($brandsurl)) {
             $id = $brandsurl->id;
             $title = $brandsurl->name;
-            $main = Product::where('status', 1)->where('brand_id', $id)->paginate(10);
-            $brands = Brand::where('status', 1)->get();
-            $category = Category::where('status', 1)->get();
+            $main = Product::status()->findbrand($id)->paginate(10);
+            $brands = Brand::status()->get();
+            $category = Category::status()->get();
             return view('site.products.brandsurl', compact('main', 'title', 'category', 'brands'));
         } else {
             abort(404);

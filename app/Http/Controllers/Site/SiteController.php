@@ -16,10 +16,10 @@ class SiteController extends Controller
 {
     public function index()
     {
-        $men = Product::where('status', 1)->where('type_id', 1)->orderBy('id', 'desc')->limit(3)->get();
-        $women = Product::where('status', 1)->where('type_id', 2)->orderBy('id', 'desc')->limit(3)->get();
-        $kids = Product::where('status', 1)->where('type_id', 3)->orderBy('id', 'desc')->limit(3)->get();
-        $accessories = Product::where('status', 1)->where('type_id', 4)->orderBy('id', 'desc')->limit(3)->get();
+        $men = Product::status()->men()->desc()->limit(3)->get();
+        $women = Product::status()->women()->desc()->limit(3)->get();
+        $kids = Product::status()->kids()->desc()->limit(3)->get();
+        $accessories = Product::status()->accessories()->desc()->limit(3)->get();
         $setting = Setting::find(1);
         return view('site.pages.index', compact('setting', 'men', 'women', 'kids', 'accessories'));
     }

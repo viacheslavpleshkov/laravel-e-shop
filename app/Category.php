@@ -19,13 +19,63 @@ class Category extends Model
 	/**
 	 * @var array
 	 */
-    protected $fillable = ['name', 'url', 'men', 'women', 'kids', 'accessories', 'status'];
+	protected $fillable = ['name', 'url', 'men', 'women', 'kids', 'accessories', 'status'];
 
 	/**
 	 * @return \Illuminate\Database\Eloquent\Relations\HasMany
 	 */
-    public function products()
-    {
-        return $this->hasMany('App\Product');
-    }
+	public function products()
+	{
+		return $this->hasMany('App\Product');
+	}
+
+	/**
+	 * @param $query
+	 * @return mixed
+	 */
+	public function scopeStatus($query)
+	{
+		return $query->where('status', 1);
+	}
+
+	/**
+	 * @param $query
+	 * @return mixed
+	 */
+	public function scopeMen($query)
+	{
+		return $query->where('men', 1);
+	}
+
+	/**
+	 * @param $query
+	 * @return mixed
+	 */
+	public function scopeWomen($query)
+	{
+		return $query->where('women', 1);
+	}
+
+	/**
+	 * @param $query
+	 * @return mixed
+	 */
+	public function scopeKids($query)
+	{
+		return $query->where('kids', 1);
+	}
+
+	/**
+	 * @param $query
+	 * @return mixed
+	 */
+	public function scopeAccessories($query)
+	{
+		return $query->where('accessories', 1);
+	}
+
+	public function scopeFindUrl($query, $url)
+	{
+		return $query->where('url', $url);
+	}
 }
