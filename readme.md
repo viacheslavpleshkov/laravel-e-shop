@@ -2,13 +2,17 @@
     <a href="https://laravel.com/" target="_blank">
         <img src="https://laravel.com/assets/img/components/logo-laravel.svg" height="100px">
     </a>
-    <a href="https://laraveleshop.slavapleshkov.com/" target="_blank">
+    <a href="https://sp-laravel-e-shop.herokuapp.com/" target="_blank">
         <img src="https://github.com/slava-pleshkov/laravel-e-shop/blob/master/public/icons/mstile-310x310.png?raw=true" height="100px">
     </a>
     <h1 align="center">laravel-e-shop</h1>
     <br>
 </p>
-<p align="center">👕 The online store was created using the Laravel 5.7 Framework</p>
+<p align="center">👕 The online store was created using the Laravel 5.8 Framework</p>
+
+## Used technologies
+
+HTML5, CSS3, SCSS, JavaScript, jQuery, Bootstrap, Font Awesome, Webpack, Yarn, PHP, Laravel Framework, Laravel Eloquent, Laravel Blade, Composer, Redis, PostgreSQL, Stripe.
 
 ## Installation Dev
 
@@ -88,3 +92,7 @@
 or
 
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+
+## License
+
+Collision is an open-sourced software licensed under the [MIT license](LICENSE.md).

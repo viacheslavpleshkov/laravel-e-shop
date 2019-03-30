@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use App\Review;
+use App\Models\Review;
 use App\Http\Requests\Review as Request;
-use App\Product;
-use App\User;
+use App\Models\Product;
+use App\Models\User;
 
 
-class ReviewController extends Controller
+class ReviewController extends BaseController
 {
     /**
      * Display a listing of the resource.

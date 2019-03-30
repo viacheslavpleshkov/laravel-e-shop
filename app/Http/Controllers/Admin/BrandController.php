@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use App\Brand;
+use App\Models\Brand;
 use App\Http\Requests\Brand as Request;
 
 
-class BrandController extends Controller
+class BrandController extends BaseController
 {
     /**
      * Display a listing of the resource.

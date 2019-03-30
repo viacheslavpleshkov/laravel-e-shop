@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers\Site;
 
-use App\Http\Controllers\Controller;
-use App\Brand;
-use App\Made;
-use App\Product;
+use App\Models\Brand;
+use App\Models\Made;
+use App\Models\Product;
 use Gloudemans\Shoppingcart\Facades\Cart;
 
-class CartController extends Controller
+class CartController extends BaseController
 {
     /**
      * Display a listing of the resource.

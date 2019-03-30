@@ -2,15 +2,14 @@
 
 namespace App\Http\Controllers\Site;
 
-use App\Http\Controllers\Controller;
 use App\Http\Requests\Checkout as CheckoutRequest;
-use App\Purchasedgoods;
+use App\Models\Purchasedgoods;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Cartalyst\Stripe\Laravel\Facades\Stripe;
 use Illuminate\Support\Facades\Auth;
 
 
-class CheckoutController extends Controller
+class CheckoutController extends BaseController
 {
     /**
      * Display a listing of the resource.

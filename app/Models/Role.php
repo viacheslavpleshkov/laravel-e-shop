@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -19,13 +19,19 @@ class Role extends Model
 	/**
 	 * @var array
 	 */
-	protected $fillable = ['name', 'description'];
+	protected $fillable = [
+		'name',
+		'description'
+	];
+
+	const CREATED_AT = 'created_at';
+	const UPDATED_AT = 'updated_at';
 
 	/**
 	 * @return \Illuminate\Database\Eloquent\Relations\HasMany
 	 */
 	public function users()
 	{
-		return $this->hasMany('App\User');
+		return $this->hasMany(User::class);
 	}
 }

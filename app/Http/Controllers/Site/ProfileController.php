@@ -2,16 +2,15 @@
 
 namespace App\Http\Controllers\Site;
 
-use App\Http\Controllers\Controller;
-use App\Purchasedgoods;
-use App\User;
-use App\Wishlist;
+use App\Models\Purchasedgoods;
+use App\Models\User;
+use App\Models\Wishlist;
 use App\Http\Requests\Profileedit as RequestEdit;
 use App\Http\Requests\Profilepassword as RequestPassword;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
-class ProfileController extends Controller
+class ProfileController extends BaseController
 {
     public function index()
     {

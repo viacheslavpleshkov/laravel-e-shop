@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers\Site;
 
-use App\Brand;
-use App\Category;
-use App\Product;
-use App\Http\Controllers\Controller;
+use App\Models\Brand;
+use App\Models\Category;
+use App\Models\Product;
 
-class CategoryController extends Controller
+class CategoryController extends BaseController
 {
 	public function men($url)
 	{

@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -23,19 +23,31 @@ class User extends Authenticatable
 	/**
 	 * @var array
 	 */
-    protected $fillable = ['name', 'number', 'email', 'password', 'role_id'];
+    protected $fillable = [
+    	'name',
+		'number',
+		'email',
+		'password',
+		'role_id'
+	];
 
 	/**
 	 * @var array
 	 */
-    protected $hidden = ['password', 'remember_token'];
+    protected $hidden = [
+    	'password',
+		'remember_token'
+	];
+
+	const CREATED_AT = 'created_at';
+	const UPDATED_AT = 'updated_at';
 
 	/**
 	 * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
 	 */
     public function role()
     {
-        return $this->belongsTo('App\Role');
+        return $this->belongsTo(Role::class);
     }
 
 	/**
@@ -43,7 +55,7 @@ class User extends Authenticatable
 	 */
     public function reviews()
     {
-        return $this->hasMany('App\Review');
+        return $this->hasMany(Review::class);
     }
 
 	/**
@@ -51,7 +63,7 @@ class User extends Authenticatable
 	 */
     public function wishlist()
     {
-        return $this->hasMany('App\Wishlist');
+        return $this->hasMany(Wishlist::class);
     }
 
 	/**
@@ -59,6 +71,6 @@ class User extends Authenticatable
 	 */
     public function purchasedgoods()
     {
-        return $this->hasMany('App\Purchasedgoods');
+        return $this->hasMany(Purchasedgoods::class);
     }
 }

@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use App\Purchasedgoods;
+use App\Models\Purchasedgoods;
 use App\Http\Requests\Purchasedgoods as Request;
-use App\Product;
-use App\User;
+use App\Models\Product;
+use App\Models\User;
 
 
-class PurchasedcommoditiesController extends Controller
+class PurchasedcommoditiesController extends BaseController
 {
     /**
      * Display a listing of the resource.

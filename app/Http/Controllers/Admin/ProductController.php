@@ -2,17 +2,16 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Brand;
-use App\Category;
-use App\Http\Controllers\Controller;
-use App\Made;
-use App\Product;
+use App\Models\Brand;
+use App\Models\Category;
+use App\Models\Made;
+use App\Models\Product;
 use App\Http\Requests\Product as Request;
-use App\Type;
-use App\User;
+use App\Models\Type;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
-class ProductController extends Controller
+class ProductController extends BaseController
 {
     /**
      * Display a listing of the resource.

@@ -1,10 +1,10 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Review extends Model
+class Purchasedgoods extends Model
 {
 	/**
 	 * @var array
@@ -14,19 +14,25 @@ class Review extends Model
 	/**
 	 * @var string
 	 */
-	protected $table = 'reviews';
+	protected $table = 'purchasedgoods';
 
 	/**
 	 * @var array
 	 */
-    protected $fillable = ['user_id', 'product_id', 'text', 'status'];
+    protected $fillable = [
+    	'user_id',
+		'product_id'
+	];
+
+	const CREATED_AT = 'created_at';
+	const UPDATED_AT = 'updated_at';
 
 	/**
 	 * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
 	 */
     public function user()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo(User::class);
     }
 
 	/**
@@ -34,6 +40,6 @@ class Review extends Model
 	 */
     public function product()
     {
-        return $this->belongsTo('App\Product');
+        return $this->belongsTo(Product::class);
     }
 }

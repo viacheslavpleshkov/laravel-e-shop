@@ -14,7 +14,7 @@ class CreateHelpsTable extends Migration
     public function up()
     {
         Schema::create('helps', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->text('faq');
             $table->text('men');
             $table->text('women');

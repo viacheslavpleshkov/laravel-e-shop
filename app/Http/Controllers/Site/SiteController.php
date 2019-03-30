@@ -2,17 +2,13 @@
 
 namespace App\Http\Controllers\Site;
 
-use App\Http\Controllers\Controller;
 use App\Mail\MailShipped;
-use App\Product;
-use App\Subscribe;
-use App\Http\Requests\Subscribe as SubscribeRequest;
-use App\Setting;
+use App\Models\Product;
+use App\Models\Setting;
 use App\Http\Requests\Contact as ContactRequest;
-use GuzzleHttp\Psr7\Request;
 use Illuminate\Support\Facades\Mail;
 
-class SiteController extends Controller
+class SiteController extends BaseController
 {
     public function index()
     {

@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use App\Product;
-use App\User;
-use App\Wishlist;
+use App\Models\Product;
+use App\Models\User;
+use App\Models\Wishlist;
 use App\Http\Requests\Wishlist as Request;
 
 
-class WishlistController extends Controller
+class WishlistController extends BaseController
 {
     /**
      * Display a listing of the resource.

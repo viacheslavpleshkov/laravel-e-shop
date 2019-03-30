@@ -2,17 +2,11 @@
 
 namespace App\Http\Controllers\Site;
 
-use App\Brand;
-use App\Category;
-use App\Http\Controllers\Controller;
-use App\Made;
-use App\Product;
-use App\Review;
-use App\Wishlist;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use App\Models\Brand;
+use App\Models\Category;
+use App\Models\Product;
 
-class BrandController extends Controller
+class BrandController extends BaseController
 {
 
     public function men($url)

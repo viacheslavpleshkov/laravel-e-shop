@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use App\Made;
+use App\Models\Made;
 use App\Http\Requests\Made as Request;
 
 
-class MadeController extends Controller
+class MadeController extends BaseController
 {
     /**
      * Display a listing of the resource.

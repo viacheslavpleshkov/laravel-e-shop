@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers\Site;
 
-use App\Http\Controllers\Controller;
-use App\Subscribe;
+use App\Models\Subscribe;
 use Illuminate\Http\Request;
 
-class SubscribeController extends Controller
+class SubscribeController extends BaseController
 {
     public function subscribe(Request $request)
     {

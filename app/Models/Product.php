@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -19,14 +19,35 @@ class Product extends Model
 	/**
 	 * @var array
 	 */
-	protected $fillable = ['name', 'images', 'description', 'type_id', 'category_id', 'price', 'sale', 'new', 'trend', 'color', 'url', 'brand_id', 'made_id', 'information', 'specifications', 'user_id', 'status'];
+	protected $fillable = [
+		'name',
+		'images',
+		'description',
+		'type_id',
+		'category_id',
+		'price',
+		'sale',
+		'new',
+		'trend',
+		'color',
+		'url',
+		'brand_id',
+		'made_id',
+		'information',
+		'specifications',
+		'user_id',
+		'status'
+	];
+
+	const CREATED_AT = 'created_at';
+	const UPDATED_AT = 'updated_at';
 
 	/**
 	 * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
 	 */
 	public function type()
 	{
-		return $this->belongsTo('App\Type');
+		return $this->belongsTo(Type::class);
 	}
 
 	/**
@@ -34,7 +55,7 @@ class Product extends Model
 	 */
 	public function category()
 	{
-		return $this->belongsTo('App\Category');
+		return $this->belongsTo(Category::class);
 	}
 
 	/**
@@ -42,7 +63,7 @@ class Product extends Model
 	 */
 	public function brand()
 	{
-		return $this->belongsTo('App\Brand');
+		return $this->belongsTo(Brand::class);
 	}
 
 	/**
@@ -50,7 +71,7 @@ class Product extends Model
 	 */
 	public function made()
 	{
-		return $this->belongsTo('App\Made');
+		return $this->belongsTo(Made::class);
 	}
 
 	/**
@@ -58,7 +79,7 @@ class Product extends Model
 	 */
 	public function user()
 	{
-		return $this->belongsTo('App\User');
+		return $this->belongsTo(User::class);
 	}
 
 	/**
@@ -66,7 +87,7 @@ class Product extends Model
 	 */
 	public function reviews()
 	{
-		return $this->hasMany('App\Review');
+		return $this->hasMany(Review::class);
 	}
 
 	/**
@@ -74,7 +95,7 @@ class Product extends Model
 	 */
 	public function wishlist()
 	{
-		return $this->hasMany('App\Wishlist');
+		return $this->hasMany(Wishlist::class);
 	}
 
 	/**
@@ -82,7 +103,7 @@ class Product extends Model
 	 */
 	public function purchasedgoods()
 	{
-		return $this->hasMany('App\Purchasedgoods');
+		return $this->hasMany(Purchasedgoods::class);
 	}
 
 	/**

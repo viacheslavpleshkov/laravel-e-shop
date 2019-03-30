@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -19,5 +19,15 @@ class Help extends Model
 	/**
 	 * @var array
 	 */
-	protected $fillable = ['faq', 'men', 'women', 'kids', 'accessories', 'brands'];
+	protected $fillable = [
+		'faq',
+		'men',
+		'women',
+		'kids',
+		'accessories',
+		'brands'
+	];
+
+	const CREATED_AT = 'created_at';
+	const UPDATED_AT = 'updated_at';
 }

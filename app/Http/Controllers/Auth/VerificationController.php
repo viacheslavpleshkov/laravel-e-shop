@@ -3,10 +3,9 @@
 namespace App\Http\Controllers\Auth;
 
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
 use Illuminate\Foundation\Auth\VerifiesEmails;
 
-class VerificationController extends Controller
+class VerificationController extends BaseController
 {
     /*
     |--------------------------------------------------------------------------

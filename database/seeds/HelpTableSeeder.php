@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Help;
+use App\Models\Help;
 
 class HelpTableSeeder extends Seeder
 {

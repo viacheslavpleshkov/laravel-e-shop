@@ -1,10 +1,10 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Made extends Model
+class Type extends Model
 {
 	/**
 	 * @var array
@@ -14,18 +14,23 @@ class Made extends Model
 	/**
 	 * @var string
 	 */
-	protected $table = 'mades';
+	protected $table = 'types';
 
 	/**
 	 * @var array
 	 */
-    protected $fillable = ['name', 'status'];
+    protected $fillable = [
+    	'name'
+	];
+
+	const CREATED_AT = 'created_at';
+	const UPDATED_AT = 'updated_at';
 
 	/**
 	 * @return \Illuminate\Database\Eloquent\Relations\HasMany
 	 */
     public function products()
     {
-        return $this->hasMany('App\Product');
+        return $this->hasMany(Product::class);
     }
 }

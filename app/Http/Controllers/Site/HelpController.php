@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers\Site;
 
-use App\Http\Controllers\Controller;
-use App\Help;
+use App\Models\Help;
 
-class HelpController extends Controller
+class HelpController extends BaseController
 {
     public function faq()
     {

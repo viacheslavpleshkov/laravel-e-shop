@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use App;
-use App\Setting;
-use App\Help;
+use App\Models\Setting;
+use App\Models\Help;
 use App\Http\Requests\Help as HelpRequest;
 use Illuminate\Http\Request;
 
-class AdminController extends Controller
+class AdminController extends BaseController
 {
     public function index()
     {

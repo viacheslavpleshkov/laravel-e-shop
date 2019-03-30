@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use App\Subscribe;
+use App\Models\Subscribe;
 use App\Http\Requests\Subscribe as Request;
 
 
-class SubscribeController extends Controller
+class SubscribeController extends BaseController
 {
     /**
      * Display a listing of the resource.
