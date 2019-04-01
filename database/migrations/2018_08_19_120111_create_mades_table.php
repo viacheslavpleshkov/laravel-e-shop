@@ -16,7 +16,7 @@ class CreateMadesTable extends Migration
         Schema::create('mades', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->integer('status');
+            $table->bigInteger('status');
             $table->timestamps();
         });
     }

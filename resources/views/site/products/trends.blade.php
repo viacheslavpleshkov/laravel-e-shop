@@ -40,13 +40,21 @@
                     <ul>
                         @foreach($main as $item)
                             <li>
-                                <a class="cbp-vm-image" href="{{ asset('storage').'/'.$item->images }}">
-                                </a><div class="simpleCart_shelfItem"><a class="cbp-vm-image" href="{{ route('site.products',$item->url) }}">
+                                @if($item->images == 'none')
+                                    <a class="cbp-vm-image" href="{{ asset('/images/photo-not-available.png') }}"></a>
+                                @else
+                                    <a class="cbp-vm-image" href="{{ asset('storage').'/'.$item->images }}"></a>
+                                @endif
+                                <div class="simpleCart_shelfItem"><a class="cbp-vm-image" href="{{ route('site.products',$item->url) }}">
                                         <div class="view view-first">
                                             <div class="inner_content clearfix">
                                                 <div class="product_image">
-                                                    <img src="{{ asset('storage').'/'.$item->images }}" class="img-responsive" alt="">
-                                                    <div class="mask">
+                                                    @if($item->images == 'none')
+                                                        <img src="{{ asset('/images/photo-not-available.png') }}" class="img-responsive" alt="">
+                                                    @else
+                                                        <img src="{{ asset('storage').'/'.$item->images }}" class="img-responsive" alt="">
+                                                    @endif
+                                                        <div class="mask">
                                                         <div class="info">{{ __('site.trends-quick-view') }}</div>
                                                     </div>
                                                     <div class="product_container">

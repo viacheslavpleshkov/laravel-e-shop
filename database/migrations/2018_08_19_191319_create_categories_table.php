@@ -17,11 +17,11 @@ class CreateCategoriesTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('url')->unique();
-            $table->integer('men');
-            $table->integer('women');
-            $table->integer('kids');
-            $table->integer('accessories');
-            $table->integer('status');
+            $table->bigInteger('men');
+            $table->bigInteger('women');
+            $table->bigInteger('kids');
+            $table->bigInteger('accessories');
+            $table->bigInteger('status');
             $table->timestamps();
         });
     }

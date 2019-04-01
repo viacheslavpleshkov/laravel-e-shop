@@ -19,7 +19,7 @@ class CreateBrandsTable extends Migration
             $table->string('images');
             $table->text('description');
             $table->string('url')->unique();
-            $table->integer('status');
+            $table->bigInteger('status');
             $table->timestamps();
         });
     }
