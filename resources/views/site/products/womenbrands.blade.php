@@ -52,8 +52,8 @@
 								@else
 									<a class="cbp-vm-image" href="{{ asset('storage').'/'.$item->images }}"></a>
 								@endif
-								<div class="simpleCart_shelfItem"><a class="cbp-vm-image"
-																	 href="{{ route('site.womenbrands-view',$item->url) }}">
+								<div class="simpleCart_shelfItem">
+									<a class="cbp-vm-image" href="{{ route('site.women-brands',$item->url) }}">
 										<div class="view view-first">
 											<div class="inner_content clearfix">
 												<div class="product_image">
