@@ -29,13 +29,13 @@
 				<div class="col-md-5 zoom-grid">
 					<div class="flexslider">
 						<ul class="slides">
-							@if($item->images == 'none')
+							@if($main->images == 'none')
 								<li data-thumb="{{ asset('/images/photo-not-available.png') }}">
 							@else
 								<li data-thumb="{{ asset('storage').'/'.$main->images }}">
 									@endif
 									<div class="thumb-image">
-										@if($item->images == 'none')
+										@if($main->images == 'none')
 											<img src="{{ asset('/images/photo-not-available.png') }}" data-imagezoom="true" class="img-responsive" alt=""/>
 										@else
 											<img src="{{ asset('storage').'/'.$main->images }}" data-imagezoom="true" class="img-responsive" alt=""/>
