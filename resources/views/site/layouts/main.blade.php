@@ -185,6 +185,7 @@
 		</div>
 		<div class="copyright text-center">
 			<p>{{ __('site.title') }} ©{{ date('Y') }}. {{__('site.all-rights-reserved')}}</p>
+			<p>Made with <i class="glyphicon glyphicon-heart"></i> by  <a href="https://slavapleshkov.com/" rel="nofollow" target="_blank">Slava Pleshkov</a>.</p>
 		</div>
 	</div>
 </div>
