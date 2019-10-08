@@ -1,6 +1,6 @@
 {
   "name": "E-shop",
-  "description": "The online store was created using the Laravel 5.7 Framework",
+  "description": "The online store was created using the Laravel 6.1 Framework",
   "repository": "https://github.com/slava-pleshkov/laravel-e-shop",
   "logo": "https://github.com/slava-pleshkov/laravel-e-shop/blob/master/public/icons/mstile-310x310.png?raw=true",
   "keywords": [
@@ -33,35 +33,20 @@
     "DB_CONNECTION": {
       "value": "pgsql"
     },
-    "DB_HOST": {
-      "generator": "secret"
-    },
-    "DB_PORT": {
-      "generator": "secret"
-    },
-    "DB_DATABASE": {
-      "generator": "secret"
-    },
-    "DB_USERNAME": {
-      "generator": "secret"
-    },
-    "DB_PASSWORD": {
-      "generator": "secret"
-    },
     "BROADCAST_DRIVER": {
       "value": "log"
     },
     "CACHE_DRIVER": {
-      "value": "file"
+      "value": "redis"
     },
     "SESSION_DRIVER": {
-      "value": "database"
+      "value": "redis"
     },
     "SESSION_LIFETIME": {
       "value": "120"
     },
     "QUEUE_DRIVER": {
-      "value": "sync"
+      "value": "redis"
     },
     "STRIPE_SECRET": {
       "generator": "secret"

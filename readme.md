@@ -8,7 +8,7 @@
     <h1 align="center">laravel-e-shop</h1>
     <br>
 </p>
-<p align="center">👕 The online store was created using the Laravel 5.8 Framework</p>
+<p align="center">👕 The online store was created using the Laravel 6.1 Framework</p>
 
 ## Used technologies
 
@@ -87,16 +87,11 @@ HTML5, CSS3, SCSS, JavaScript, jQuery, Bootstrap, Font Awesome, Webpack, Yarn, H
 1. Run this command `heroku config:set APP_URL=secret`
 1. Run this command `heroku config:set LOG_CHANNEL=errorlog`
 1. Run this command `heroku config:set DB_CONNECTION=pgsql`
-1. Run this command `heroku config:set DB_HOST=secret`
-1. Run this command `heroku config:set DB_PORT=secret`
-1. Run this command `heroku config:set DB_DATABASE=secret`
-1. Run this command `heroku config:set DB_USERNAME=secret`
-1. Run this command `heroku config:set DB_PASSWORD=secret`
 1. Run this command `heroku config:set BROADCAST_DRIVER=log`
-1. Run this command `heroku config:set CACHE_DRIVER=file`
-1. Run this command `heroku config:set SESSION_DRIVER=database`
+1. Run this command `heroku config:set CACHE_DRIVER=redis`
+1. Run this command `heroku config:set SESSION_DRIVER=redis`
 1. Run this command `heroku config:set SESSION_LIFETIME=120`
-1. Run this command `heroku config:set QUEUE_DRIVER=sync`
+1. Run this command `heroku config:set QUEUE_DRIVER=redis`
 1. Run this command `heroku config:set STRIPE_SECRET=secret`
 1. Run this command `heroku config:set MAIL_DRIVER=secret`
 1. Run this command `heroku config:set MAIL_HOST=secret`
